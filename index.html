@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Janseva Hospital & Trauma Centre Varanasi | Multi-Speciality Surgical Care</title>
+    <meta name="description" content="Janseva Hospital & Research Centre (Pvt.) Ltd. in Varanasi since 1997. Advanced surgical care, trauma centre, emergency services, and Ayushman Bharat empanelled.">
+    <meta name="keywords" content="Best Hospital in Varanasi, Trauma Centre in Varanasi, Joint Replacement Hospital Varanasi, Neurosurgery Hospital Varanasi, Urology Hospital Varanasi, Ayushman Bharat Hospital Varanasi, Orthopedic Hospital Varanasi, Emergency Hospital Varanasi">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Janseva Hospital & Trauma Centre | Varanasi">
+    <meta property="og:description" content="25+ Years of Healthcare Excellence. ISO Certified, Ayushman Bharat Empanelled.">
+    <meta property="og:image" content="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGdXLM9hpCjpHW9DFA0yQ2TDAzYdhchYBM6cuiPdy3eB4PWvvEnISlcgwSxcMLsdcEh2iMeZ9Dy-UwXDiaOdEkoL2eOXUU8nFTRGh1SYokGhnsE4fYjw_6VSZntRBFaQzZOHjW34A=s1360-w1360-h1020-rw">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Adding favicon -->
+<link rel="icon" href="/Images/logo-modified.png" type="image/x-icon">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        medical: {
+                            blue: '#0A3A66',
+                            green: '#107c64',
+                            light: '#f0f9fa',
+                            dark: '#052240',
+                        },
+                        accent: {
+                            blue: '#3b82f6',
+                            green: '#10b981',
+                        },
+                        emergency: '#dc2626'
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glass': '0 8px 32px 0 rgba(10, 58, 102, 0.1)',
+                        'glow': '0 0 20px rgba(16, 124, 100, 0.4)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for Premium Effects -->
+    <style>
+        /* Glassmorphism */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+        }
+        
+        .glass-dark {
+            background: rgba(10, 58, 102, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(220, 38, 38, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+        }
+        @keyframes gradient-bg {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @keyframes typing {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .animate-float-slow { animation: float 9s ease-in-out infinite reverse; }
+        .pulse-emergency { animation: pulse-glow 2s infinite; }
+        .gradient-animate {
+            background: linear-gradient(-45deg, #0A3A66, #107c64, #0d5470, #138A72);
+            background-size: 400% 400%;
+            animation: gradient-bg 15s ease infinite;
+        }
+
+        /* Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hover Lift */
+        .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(10, 58, 102, 0.15);
+        }
+
+        /* Hero Slider */
+        .hero-slide {
+            opacity: 0;
+            transition: opacity 1s ease-in-out, transform 3s ease-in-out;
+            transform: scale(1.05);
+        }
+        .hero-slide.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #107c64; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #0A3A66; }
+
+        /* Background Icons Container */
+        .bg-icons-container {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .bg-icon {
+            position: absolute;
+            color: rgba(16, 124, 100, 0.04);
+            font-size: 2rem; /* Reduced by 50% */
+        }
+        
+        /* Section setup */
+        section { position: relative; z-index: 1; }
+        .content-relative { position: relative; z-index: 10; }
+
+        .line-clamp-3 {
+            display: -webkit-box;
+            line-clamp: 3;
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
+        }
+    </style>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalOrganization",
+      "name": "Janseva Hospital & Research Centre (Pvt.) Ltd.",
+      "alternateName": "जनसेवा हॉस्पिटल एवं रिसर्च सेन्टर",
+      "url": "https://jansevahospital.com",
+      "logo": "logo.png",
+      "foundingDate": "1997",
+      "description": "25+ Years of Trusted Healthcare Excellence. Multi-Speciality, Trauma Centre, and Ayushman Bharat Empanelled Hospital in Varanasi.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "In Front of Krishi Bhawan, GT Road, Churamanpur, Chandpur",
+        "addressLocality": "Varanasi",
+        "addressRegion": "Uttar Pradesh",
+        "postalCode": "221108",
+        "addressCountry": "IN"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+91-8542929429",
+          "contactType": "emergency",
+          "availableLanguage": ["English", "Hindi"]
+        }
+      ]
+    }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased overflow-x-hidden">
+
+    <!-- Sticky Glass Navbar -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 glass-panel py-2">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <!-- Logo & Name -->
+                <div class="flex items-center gap-2.5">
+                    <img src="Images/logo-modified.png" alt="Janseva Logo" class="h-10 w-10 object-contain rounded-full shadow-glow" onerror="this.src='https://placehold.co/100x100/0A3A66/ffffff?text=JH'">
+                    <div class="hidden sm:block">
+                        <h1 class="font-bold text-medical-blue text-base leading-tight tracking-tight">
+                            <span class="block">JANSEVA HOSPITAL</span>
+                            <span class="block">& TRAUMA CENTRE</span>
+                        </h1>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-4 font-medium text-sm text-medical-dark">
+                    <a href="#home" class="hover:text-medical-green transition-colors">Home</a>
+                    <a href="#about" class="hover:text-medical-green transition-colors">About</a>
+                    <a href="#specialities" class="hover:text-medical-green transition-colors">Departments</a>
+                    <a href="#notices" class="hover:text-medical-green transition-colors">Notices</a>
+                    <a href="#testimonials" class="hover:text-medical-green transition-colors">Testimonials</a>
+
+                    <a href="#contact" class="hover:text-medical-green transition-colors">Contact</a>
+                    <a href="tel:8542929429" class="bg-emergency text-white px-4 py-2 rounded-full shadow-lg pulse-emergency flex items-center gap-2 hover:bg-red-700 transition-colors">
+                        <i class="fa-solid fa-phone-volume text-xs"></i> Emergency
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-medical-blue focus:outline-none text-2xl">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-xl">
+            <div class="px-4 pt-2 pb-4 space-y-1 text-center">
+                <a href="#home" class="block px-3 py-2 text-medical-dark hover:bg-medical-light rounded-md">Home</a>
+                <a href="#about" class="block px-3 py-2 text-medical-dark hover:bg-medical-light rounded-md">About</a>
+                <a href="#specialities" class="block px-3 py-2 text-medical-dark hover:bg-medical-light rounded-md">Departments</a>
+                <a href="#notices" class="block px-3 py-2 text-medical-dark hover:bg-medical-light rounded-md">Notices</a>
+                <a href="#testimonials" class="block px-3 py-2 text-medical-dark hover:bg-medical-light rounded-md">Testimonials</a>
+                <a href="#contact" class="block px-3 py-2 text-medical-dark hover:bg-medical-light rounded-md">Contact</a>
+                <a href="tel:8542929429" class="block px-3 py-2 bg-emergency text-white rounded-md mt-2 pulse-emergency font-bold"><i class="fa-solid fa-phone mr-2"></i> 85429 29429</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header id="home" class="relative min-h-screen w-full overflow-hidden flex flex-col bg-medical-dark">
+        <!-- Sliders -->
+        <div id="hero-slider" class="absolute inset-0 w-full h-full">
+            <!-- Slides injected via JS -->
+        </div>
+
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-r from-medical-dark/90 via-medical-blue/70 to-transparent z-10"></div>
+        <div class="absolute inset-0 bg-black/30 z-10"></div> <!-- Additional darken for text readability -->
+
+        <!-- Top Spacer for Sticky Navbar -->
+        <div class="h-16 w-full relative z-20 flex-shrink-0"></div>
+
+        <!-- Hero Content -->
+        <div class="relative z-20 flex-grow flex flex-col justify-center items-start max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-10">
+            <div class="max-w-3xl reveal active">
+                <div class="inline-block px-4 py-1 mb-4 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm text-white text-sm font-semibold tracking-wide shadow-glass ">
+                    <i class="fa-solid fa-shield-halved text-medical-green mr-2"></i> ISO Certified | Since 1997
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight drop-shadow-lg">
+                    JANSEVA HOSPITAL & TRAUMA CENTRE <br> <span class="text-3xl md:text-5xl font-light text-medical-light opacity-90"></span>
+                </h1>
+                <h2 class="text-xl md:text-2xl text-medical-green font-semibold mb-6 flex flex-wrap gap-2 items-center drop-shadow-md">
+                    <span>Advanced Surgical Care</span> <span class="text-white  md:inline">•</span>
+                    <span>Trauma Centre </span> <span class="text-white md:inline">•</span>
+                    <span>Emergency Services</span>
+                </h2>
+                <p class="text-gray-100 text-lg mb-8 line-clamp-3 md:line-clamp-none max-w-2xl drop-shadow-md font-medium">
+                    Serving Varanasi since 1997 with trusted healthcare, advanced surgical procedures, emergency care, critical care facilities, and Ayushman Bharat supported treatments.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                    <button onclick="document.getElementById('appointment-modal').classList.remove('hidden')" class="px-8 py-4 bg-medical-green text-white font-bold rounded-lg shadow-glow hover:bg-emerald-600 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                        <i class="fa-regular fa-calendar-check"></i> Book Appointment
+                    </button>
+                    <a href="tel:8542929429" class="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-medical-blue transition-all flex items-center justify-center gap-2 backdrop-blur-sm bg-white/5">
+                        <i class="fa-solid fa-truck-medical"></i> Emergency Contact
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Integrated Trust Bar at Bottom of Hero -->
+        <div class="relative z-30 w-full pb-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto hidden md:block">
+            <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 flex justify-around items-center divide-x divide-white/20 shadow-glass">
+                <div class="text-center px-4 w-1/5">
+                    <div class="text-3xl font-bold text-white mb-1 drop-shadow-md" data-counter="25">25+</div>
+                    <div class="text-sm font-medium text-gray-200 uppercase tracking-wider text-[10px]">Years Excellence</div>
+                </div>
+                <div class="text-center px-4 w-1/5">
+                    <div class="text-3xl font-bold text-white mb-1 drop-shadow-md" data-counter="10">10+</div>
+                    <div class="text-sm font-medium text-gray-200 uppercase tracking-wider text-[10px]">Specialists</div>
+                </div>
+                <div class="text-center px-4 w-1/5">
+                    <div class="text-3xl font-bold text-red-400 mb-1 drop-shadow-md">24×7</div>
+                    <div class="text-sm font-medium text-gray-200 uppercase tracking-wider text-[10px]">Emergency Care</div>
+                </div>
+                <div class="text-center px-4 w-1/5">
+                    <div class="text-3xl font-bold text-white mb-1 drop-shadow-md" data-counter="5000">5000+</div>
+                    <div class="text-sm font-medium text-gray-200 uppercase tracking-wider text-[10px]">Procedures</div>
+                </div>
+                <div class="text-center px-4 w-1/5 flex flex-col items-center">
+                    <div class="text-medical-green text-3xl mb-1 bg-white/20 h-12 w-12 rounded-full flex items-center justify-center border border-white/30"><i class="fa-solid fa-hands-holding-child drop-shadow-md"></i></div>
+                    <div class="text-[11px] font-bold text-white tracking-wide mt-1">AYUSHMAN BHARAT</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Trust bar (Flows below hero on very small screens) -->
+    <div class="md:hidden bg-medical-dark py-6 border-t border-white/10 relative z-20">
+        <div class="grid grid-cols-2 gap-y-6 gap-x-4 px-4 text-center">
+             <div>
+                <div class="text-2xl font-bold text-white mb-1">25+</div>
+                <div class="text-[10px] font-medium text-gray-300 uppercase tracking-wider">Years Excellence</div>
+            </div>
+            <div>
+                <div class="text-2xl font-bold text-red-400 mb-1">24×7</div>
+                <div class="text-[10px] font-medium text-gray-300 uppercase tracking-wider">Emergency Care</div>
+            </div>
+            <div>
+                <div class="text-2xl font-bold text-white mb-1">5000+</div>
+                <div class="text-[10px] font-medium text-gray-300 uppercase tracking-wider">Procedures</div>
+            </div>
+            <div class="flex flex-col items-center justify-center">
+                <i class="fa-solid fa-hands-holding-child text-medical-green text-xl mb-1 bg-white/10 p-2 rounded-full"></i>
+                <div class="text-[10px] font-bold text-white tracking-wider">AYUSHMAN BHARAT</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-20 md:py-32 bg-medical-light relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 content-relative">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Image Composite -->
+                <div class="relative reveal">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-medical-blue to-medical-green rounded-2xl transform rotate-3 opacity-20 blur-lg"></div>
+                    <img src="Images/1.png" alt="Janseva Hospital Building" class="relative rounded-2xl shadow-2xl z-10 hover-lift">
+                    
+                    <!-- Floating Badge -->
+                    <div class="absolute -bottom-6 -right-6 glass-panel p-4 rounded-xl shadow-xl z-20 flex items-center gap-4 ">
+                        <div class="h-12 w-12 bg-medical-blue rounded-full flex items-center justify-center text-white text-2xl">
+                            <i class="fa-solid fa-certificate"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-medical-dark">ISO 9001:2015</p>
+                            <p class="text-xs text-gray-500">Certified Hospital</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Content -->
+                <div class="reveal">
+                    <h4 class="text-medical-green font-bold tracking-wider uppercase mb-2">About Us</h4>
+                    <h2 class="text-3xl md:text-4xl font-bold text-medical-dark mb-6 leading-tight">
+                         Janseva Hospital & Trauma Centre Pvt Ltd.
+                    </h2>
+                    <h3 class="text-xl text-gray-600 mb-6 font-medium">A Legacy of Trust Since 1997</h3>
+                    
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Janseva Hospital & Trauma Centre has been serving patients since 1997 (Incorporated 2001) with a resolute commitment to affordable, accessible, and advanced healthcare. 
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Located in the heart of Varanasi, the hospital provides multidisciplinary medical services, advanced trauma care, complex surgical specialties, modern diagnostics, critical care (ICU/NICU), and proactive community healthcare initiatives entirely under one roof.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-medical-green text-xl"></i> <span class="font-medium text-gray-700">Trauma Care</span></div>
+                        <div class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-medical-green text-xl"></i> <span class="font-medium text-gray-700">Surgical Hub</span></div>
+                        <div class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-medical-green text-xl"></i> <span class="font-medium text-gray-700">Critical Care</span></div>
+                        <div class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-medical-green text-xl"></i> <span class="font-medium text-gray-700">Community Focus</span></div>
+                    </div>
+
+                    <a href="#specialities" class="text-medical-blue font-bold border-b-2 border-medical-blue pb-1 hover:text-medical-green hover:border-medical-green transition-all">Explore Our Departments <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AYUSHMAN BHARAT SECTION (The Biggest Section) -->
+    <section id="ayushman" class="py-24 bg-white relative overflow-hidden">
+        <!-- Abstract Shapes -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-medical-green opacity-5 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-medical-blue opacity-5 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 content-relative">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <img src="Images/ayush.png" alt="Ayushman Bharat Logo" class="h-20 mx-auto mb-6 object-contain" onerror="this.src=''; this.alt='Ayushman Bharat Logo (Image Unavailable)';">
+                <h2 class="text-4xl md:text-5xl font-bold text-medical-dark mb-4">Ayushman Bharat PM-JAY</h2>
+                <h3 class="text-2xl text-medical-green font-semibold mb-4">100% Cashless Treatment</h3>
+                <p class="text-gray-600 text-lg">Proudly empanelled to provide free, high-quality medical and surgical care up to <span class="font-bold text-medical-blue text-xl">₹5 Lakhs</span> per family per year.</p>
+            </div>
+
+            <!-- Process Flow -->
+            <div class="mb-20 reveal">
+                <h4 class="text-center font-bold text-gray-800 mb-10 text-xl">Simple 6-Step Cashless Process</h4>
+                <div class="flex flex-col md:flex-row justify-between items-center relative">
+                    <!-- Connecting Line (Desktop) -->
+                    <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-gray-200 -z-10 transform -translate-y-1/2"></div>
+                    
+                    <!-- Steps -->
+                    <div class="flex flex-col items-center mb-8 md:mb-0 bg-white p-2 rounded-full">
+                        <div class="h-16 w-16 rounded-full bg-medical-light border-4 border-medical-green flex items-center justify-center text-2xl text-medical-green font-bold mb-3 shadow-md hover:scale-110 transition-transform"><i class="fa-solid fa-id-card"></i></div>
+                        <p class="font-semibold text-sm">1. Registration</p>
+                    </div>
+                    <div class="flex flex-col items-center mb-8 md:mb-0 bg-white p-2 rounded-full">
+                        <div class="h-16 w-16 rounded-full bg-medical-light border-4 border-medical-blue flex items-center justify-center text-2xl text-medical-blue font-bold mb-3 shadow-md hover:scale-110 transition-transform"><i class="fa-solid fa-fingerprint"></i></div>
+                        <p class="font-semibold text-sm">2. Verification</p>
+                    </div>
+                    <div class="flex flex-col items-center mb-8 md:mb-0 bg-white p-2 rounded-full">
+                        <div class="h-16 w-16 rounded-full bg-medical-light border-4 border-yellow-500 flex items-center justify-center text-2xl text-yellow-500 font-bold mb-3 shadow-md hover:scale-110 transition-transform"><i class="fa-solid fa-file-signature"></i></div>
+                        <p class="font-semibold text-sm">3. Approval</p>
+                    </div>
+                    <div class="flex flex-col items-center mb-8 md:mb-0 bg-white p-2 rounded-full">
+                        <div class="h-16 w-16 rounded-full bg-medical-light border-4 border-accent-blue flex items-center justify-center text-2xl text-accent-blue font-bold mb-3 shadow-md hover:scale-110 transition-transform"><i class="fa-solid fa-bed-pulse"></i></div>
+                        <p class="font-semibold text-sm">4. Treatment</p>
+                    </div>
+                    <div class="flex flex-col items-center mb-8 md:mb-0 bg-white p-2 rounded-full">
+                        <div class="h-16 w-16 rounded-full bg-medical-light border-4 border-purple-500 flex items-center justify-center text-2xl text-purple-500 font-bold mb-3 shadow-md hover:scale-110 transition-transform"><i class="fa-solid fa-house-medical-circle-check"></i></div>
+                        <p class="font-semibold text-sm">5. Discharge</p>
+                    </div>
+                    <div class="flex flex-col items-center bg-white p-2 rounded-full">
+                        <div class="h-16 w-16 rounded-full bg-medical-light border-4 border-accent-green flex items-center justify-center text-2xl text-accent-green font-bold mb-3 shadow-md hover:scale-110 transition-transform"><i class="fa-solid fa-check-double"></i></div>
+                        <p class="font-semibold text-sm">6. Settlement</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Treatments Available Grid -->
+            <div class="bg-gray-50 rounded-3xl p-8 md:p-12 shadow-inner reveal">
+                <h4 class="text-2xl font-bold text-center text-medical-dark mb-8">Covered Procedures & Treatments</h4>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center gap-4 hover-lift">
+                        <div class="bg-blue-50 p-3 rounded-lg text-medical-blue"><i class="fa-solid fa-bone text-xl"></i></div>
+                        <span class="font-medium text-gray-700">Knee Replacement</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center gap-4 hover-lift">
+                        <div class="bg-blue-50 p-3 rounded-lg text-medical-blue"><i class="fa-solid fa-person-walking text-xl"></i></div>
+                        <span class="font-medium text-gray-700">Hip Replacement</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center gap-4 hover-lift">
+                        <div class="bg-green-50 p-3 rounded-lg text-medical-green"><i class="fa-solid fa-bandage text-xl"></i></div>
+                        <span class="font-medium text-gray-700">Hernia Surgery</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center gap-4 hover-lift">
+                        <div class="bg-green-50 p-3 rounded-lg text-medical-green"><i class="fa-solid fa-scissors text-xl"></i></div>
+                        <span class="font-medium text-gray-700">Appendix Surgery</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center gap-4 hover-lift">
+                        <div class="bg-blue-50 p-3 rounded-lg text-medical-blue"><i class="fa-solid fa-bed-pulse text-xl"></i></div>
+                        <span class="font-medium text-gray-700">Gall Bladder Surgery</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center gap-4 hover-lift">
+                        <div class="bg-red-50 p-3 rounded-lg text-emergency"><i class="fa-solid fa-viruses text-xl"></i></div>
+                        <span class="font-medium text-gray-700">Typhoid Treatment</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center gap-4 hover-lift">
+                        <div class="bg-red-50 p-3 rounded-lg text-emergency"><i class="fa-solid fa-mosquito text-xl"></i></div>
+                        <span class="font-medium text-gray-700">Malaria Treatment</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center gap-4 hover-lift">
+                        <div class="bg-yellow-50 p-3 rounded-lg text-yellow-600"><i class="fa-solid fa-face-flushed text-xl"></i></div>
+                        <span class="font-medium text-gray-700">Jaundice Treatment</span>
+                    </div>
+                </div>
+                <div class="text-center mt-10">
+                    <button onclick="document.getElementById('appointment-modal').classList.remove('hidden')" class="px-8 py-3 bg-medical-blue text-white rounded-lg font-bold shadow-lg hover:bg-blue-800 transition-colors">Verify Your Ayushman Card Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPECIALITIES / DEPARTMENTS SECTION -->
+    <section id="specialities" class="py-20 bg-medical-light relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 content-relative">
+            <div class="text-center mb-16 reveal">
+                <h4 class="text-medical-green font-bold uppercase tracking-widest mb-2">Our Specialities</h4>
+                <h2 class="text-3xl md:text-5xl font-bold text-medical-dark">Advanced Medical Departments</h2>
+                <div class="w-24 h-1 bg-medical-green mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <!-- CSS Grid for Premium Hover Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Orthopedics -->
+                <div class="group bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 relative overflow-hidden reveal">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full -z-0 transition-transform group-hover:scale-150 duration-500"></div>
+                    <div class="relative z-10">
+                        <i class="fa-solid fa-bone text-4xl text-medical-blue mb-6 group-hover:animate-bounce"></i>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Orthopedics & Joint Replacement</h3>
+                        <p class="text-gray-600 mb-4 h-12 overflow-hidden transition-all duration-300 group-hover:h-auto">Advanced care for bone, joint, and spine disorders.</p>
+                        <ul class="text-sm text-gray-500 space-y-2 mb-6 hidden group-hover:block transition-all">
+                            <li><i class="fa-solid fa-check text-medical-green mr-2"></i>Knee Replacement</li>
+                            <li><i class="fa-solid fa-check text-medical-green mr-2"></i>Hip Replacement</li>
+                            <li><i class="fa-solid fa-check text-medical-green mr-2"></i>Fracture Management</li>
+                            <li><i class="fa-solid fa-check text-medical-green mr-2"></i>Trauma Care</li>
+                        </ul>
+                        <button onclick="openBooking('Orthopedics')" class="text-medical-blue font-semibold group-hover:text-medical-green transition-colors flex items-center">Book Consultation <i class="fa-solid fa-arrow-right ml-2 opacity-0 group-hover:opacity-100 transform translate-x-[-10px] group-hover:translate-x-0 transition-all"></i></button>
+                    </div>
+                </div>
+
+                <!-- Neurosurgery -->
+                <div class="group bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 relative overflow-hidden reveal">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-green-50 rounded-bl-full -z-0 transition-transform group-hover:scale-150 duration-500"></div>
+                    <div class="relative z-10">
+                        <i class="fa-solid fa-brain text-4xl text-medical-green mb-6 group-hover:animate-bounce"></i>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Neurosurgery</h3>
+                        <p class="text-gray-600 mb-4 h-12 overflow-hidden transition-all duration-300 group-hover:h-auto">State-of-the-art procedures for brain and spine.</p>
+                        <ul class="text-sm text-gray-500 space-y-2 mb-6 hidden group-hover:block transition-all">
+                            <li><i class="fa-solid fa-check text-medical-green mr-2"></i>Brain Surgery</li>
+                            <li><i class="fa-solid fa-check text-medical-green mr-2"></i>Neuro Trauma</li>
+                            <li><i class="fa-solid fa-check text-medical-green mr-2"></i>Spine Disorders</li>
+                        </ul>
+                        <button onclick="openBooking('Neurosurgery')" class="text-medical-blue font-semibold group-hover:text-medical-green transition-colors flex items-center">Book Consultation <i class="fa-solid fa-arrow-right ml-2 opacity-0 group-hover:opacity-100 transform translate-x-[-10px] group-hover:translate-x-0 transition-all"></i></button>
+                    </div>
+                </div>
+
+                <!-- Urology -->
+                <div class="group bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 relative overflow-hidden reveal">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full -z-0 transition-transform group-hover:scale-150 duration-500"></div>
+                    <div class="relative z-10">
+                        <i class="fa-solid fa-vial text-4xl text-medical-blue mb-6 group-hover:animate-bounce"></i>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Urology</h3>
+                        <p class="text-gray-600 mb-4 h-12 overflow-hidden transition-all duration-300 group-hover:h-auto">Comprehensive care for urinary tract system.</p>
+                        <ul class="text-sm text-gray-500 space-y-2 mb-6 hidden group-hover:block transition-all">
+                            <li><i class="fa-solid fa-check text-medical-green mr-2"></i>Kidney Disorders</li>
+                            <li><i class="fa-solid fa-check text-medical-green mr-2"></i>Uro Surgery</li>
+                            <li><i class="fa-solid fa-check text-medical-green mr-2"></i>Stone Treatment</li>
+                        </ul>
+                        <button onclick="openBooking('Urology')" class="text-medical-blue font-semibold group-hover:text-medical-green transition-colors flex items-center">Book Consultation <i class="fa-solid fa-arrow-right ml-2 opacity-0 group-hover:opacity-100 transform translate-x-[-10px] group-hover:translate-x-0 transition-all"></i></button>
+                    </div>
+                </div>
+
+                <!-- General Surgery -->
+                <div class="group bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 relative overflow-hidden reveal">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-green-50 rounded-bl-full -z-0 transition-transform group-hover:scale-150 duration-500"></div>
+                    <div class="relative z-10">
+                        <i class="fa-solid fa-syringe text-4xl text-medical-green mb-6 group-hover:animate-bounce"></i>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">General Surgery</h3>
+                        <p class="text-gray-600 mb-4 h-12 overflow-hidden transition-all duration-300 group-hover:h-auto">Laparoscopic and minimally invasive surgical solutions.</p>
+                        <ul class="text-sm text-gray-500 space-y-2 mb-6 hidden group-hover:block transition-all">
+                            <li><i class="fa-solid fa-check text-medical-green mr-2"></i>Appendix & Hernia</li>
+                            <li><i class="fa-solid fa-check text-medical-green mr-2"></i>Gall Bladder Surgery</li>
+                            <li><i class="fa-solid fa-check text-medical-green mr-2"></i>Laparoscopic Procedures</li>
+                        </ul>
+                        <button onclick="openBooking('General Surgery')" class="text-medical-blue font-semibold group-hover:text-medical-green transition-colors flex items-center">Book Consultation <i class="fa-solid fa-arrow-right ml-2 opacity-0 group-hover:opacity-100 transform translate-x-[-10px] group-hover:translate-x-0 transition-all"></i></button>
+                    </div>
+                </div>
+
+                <!-- Obstetrics & Gynecology -->
+                <div class="group bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 relative overflow-hidden reveal">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-pink-50 rounded-bl-full -z-0 transition-transform group-hover:scale-150 duration-500"></div>
+                    <div class="relative z-10">
+                        <i class="fa-solid fa-person-pregnant text-4xl text-pink-500 mb-6 group-hover:animate-bounce"></i>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Obstetrics & Gynecology</h3>
+                        <p class="text-gray-600 mb-4 h-12 overflow-hidden transition-all duration-300 group-hover:h-auto">Complete healthcare for women from puberty to maternity.</p>
+                        <ul class="text-sm text-gray-500 space-y-2 mb-6 hidden group-hover:block transition-all">
+                            <li><i class="fa-solid fa-check text-medical-green mr-2"></i>Pregnancy Care</li>
+                            <li><i class="fa-solid fa-check text-medical-green mr-2"></i>High-Risk Pregnancy</li>
+                            <li><i class="fa-solid fa-check text-medical-green mr-2"></i>Women's Health</li>
+                        </ul>
+                        <button onclick="openBooking('Gynecology')" class="text-medical-blue font-semibold group-hover:text-medical-green transition-colors flex items-center">Book Consultation <i class="fa-solid fa-arrow-right ml-2 opacity-0 group-hover:opacity-100 transform translate-x-[-10px] group-hover:translate-x-0 transition-all"></i></button>
+                    </div>
+                </div>
+
+                <!-- Other Departments Combined Card -->
+                <div class="group bg-gradient-to-br from-medical-dark to-medical-blue rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 relative overflow-hidden reveal text-white">
+                    <div class="relative z-10 h-full flex flex-col justify-between">
+                        <div>
+                            <i class="fa-solid fa-truck-medical text-4xl text-white mb-6 group-hover:animate-pulse"></i>
+                            <h3 class="text-xl font-bold mb-3">Other Specialized Centers</h3>
+                            <p class="text-gray-300 mb-4 text-sm">We provide holistic care through multiple specialized departments under one roof.</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="text-xs bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm border border-white/30">Cancer Surgery</span>
+                                <span class="text-xs bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm border border-white/30">Plastic Surgery</span>
+                                <span class="text-xs bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm border border-white/30">Pediatrics</span>
+                                <span class="text-xs bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm border border-white/30">General Medicine</span>
+                            </div>
+                        </div>
+                        <button onclick="openBooking('Other')" class="w-full py-3 bg-white text-medical-blue font-bold rounded-lg hover:bg-medical-light transition-colors shadow-lg">View All Departments</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOCTORS SECTION -->
+    <section id="doctors" class="py-20 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 content-relative">
+            <div class="text-center mb-16 reveal">
+                <h4 class="text-medical-green font-bold uppercase tracking-widest mb-2">Our Medical Experts</h4>
+                <h2 class="text-3xl md:text-5xl font-bold text-medical-dark">Leading Specialists</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Main Doctor - Dr. Alok Singh (Gets Image) -->
+                <div class="lg:col-span-1 reveal">
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 h-full flex flex-col">
+                        <div class="relative h-64 bg-medical-light overflow-hidden group">
+                            <!-- Placeholder professional medical image -->
+                            <img src="Images/13.png" alt="Dr. Alok Singh" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent">
+                                <span class="bg-yellow-500 text-xs font-bold px-2 py-1 rounded text-white shadow"><i class="fa-solid fa-medal"></i> Gold Medalist Surgeon</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-medical-dark mb-1">Dr. Alok Singh</h3>
+                                <p class="text-medical-green font-semibold text-sm mb-4">MBBS, Orthopedic Surgeon</p>
+                                <div class="space-y-2 text-sm text-gray-600 mb-6 border-t pt-4">
+                                    <p><i class="fa-solid fa-check-circle text-medical-green w-5"></i> Joint Replacement</p>
+                                    <p><i class="fa-solid fa-check-circle text-medical-green w-5"></i> Trauma Surgery</p>
+                                    <p><i class="fa-solid fa-check-circle text-medical-green w-5"></i> Fracture Care</p>
+                                    <p><i class="fa-solid fa-check-circle text-medical-green w-5"></i> Orthopedic Procedures</p>
+                                </div>
+                            </div>
+                            <button onclick="openBooking('Orthopedics', 'Dr. Alok Singh')" class="w-full py-3 bg-medical-blue text-white rounded-lg hover:bg-medical-dark transition-colors font-medium">Book Appointment</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other Doctors (Text Cards to save space efficiently) -->
+                <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6 reveal">
+                    
+                    <!-- Dr. Mamta Singh -->
+                    <div class="bg-medical-light rounded-xl p-5 border border-gray-200 hover:shadow-md transition-shadow flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start justify-between mb-2">
+                                <div>
+                                    <h4 class="font-bold text-lg text-medical-dark">Dr. Mamta Singh</h4>
+                                    <p class="text-xs text-medical-green font-bold">MBBS, MD</p>
+                                </div>
+                                <div class="bg-pink-100 p-2 rounded-full text-pink-600"><i class="fa-solid fa-person-pregnant"></i></div>
+                            </div>
+                            <p class="text-sm text-gray-700 font-medium mb-2">Obstetrics & Gynecology Specialist</p>
+                            <p class="text-xs text-gray-500 mb-4 line-clamp-2">Expertise in Pregnancy Care, Gynecology, and Comprehensive Women's Health.</p>
+                        </div>
+                        <button onclick="openBooking('Gynecology', 'Dr. Mamta Singh')" class="text-sm text-medical-blue font-semibold hover:underline text-left">Consult Doctor &rarr;</button>
+                    </div>
+
+                    <!-- Dr. Deepak Agrahari -->
+                    <div class="bg-medical-light rounded-xl p-5 border border-gray-200 hover:shadow-md transition-shadow flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start justify-between mb-2">
+                                <div>
+                                    <h4 class="font-bold text-lg text-medical-dark">Dr. Deepak Agrahari</h4>
+                                    <p class="text-xs text-medical-green font-bold">MBBS, MS, MCh</p>
+                                </div>
+                                <div class="bg-blue-100 p-2 rounded-full text-blue-600"><i class="fa-solid fa-user-doctor"></i></div>
+                            </div>
+                            <p class="text-sm text-gray-700 font-medium mb-4">Plastic Surgeon</p>
+                        </div>
+                        <button onclick="openBooking('Plastic Surgery', 'Dr. Deepak Agrahari')" class="text-sm text-medical-blue font-semibold hover:underline text-left">Consult Doctor &rarr;</button>
+                    </div>
+
+                    <!-- Compact list for remaining -->
+                    <div class="sm:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="flex items-center justify-between bg-white border border-gray-200 p-4 rounded-lg shadow-sm">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-brain text-medical-blue opacity-70"></i>
+                                <div>
+                                    <h5 class="font-bold text-gray-800 text-sm">Dr. S. K. Dubey</h5>
+                                    <p class="text-xs text-medical-green">Neurosurgeon</p>
+                                </div>
+                            </div>
+                            <button onclick="openBooking('Neurosurgery', 'Dr. S. K. Dubey')" class="text-medical-blue"><i class="fa-regular fa-calendar-plus text-xl"></i></button>
+                        </div>
+                        <div class="flex items-center justify-between bg-white border border-gray-200 p-4 rounded-lg shadow-sm">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-vial text-medical-blue opacity-70"></i>
+                                <div>
+                                    <h5 class="font-bold text-gray-800 text-sm">Dr. P. K. Keshri</h5>
+                                    <p class="text-xs text-medical-green">Urologist</p>
+                                </div>
+                            </div>
+                            <button onclick="openBooking('Urology', 'Dr. P. K. Keshri')" class="text-medical-blue"><i class="fa-regular fa-calendar-plus text-xl"></i></button>
+                        </div>
+                        <div class="flex items-center justify-between bg-white border border-gray-200 p-4 rounded-lg shadow-sm">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-staff-snake text-medical-blue opacity-70"></i>
+                                <div>
+                                    <h5 class="font-bold text-gray-800 text-sm">Dr. H. S. Singh</h5>
+                                    <p class="text-xs text-medical-green">Cancer Surgeon</p>
+                                </div>
+                            </div>
+                            <button onclick="openBooking('Cancer Surgery', 'Dr. H. S. Singh')" class="text-medical-blue"><i class="fa-regular fa-calendar-plus text-xl"></i></button>
+                        </div>
+                        <div class="flex items-center justify-between bg-white border border-gray-200 p-4 rounded-lg shadow-sm">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-children text-medical-blue opacity-70"></i>
+                                <div>
+                                    <h5 class="font-bold text-gray-800 text-sm">Dr. S. N. Singh</h5>
+                                    <p class="text-xs text-medical-green">Pediatric Specialist</p>
+                                </div>
+                            </div>
+                            <button onclick="openBooking('Pediatrics', 'Dr. S. N. Singh')" class="text-medical-blue"><i class="fa-regular fa-calendar-plus text-xl"></i></button>
+                        </div>
+                         <div class="flex items-center justify-between bg-white border border-gray-200 p-4 rounded-lg shadow-sm">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-child-reaching text-medical-blue opacity-70"></i>
+                                <div>
+                                    <h5 class="font-bold text-gray-800 text-sm">Dr. Abhishek Agrahari</h5>
+                                    <p class="text-xs text-medical-green">Child Disease Specialist</p>
+                                </div>
+                            </div>
+                            <button onclick="openBooking('Pediatrics', 'Dr. Abhishek Agrahari')" class="text-medical-blue"><i class="fa-regular fa-calendar-plus text-xl"></i></button>
+                        </div>
+                        <div class="flex items-center justify-between bg-white border border-gray-200 p-4 rounded-lg shadow-sm">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-syringe text-medical-blue opacity-70"></i>
+                                <div>
+                                    <h5 class="font-bold text-gray-800 text-sm">Dr. Sunil Singh</h5>
+                                    <p class="text-xs text-medical-green">General Surgeon</p>
+                                </div>
+                            </div>
+                            <button onclick="openBooking('General Surgery', 'Dr. Sunil Singh')" class="text-medical-blue"><i class="fa-regular fa-calendar-plus text-xl"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FACILITIES SECTION -->
+    <section id="facilities" class="py-20 gradient-animate relative text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 content-relative">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">World-Class Facilities</h2>
+                <p class="text-medical-light opacity-90 max-w-2xl mx-auto">Equipped with state-of-the-art medical technology to provide comprehensive care around the clock.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 reveal">
+                <!-- Facility Cards -->
+                <div class="glass-dark p-6 rounded-xl text-center hover-lift border border-white/20">
+                    <i class="fa-solid fa-bed-pulse text-3xl mb-3 text-medical-light"></i>
+                    <h5 class="font-semibold text-sm">Advanced ICU</h5>
+                </div>
+                <div class="glass-dark p-6 rounded-xl text-center hover-lift border border-white/20">
+                    <i class="fa-solid fa-baby text-3xl mb-3 text-medical-light"></i>
+                    <h5 class="font-semibold text-sm">NICU Facility</h5>
+                </div>
+                <div class="glass-dark p-6 rounded-xl text-center hover-lift border border-white/20">
+                    <i class="fa-solid fa-scissors text-3xl mb-3 text-medical-light"></i>
+                    <h5 class="font-semibold text-sm">Modern OTs</h5>
+                </div>
+                <div class="glass-dark p-6 rounded-xl text-center hover-lift border border-white/20">
+                    <i class="fa-solid fa-microscope text-3xl mb-3 text-medical-light"></i>
+                    <h5 class="font-semibold text-sm">Pathology</h5>
+                </div>
+                <div class="glass-dark p-6 rounded-xl text-center hover-lift border border-white/20">
+                    <i class="fa-solid fa-x-ray text-3xl mb-3 text-medical-light"></i>
+                    <h5 class="font-semibold text-sm">Digital X-Ray</h5>
+                </div>
+                <div class="glass-dark p-6 rounded-xl text-center hover-lift border border-white/20">
+                    <i class="fa-solid fa-heart-pulse text-3xl mb-3 text-medical-light"></i>
+                    <h5 class="font-semibold text-sm">ECG Services</h5>
+                </div>
+                <div class="glass-dark p-6 rounded-xl text-center hover-lift border border-white/20">
+                    <i class="fa-solid fa-sun text-3xl mb-3 text-medical-light"></i>
+                    <h5 class="font-semibold text-sm">Day Care</h5>
+                </div>
+                <div class="glass-dark p-6 rounded-xl text-center hover-lift border border-white/20">
+                    <i class="fa-solid fa-user-nurse text-3xl mb-3 text-medical-light"></i>
+                    <h5 class="font-semibold text-sm">OPD & IPD</h5>
+                </div>
+                <div class="glass-dark p-6 rounded-xl text-center hover-lift border border-white/20">
+                    <i class="fa-solid fa-pills text-3xl mb-3 text-medical-light"></i>
+                    <h5 class="font-semibold text-sm">24x7 Pharmacy</h5>
+                </div>
+                <div class="glass-dark p-6 rounded-xl text-center hover-lift border border-white/20 bg-red-600/30 border-red-500/50">
+                    <i class="fa-solid fa-ambulance text-3xl mb-3 text-white"></i>
+                    <h5 class="font-semibold text-sm">24x7 Ambulance</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EMERGENCY BANNER -->
+    <section class="bg-emergency py-8 relative overflow-hidden shadow-xl">
+        <div class="absolute inset-0 opacity-20" style="background-image: repeating-linear-gradient(45deg, #000 0, #000 20px, transparent 20px, transparent 40px);"></div>
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between relative z-10">
+            <div class="text-white flex items-center gap-6 mb-4 md:mb-0">
+                <i class="fa-solid fa-truck-medical text-5xl animate-pulse"></i>
+                <div>
+                    <h2 class="text-3xl font-black uppercase tracking-wider">24×7 Emergency Services</h2>
+                    <p class="text-red-100 font-medium">Casualty & Trauma Care Ready</p>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="tel:8542929429" class="bg-white text-emergency px-8 py-3 rounded-full font-bold text-xl shadow-lg hover:bg-gray-100 transition-colors flex items-center gap-2">
+                    <i class="fa-solid fa-phone"></i> 85429 29429
+                </a>
+                <a href="tel:9874054557" class="bg-white text-emergency px-8 py-3 rounded-full font-bold text-xl shadow-lg hover:bg-gray-100 transition-colors flex items-center gap-2">
+                    <i class="fa-solid fa-phone"></i> 9874054557
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMMUNITY HEALTHCARE SECTION -->
+    <section class="py-20 bg-medical-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="w-full md:w-1/2 reveal">
+                    <h4 class="text-medical-green font-bold uppercase tracking-widest mb-2">Social Responsibility</h4>
+                    <h2 class="text-3xl md:text-4xl font-bold text-medical-dark mb-6">Healthcare Beyond Hospital Walls</h2>
+                    <p class="text-gray-600 mb-6">Janseva Hospital is deeply rooted in the community. We regularly conduct outreach programs to ensure healthcare reaches the unreached in rural areas surrounding Varanasi.</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 bg-white p-3 rounded-lg shadow-sm"><i class="fa-solid fa-tent text-medical-blue text-xl"></i> <span class="font-semibold text-gray-700">Free Village Health Camps</span></li>
+                        <li class="flex items-center gap-3 bg-white p-3 rounded-lg shadow-sm"><i class="fa-solid fa-users text-medical-blue text-xl"></i> <span class="font-semibold text-gray-700">Rural Healthcare Programs</span></li>
+                        <li class="flex items-center gap-3 bg-white p-3 rounded-lg shadow-sm"><i class="fa-solid fa-stethoscope text-medical-blue text-xl"></i> <span class="font-semibold text-gray-700">Community Checkup Drives</span></li>
+                        <li class="flex items-center gap-3 bg-white p-3 rounded-lg shadow-sm"><i class="fa-solid fa-shield-virus text-medical-blue text-xl"></i> <span class="font-semibold text-gray-700">Preventive Healthcare Initiatives</span></li>
+                    </ul>
+                </div>
+                <div class="w-full md:w-1/2 reveal flex justify-center">
+    <img src="Images/7.png"
+         alt="Health Camp"
+         class="w-full max-w-xl h-auto rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
+</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimonials" class="py-20 bg-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 text-gray-100 text-9xl font-serif opacity-50 z-0">"</div>
+        <div class="max-w-7xl mx-auto px-4 relative z-10 content-relative">
+            <div class="text-center mb-16 reveal">
+                <h4 class="text-medical-green font-bold uppercase tracking-widest mb-2">Patient Stories</h4>
+                <h2 class="text-3xl md:text-4xl font-bold text-medical-dark">What Our Patients Say</h2>
+            </div>
+
+            <!-- Testimonial Slider Container -->
+            <div class="relative overflow-hidden w-full max-w-4xl mx-auto reveal">
+                <div id="testimonial-slider" class="flex transition-transform duration-700 ease-in-out">
+                    <!-- Slides injected via JS to use provided text cleanly -->
+                </div>
+            </div>
+            
+            <div class="flex justify-center mt-8 gap-2" id="testimonial-dots">
+                <!-- Dots injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section id="gallery" class="py-20 bg-medical-dark text-white relative">
+        <div class="max-w-7xl mx-auto px-4 content-relative">
+            <div class="text-center mb-12 reveal">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Hospital Infrastructure</h2>
+                <p class="text-gray-300">A glimpse into our world-class facilities and environment.</p>
+            </div>
+
+            <!-- Tabs -->
+            <div class="flex flex-wrap justify-center gap-2 mb-8 reveal" id="gallery-tabs">
+                <button class="gallery-tab active px-6 py-2 rounded-full border border-medical-green bg-medical-green text-white text-sm font-medium transition-colors" data-category="Building">Hospital Building</button>
+                <button class="gallery-tab px-6 py-2 rounded-full border border-white/20 hover:border-medical-green text-sm font-medium transition-colors" data-category="OT">Operation Theatre</button>
+                <button class="gallery-tab px-6 py-2 rounded-full border border-white/20 hover:border-medical-green text-sm font-medium transition-colors" data-category="ICU">ICU & NICU</button>
+                <!-- <button class="gallery-tab px-6 py-2 rounded-full border border-white/20 hover:border-medical-green text-sm font-medium transition-colors" data-category="Wards">Patient Wards</button> -->
+            </div>
+
+            <!-- Gallery Grid/Slider -->
+            <div class="relative max-w-5xl mx-auto reveal">
+                <div class="overflow-hidden rounded-2xl shadow-2xl bg-black/50">
+                    <div id="gallery-container" class="flex transition-transform duration-500 ease-in-out h-64 md:h-96">
+                        <!-- Images injected by JS based on tab -->
+                    </div>
+                </div>
+                <!-- Controls -->
+                <button id="gal-prev" class="absolute left-0 top-1/2 -translate-y-1/2 -ml-4 md:-ml-8 bg-white text-medical-dark w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-medical-green hover:text-white transition-colors z-10">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button id="gal-next" class="absolute right-0 top-1/2 -translate-y-1/2 -mr-4 md:-mr-8 bg-white text-medical-dark w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-medical-green hover:text-white transition-colors z-10">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION (Dedicated before footer) -->
+    <section id="contact" class="py-20 bg-emerald-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+                <h4 class="text-medical-green font-bold uppercase tracking-widest mb-2">Reach Out to Us</h4>
+                <h2 class="text-3xl md:text-5xl font-bold text-medical-dark">Get in Touch</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 bg-white rounded-3xl shadow-xl overflow-hidden reveal border border-gray-100">
+                
+                <!-- Info Side -->
+                <div class="p-8 md:p-12 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-medical-light rounded-full -mr-32 -mt-32 opacity-50"></div>
+                    
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-bold text-medical-dark mb-8 border-b pb-4">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="bg-emerald-50 p-3 rounded-full mt-1 text-medical-green border border-emerald-100 shadow-sm">
+                                    <i class="fa-solid fa-location-dot text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 text-lg">Address</h4>
+                                    <p class="text-gray-600 mt-1">In Front of Krishi Bhawan, GT Road<br>Churamanpur, Chandpur<br>Varanasi, Uttar Pradesh – 221108</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="bg-emerald-50 p-3 rounded-full mt-1 text-medical-green border border-emerald-100 shadow-sm">
+                                    <i class="fa-solid fa-phone text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 text-lg">Phone Numbers</h4>
+                                    <p class="text-gray-600 mt-1">Primary/Emergency: <a href="tel:8542929429" class="font-bold text-medical-green hover:text-medical-blue">8542929429</a></p>
+                                    <p class="text-gray-600 text-sm mt-1">Others: 9874054557, 9838916689, 9651796001</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="bg-emerald-50 p-3 rounded-full mt-1 text-medical-green border border-emerald-100 shadow-sm">
+                                    <i class="fa-solid fa-envelope text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 text-lg">Email</h4>
+                                    <a href="mailto:Jansevahospitalvaranasi@gmail.com" class="text-medical-green hover:text-medical-blue font-medium break-all mt-1 inline-block">Jansevahospitalvaranasi@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="bg-emerald-50 p-3 rounded-full mt-1 text-medical-green border border-emerald-100 shadow-sm">
+                                    <i class="fa-solid fa-clock text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 text-lg">Timings</h4>
+                                    <p class="text-gray-600 mt-1">Monday – Sunday: 9:00 AM – 5:00 PM</p>
+                                    <p class="text-emergency font-bold mt-1 bg-red-50 inline-block px-2 py-1 rounded">Emergency: 24×7 Available</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Socials -->
+                        <div class="mt-10 pt-6 border-t border-gray-100">
+                            <h4 class="font-bold mb-4 text-sm uppercase tracking-wider text-gray-500">Connect With Us</h4>
+                            <div class="flex gap-4">
+                                <a href="https://www.facebook.com/jansevahospitalvaranasi.in" target="_blank" class="w-10 h-10 rounded-full bg-medical-blue flex items-center justify-center text-white hover:bg-blue-700 transition-colors shadow-md"><i class="fa-brands fa-facebook-f text-lg"></i></a>
+                                <a href="https://www.instagram.com/jansevahospitalvaranasi/" target="_blank" class="w-10 h-10 rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 flex items-center justify-center text-white hover:opacity-80 transition-opacity shadow-md"><i class="fa-brands fa-instagram text-lg"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map Side -->
+                <div class="h-96 lg:h-auto min-h-[400px] w-full border-t lg:border-t-0 lg:border-l border-gray-100">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.041399605727!2d82.95257989999999!3d25.302813099999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e327fa9afbb59%3A0x7d26f2a4c29c977d!2sJanseva%20Hospital!5e0!3m2!1sen!2sin!4v1781958213614!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Janseva Hospital Map Location"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-medical-dark text-gray-300 pt-16 pb-8 border-t-4 border-medical-green relative z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Branding -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="Images/logo-modified.png" alt="Janseva Logo" class="h-10 w-10 object-contain bg-white rounded-full p-0.5" onerror="this.src='https://placehold.co/100x100/ffffff/0A3A66?text=JH'">
+                        <h3 class="text-white font-bold text-lg leading-tight">Janseva Hospital &<br>Trauma Centre</h3>
+                    </div>
+                    <p class="text-sm mb-4">A legacy of trust since 1997. Providing advanced, accessible, and affordable healthcare to Eastern Uttar Pradesh.</p>
+                    <div class="flex gap-2">
+                        <span class="text-xs bg-white/10 px-2 py-1 rounded border border-white/20">ISO Certified</span>
+                        <span class="text-xs bg-white/10 px-2 py-1 rounded border border-white/20 text-medical-green font-bold">Ayushman Bharat</span>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Quick Links</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#home" class="hover:text-medical-green transition-colors"><i class="fa-solid fa-angle-right mr-2 text-medical-green"></i>Home</a></li>
+                        <li><a href="#about" class="hover:text-medical-green transition-colors"><i class="fa-solid fa-angle-right mr-2 text-medical-green"></i>About Us</a></li>
+                        <li><a href="#specialities" class="hover:text-medical-green transition-colors"><i class="fa-solid fa-angle-right mr-2 text-medical-green"></i>Departments</a></li>
+                        <li><a href="#testimonials" class="hover:text-medical-green transition-colors"><i class="fa-solid fa-angle-right mr-2 text-medical-green"></i>Testimonials</a></li>
+                        <li><a href="#" onclick="document.getElementById('appointment-modal').classList.remove('hidden')" class="hover:text-medical-green transition-colors"><i class="fa-solid fa-angle-right mr-2 text-medical-green"></i>Book Appointment</a></li>
+                    </ul>
+                </div>
+
+                <!-- Departments -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Departments</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#specialities" class="hover:text-medical-green transition-colors">Orthopedics & Trauma</a></li>
+                        <li><a href="#specialities" class="hover:text-medical-green transition-colors">Neurosurgery</a></li>
+                        <li><a href="#specialities" class="hover:text-medical-green transition-colors">Urology</a></li>
+                        <li><a href="#specialities" class="hover:text-medical-green transition-colors">General Surgery</a></li>
+                        <li><a href="#specialities" class="hover:text-medical-green transition-colors">Obstetrics & Gynecology</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Emergency Contact</h4>
+                    <a href="tel:8542929429" class="block bg-emergency text-white text-center py-3 rounded-lg font-bold text-xl mb-4 hover:bg-red-700 transition-colors shadow-glow pulse-emergency">
+                        85429 29429
+                    </a>
+                    <p class="text-sm"><i class="fa-solid fa-location-dot mr-2 text-medical-green"></i> GT Road, Churamanpur, Varanasi</p>
+                    <div class="flex gap-4 mt-6">
+                         <a href="https://www.facebook.com/jansevahospitalvaranasi.in" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-facebook-f text-xl"></i></a>
+                         <a href="https://www.instagram.com/jansevahospitalvaranasi/" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+                <p>&copy; <span id="year"></span> Janseva Hospital & Research Centre (Pvt.) Ltd. All Rights Reserved.</p>
+                <p class="mt-2 md:mt-0">Designed for Excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODALS & FLOATING BUTTONS -->
+
+    <!-- Appointment Modal -->
+    <div id="appointment-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden transform transition-all relative">
+            <button onclick="document.getElementById('appointment-modal').classList.add('hidden')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-800 text-2xl z-10">&times;</button>
+            <div class="bg-medical-blue p-6 text-white text-center relative overflow-hidden">
+                 <div class="absolute inset-0 opacity-20" style="background-image: repeating-linear-gradient(45deg, #fff 0, #fff 2px, transparent 2px, transparent 10px);"></div>
+                <h3 class="text-2xl font-bold relative z-10">Book Appointment</h3>
+                <p class="text-sm text-blue-200 relative z-10">We will confirm via WhatsApp instantly.</p>
+            </div>
+            <div class="p-6">
+                <form id="booking-form" onsubmit="handleBooking(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Patient Name *</label>
+                        <input type="text" id="b-name" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-medical-green focus:border-medical-green outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Mobile Number *</label>
+                        <input type="tel" id="b-phone" required pattern="[0-9]{10}" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-medical-green outline-none" placeholder="10 digit number">
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Department</label>
+                            <select id="b-dept" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-medical-green outline-none">
+                                <option value="General">Select...</option>
+                                <option value="Orthopedics">Orthopedics</option>
+                                <option value="Neurosurgery">Neurosurgery</option>
+                                <option value="Urology">Urology</option>
+                                <option value="Gynecology">Gynecology</option>
+                                <option value="General Surgery">General Surgery</option>
+                                <option value="Pediatrics">Pediatrics</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Doctor (Optional)</label>
+                            <input type="text" id="b-doc" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-medical-green outline-none" placeholder="Any Available">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Date</label>
+                            <input type="date" id="b-date" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-medical-green outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Time</label>
+                            <input type="time" id="b-time" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-medical-green outline-none">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Problem Description</label>
+                        <textarea id="b-desc" rows="2" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-medical-green outline-none"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-green-500 text-white font-bold py-3 rounded-lg hover:bg-green-600 transition-colors flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Book via WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/918542929429?text=Hello%20Janseva%20Hospital,%20I%20would%20like%20to%20know%20more%20about%20your%20services." target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-[0_0_20px_rgba(34,197,94,0.5)] hover:scale-110 transition-transform pulse-emergency" style="animation: pulse-glow 2s infinite, float 6s ease-in-out infinite;">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- AI Chatbot UI -->
+    <div id="chatbot-container" class="fixed bottom-6 left-6 z-50 flex flex-col items-start hidden transition-all duration-300 transform translate-y-10 opacity-0">
+        <div class="glass-panel w-80 rounded-2xl shadow-2xl overflow-hidden border border-gray-200 flex flex-col h-96 mb-4">
+            <div class="bg-gradient-to-r from-medical-blue to-medical-green p-4 text-white flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center"><i class="fa-solid fa-robot"></i></div>
+                    <span class="font-bold">Janseva Assistant</span>
+                </div>
+                <button onclick="toggleChatbot()" class="text-white hover:text-red-300"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div id="chat-messages" class="flex-grow p-4 overflow-y-auto bg-gray-50 flex flex-col gap-3 text-sm">
+                <div class="bg-white border border-gray-100 p-3 rounded-tr-xl rounded-br-xl rounded-bl-xl shadow-sm text-gray-800 self-start max-w-[85%]">
+                    Hello! Welcome to Janseva Hospital. I can answer questions about our Doctors, Facilities, Timings, Ayushman Bharat, or help you book an appointment. How can I help you today?
+                </div>
+            </div>
+            <div class="p-3 bg-white border-t flex gap-2">
+                <input type="text" id="chat-input" placeholder="Type a message..." class="flex-grow border rounded-full px-4 py-2 outline-none focus:border-medical-green text-sm" onkeypress="handleChatKey(event)">
+                <button onclick="sendChatMessage()" class="bg-medical-blue text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-medical-green transition-colors"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+    <button onclick="toggleChatbot()" id="chat-toggle-btn" class="fixed bottom-6 left-6 z-50 bg-medical-blue text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-[0_0_20px_rgba(10,58,102,0.5)] hover:scale-110 transition-transform">
+        <i class="fa-solid fa-message"></i>
+    </button>
+
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // 1. Background Medical Icons Logic
+        function createBackgroundIcons() {
+            const icons = ['fa-stethoscope', 'fa-heart-pulse', 'fa-truck-medical', 'fa-suitcase-medical', 'fa-staff-snake', 'fa-dna', 'fa-microscope', 'fa-shield-halved', 'fa-syringe', 'fa-brain', 'fa-vial', 'fa-bone'];
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                if (section.id === 'home') return; // Skip hero
+                const container = document.createElement('div');
+                container.className = 'bg-icons-container';
+                
+                // 8 icons per section
+                for(let i=0; i<8; i++) {
+                    const icon = document.createElement('i');
+                    const randIcon = icons[Math.floor(Math.random() * icons.length)];
+                    icon.className = `fa-solid ${randIcon} bg-icon animate-float`;
+                    icon.style.left = `${Math.random() * 90}%`;
+                    icon.style.top = `${Math.random() * 90}%`;
+                    icon.style.animationDelay = `${Math.random() * 5}s`;
+                    icon.style.transform = `rotate(${Math.random() * 45}deg) scale(${0.5 + Math.random()})`;
+                    container.appendChild(icon);
+                }
+                section.insertBefore(container, section.firstChild);
+            });
+        }
+
+        // 2. Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.style.background = 'rgba(255, 255, 255, 0.85)';
+            }
+        });
+
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // 3. Hero Slider Logic
+        const heroImages = [
+            'Images/2.png', // Exterior
+            'https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1920&q=80', // Ortho/Surgery
+            'Images/5.png', // Trauma
+            'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1920&q=80', // ICU
+            // 'https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&w=1920&q=80'  // Emergency
+        ];
+        
+        const sliderContainer = document.getElementById('hero-slider');
+        heroImages.forEach((src, i) => {
+            const div = document.createElement('div');
+            div.className = `hero-slide absolute inset-0 bg-cover bg-center ${i === 0 ? 'active' : ''}`;
+            div.style.backgroundImage = `url('${src}')`;
+            sliderContainer.appendChild(div);
+        });
+
+        let currentSlide = 0;
+        function nextSlide() {
+            const slides = document.querySelectorAll('.hero-slide');
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+        setInterval(nextSlide, 3000); 
+
+        // 4. Scroll Reveal & Counters
+        const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    // Check if it has counters
+                    const counters = entry.target.querySelectorAll('[data-counter]');
+                    counters.forEach(counter => animateCounter(counter));
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        function animateCounter(el) {
+            const target = parseInt(el.getAttribute('data-counter'));
+            const duration = 2000;
+            const step = target / (duration / 16);
+            let current = 0;
+            
+            const update = () => {
+                current += step;
+                if(current < target) {
+                    el.textContent = Math.ceil(current) + '+';
+                    requestAnimationFrame(update);
+                } else {
+                    el.textContent = target + '+';
+                }
+            };
+            update();
+        }
+
+        // 5. Testimonial Slider (Using provided text)
+        const reviews = [
+            { name: "Jyoti Yadav", time: "4 weeks ago", text: "It is a very good hospital. My mother had a free operation for kidney stones done by Ayushman. Then my aunt's bone operation was done very well." },
+            { name: "Anoop", time: "3 months ago", text: "Staffs and doctors behaviour are so good. Cleaning and hygiene is so fair in the hospital." },
+            { name: "AP Global Institute", time: "3 years ago", text: "This is one of the best hospital in Varanasi with best doctors team. All doctors of this hospital is highly experienced." },
+            { name: "Mr. Uday", time: "4 months ago", text: "My mother got free treatment as good as home." },
+            { name: "Shalini Yadav", time: "4 years ago", text: "My brother had his leg surgery done at this hospital. It's a very good hospital. The behavior of the doctors and staff is also very good. The facilities here are excellent." },
+            { name: "Nomadic Shubham Gautam", time: "3 years ago", text: "Such a nice hospital, professional doctors and friendly staff members." },
+            { name: "Dr. Pratiksha", time: "a year ago", text: "Nice services provided by the hospital and friendly staff." }
+        ];
+
+        const testSlider = document.getElementById('testimonial-slider');
+        const testDots = document.getElementById('testimonial-dots');
+        
+        reviews.forEach((r, i) => {
+            // Slide
+            const div = document.createElement('div');
+            div.className = "w-full flex-shrink-0 px-4 md:px-12";
+            div.innerHTML = `
+                <div class="glass-panel p-8 md:p-10 rounded-2xl shadow-xl border border-gray-100 relative">
+                    <i class="fa-solid fa-quote-left absolute top-4 left-4 text-4xl text-medical-light opacity-50"></i>
+                    <div class="flex items-center gap-2 text-yellow-400 mb-4 justify-center">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 text-lg md:text-xl italic text-center mb-8 relative z-10">"${r.text}"</p>
+                    <div class="flex items-center justify-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-medical-blue to-medical-green flex items-center justify-center text-white font-bold uppercase">${r.name.charAt(0)}</div>
+                        <div class="text-left">
+                            <h5 class="font-bold text-gray-800">${r.name}</h5>
+                            <span class="text-xs text-gray-500">${r.time} • Google Review</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+            testSlider.appendChild(div);
+            
+            // Dot
+            const dot = document.createElement('button');
+            dot.className = `w-3 h-3 rounded-full transition-colors ${i===0 ? 'bg-medical-green' : 'bg-gray-300'}`;
+            dot.onclick = () => goToTestimonial(i);
+            testDots.appendChild(dot);
+        });
+
+        let currentTest = 0;
+        function goToTestimonial(index) {
+            currentTest = index;
+            testSlider.style.transform = `translateX(-${index * 100}%)`;
+            Array.from(testDots.children).forEach((d, i) => {
+                d.className = `w-3 h-3 rounded-full transition-colors ${i===index ? 'bg-medical-green' : 'bg-gray-300'}`;
+            });
+        }
+        setInterval(() => {
+            currentTest = (currentTest + 1) % reviews.length;
+            goToTestimonial(currentTest);
+        }, 3000); // Auto slide
+
+        // 6. Gallery Logic
+        const galleryData = {
+            'Building': ['Images/1.png', 'Images/5.png', 'Images/2.png', 'Images/7.png'],
+            'OT': ['https://images.unsplash.com/photo-1551076805-e1869033e561', 'Images/6.png', 'Images/5.png'],
+            'ICU': ['Images/ayush.jpg', 'https://images.unsplash.com/photo-1584515933487-779824d29309', 'Images/3.png'],
+            // 'Wards': ['https://images.unsplash.com/photo-1586773860418-d37222d8fce3', 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d', 'https://images.unsplash.com/photo-1538108149393-cebb47acddb2', 'https://images.unsplash.com/photo-1516549655169-df83a0774514', 'https://images.unsplash.com/photo-1587351021759-3e566b6af7cc']
+        };
+
+        const galContainer = document.getElementById('gallery-container');
+        let currentGalIndex = 0;
+        let currentCategory = 'Building';
+        let galInterval;
+
+        function loadGallery(category) {
+            currentCategory = category;
+            galContainer.innerHTML = '';
+            galleryData[category].forEach(id => {
+                const img = document.createElement('img');
+                img.src = `${id}?auto=format&fit=crop&w=1000&q=80`;
+                img.className = "w-full h-full object-cover flex-shrink-0 cursor-pointer hover:scale-105 transition-transform duration-500";
+                galContainer.appendChild(img);
+            });
+            currentGalIndex = 0;
+            updateGalleryPos();
+            resetGalInterval();
+        }
+
+        function updateGalleryPos() {
+            galContainer.style.transform = `translateX(-${currentGalIndex * 100}%)`;
+        }
+
+        function nextGalImage() {
+            currentGalIndex = (currentGalIndex + 1) % 3;
+            updateGalleryPos();
+        }
+
+        function prevGalImage() {
+            currentGalIndex = (currentGalIndex - 1 + 3) % 3;
+            updateGalleryPos();
+        }
+
+        function resetGalInterval() {
+            clearInterval(galInterval);
+            galInterval = setInterval(nextGalImage, 2000);
+        }
+
+        document.getElementById('gal-next').onclick = () => { nextGalImage(); resetGalInterval(); };
+        document.getElementById('gal-prev').onclick = () => { prevGalImage(); resetGalInterval(); };
+
+        document.querySelectorAll('.gallery-tab').forEach(btn => {
+            btn.onclick = (e) => {
+                document.querySelectorAll('.gallery-tab').forEach(b => {
+                    b.classList.remove('bg-medical-green', 'text-white', 'active');
+                    b.classList.add('border-white/20');
+                });
+                e.target.classList.add('bg-medical-green', 'text-white', 'active');
+                e.target.classList.remove('border-white/20');
+                loadGallery(e.target.dataset.category);
+            }
+        });
+        
+        // Initial load
+        loadGallery('Building');
+        createBackgroundIcons();
+
+        // 7. Booking Form Logic
+        function openBooking(dept = 'General', doc = '') {
+            const modal = document.getElementById('appointment-modal');
+            modal.classList.remove('hidden');
+            document.getElementById('b-dept').value = dept;
+            if(doc) document.getElementById('b-doc').value = doc;
+            
+            // Set today as min date
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('b-date').setAttribute('min', today);
+            
+            // Close chat if open so it doesnt overlap modal
+            if(chatOpen) toggleChatbot();
+        }
+
+        function handleBooking(e) {
+            e.preventDefault();
+            const name = document.getElementById('b-name').value;
+            const phone = document.getElementById('b-phone').value;
+            const dept = document.getElementById('b-dept').value;
+            const doc = document.getElementById('b-doc').value;
+            const date = document.getElementById('b-date').value;
+            const time = document.getElementById('b-time').value;
+            const desc = document.getElementById('b-desc').value;
+
+            const message = `*NEW APPOINTMENT REQUEST*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Department:* ${dept}%0A*Doctor:* ${doc || 'Any Available'}%0A*Date:* ${date}%0A*Time:* ${time}%0A*Problem:* ${desc}`;
+            
+            window.open(`https://wa.me/918542929429?text=${message}`, '_blank');
+            document.getElementById('appointment-modal').classList.add('hidden');
+            document.getElementById('booking-form').reset();
+        }
+
+        // 8. Advanced AI Chatbot Logic
+        let chatOpen = false;
+        function toggleChatbot() {
+            const container = document.getElementById('chatbot-container');
+            const btn = document.getElementById('chat-toggle-btn');
+            chatOpen = !chatOpen;
+            
+            if(chatOpen) {
+                container.classList.remove('hidden');
+                setTimeout(() => {
+                    container.classList.remove('translate-y-10', 'opacity-0');
+                    btn.classList.add('scale-0'); // hide button when open
+                    document.getElementById('chat-input').focus();
+                }, 10);
+            } else {
+                container.classList.add('translate-y-10', 'opacity-0');
+                btn.classList.remove('scale-0');
+                setTimeout(() => container.classList.add('hidden'), 300);
+            }
+        }
+
+        function handleChatKey(e) {
+            if (e.key === 'Enter') sendChatMessage();
+        }
+
+        function sendChatMessage() {
+            const input = document.getElementById('chat-input');
+            const text = input.value.trim();
+            if(!text) return;
+
+            addChatBubble(text, 'user');
+            input.value = '';
+
+            // Enhanced Bot Logic mapped to Janseva Hospital Knowledge Base
+            setTimeout(() => {
+                const lowerText = text.toLowerCase();
+                let reply = "I am an AI assistant. For specific details or immediate help, please call our 24x7 helpline at 85429 29429 or use the Book Appointment button.";
+                
+                // Emergency Handling First
+                if (lowerText.match(/(emergency|urgent|accident|casualty|ambulance|critical)/)) {
+                    reply = "🚨 <b>EMERGENCY:</b> Please call our 24x7 casualty helpline immediately at <b>8542929429</b> or <b>9874054557</b>. We have 24x7 ambulance and trauma care ready.";
+                } 
+                // Appointments
+                else if (lowerText.match(/(appoint|book|schedule|consult|visit)/)) {
+                    reply = "You can easily book an appointment online! <button onclick='openBooking()' class='text-medical-blue font-bold underline block mt-2'><i class='fa-regular fa-calendar-check'></i> Click here to book now</button><br>Or call us directly at 8542929429.";
+                } 
+                // Timings
+                else if (lowerText.match(/(time|open|close|hours|when)/)) {
+                    reply = "🕒 Our OPD timings are <b>Monday to Sunday, 9:00 AM to 5:00 PM</b>.<br><br>🚨 <i>Emergency services and Trauma Care are available 24x7.</i>";
+                } 
+                // Contact / Location
+                else if (lowerText.match(/(address|location|where|contact|phone|number|email|reach)/)) {
+                    reply = "📍 <b>Address:</b> In Front of Krishi Bhawan, GT Road, Churamanpur, Varanasi, UP - 221108.<br><br>📞 <b>Phones:</b> 8542929429, 9874054557.<br>✉️ <b>Email:</b> Jansevahospitalvaranasi@gmail.com";
+                } 
+                // Ayushman Bharat
+                else if (lowerText.match(/(ayushman|free|cashless|pm-jay|bpl|scheme)/)) {
+                    reply = "✅ Yes! We are proudly <b>Ayushman Bharat (PM-JAY) empanelled</b>.<br><br>We provide 100% cashless treatment up to ₹5 Lakhs per family. This covers procedures like Knee/Hip Replacement, Hernia, Appendix, Gall Bladder surgeries, and more.";
+                } 
+                // Doctors
+                else if (lowerText.match(/(doctor|specialist|surgeon|alok|mamta|dubey|singh|agrahari|keshri)/)) {
+                    reply = "👨‍⚕️ Our expert specialists include:<br>• <b>Dr. Alok Singh</b> (Orthopedics)<br>• <b>Dr. Mamta Singh</b> (Gynecology)<br>• <b>Dr. S.K. Dubey</b> (Neurosurgery)<br>• <b>Dr. P.K. Keshri</b> (Urology)<br>• <b>Dr. Deepak Agrahari</b> (Plastic Surgery)<br>And many more! <a href='#doctors' class='text-medical-blue font-bold underline'>View all doctors</a>";
+                } 
+                // Departments
+                else if (lowerText.match(/(department|speciality|service|surgery|ortho|neuro|uro|gynae|cancer|child|pediatric)/)) {
+                    reply = "🏥 We offer advanced care in:<br>• Orthopedics & Joint Replacement<br>• Neurosurgery<br>• Urology<br>• General & Plastic Surgery<br>• Cancer Surgery<br>• Obstetrics & Gynecology<br>• Pediatrics & General Medicine.";
+                } 
+                // Facilities
+                else if (lowerText.match(/(facility|facilities|icu|nicu|xray|pharmacy|lab|test|bed|ward)/)) {
+                    reply = "We offer world-class facilities including Advanced ICU, NICU, Modern Operation Theatres, Pathology Lab, Digital X-Ray, ECG, Day Care, OPD/IPD, and a <b>24x7 Pharmacy</b>.";
+                } 
+                // About / History
+                else if (lowerText.match(/(about|history|since|old|establish|trust)/)) {
+                    reply = "🏥 <b>Janseva Hospital & Trauma Centre</b> is an ISO 9001:2015 certified institution.<br><br>We have been serving Varanasi <b>since 1997</b>. With over 25+ years of excellence, we have completed 5000+ successful procedures.";
+                } 
+                // Greetings
+                else if (lowerText.match(/(hello|hi|hey|greetings)/)) {
+                    reply = "Hello! Welcome to Janseva Hospital. How can I assist you today? Feel free to ask about Appointments, Doctors, Ayushman Bharat, or Contact details.";
+                }
+
+                addChatBubble(reply, 'bot');
+            }, 600);
+        }
+
+        function addChatBubble(text, sender) {
+            const chatBox = document.getElementById('chat-messages');
+            const div = document.createElement('div');
+            
+            if(sender === 'user') {
+                div.className = "bg-medical-blue text-white p-3 rounded-tl-xl rounded-br-xl rounded-bl-xl shadow-sm self-end max-w-[85%]";
+            } else {
+                div.className = "bg-white border border-gray-100 p-3 rounded-tr-xl rounded-br-xl rounded-bl-xl shadow-sm text-gray-800 self-start max-w-[85%] animate-pulse";
+                // remove pulse after short delay to simulate typing
+                setTimeout(() => div.classList.remove('animate-pulse'), 500);
+            }
+            
+            div.innerHTML = text;
+            chatBox.appendChild(div);
+            
+            // Auto scroll to bottom
+            setTimeout(() => {
+                chatBox.scrollTo({
+                    top: chatBox.scrollHeight,
+                    behavior: 'smooth'
+                });
+            }, 50);
+        }
+    </script>
+</body>
+</html>
