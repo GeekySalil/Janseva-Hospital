@@ -247,8 +247,8 @@
     <!-- HERO SECTION -->
     <header id="home" class="relative min-h-screen w-full overflow-hidden flex flex-col bg-medical-dark">
         <!-- Sliders -->
-        <div id="hero-slider" class="absolute inset-0 w-full h-full">
-            <!-- Slides injected via JS -->
+<div id="hero-slider"
+     class="absolute inset-0 w-full h-full hidden md:block">            <!-- Slides injected via JS -->
         </div>
 
         <!-- Overlay -->
@@ -258,10 +258,37 @@
         <!-- Top Spacer for Sticky Navbar -->
         <div class="h-16 w-full relative z-20 flex-shrink-0"></div>
 
+        <!-- Mobile Medical Background Pattern -->
+<div class="absolute inset-0 md:hidden pointer-events-none overflow-hidden z-10">
+
+    <i class="fa-solid fa-heart-pulse absolute top-[12%] left-[8%] text-white/5 text-5xl animate-float"></i>
+
+    <i class="fa-solid fa-stethoscope absolute top-[28%] right-[10%] text-medical-green/10 text-6xl animate-float-slow"></i>
+
+    <i class="fa-solid fa-kit-medical absolute bottom-[28%] left-[12%] text-white/5 text-5xl animate-float"></i>
+
+    <i class="fa-solid fa-briefcase-medical absolute bottom-[12%] right-[8%] text-medical-green/10 text-5xl animate-float-slow"></i>
+
+    <i class="fa-solid fa-cross absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white/5 text-8xl"></i>
+
+</div>
+<!-- Mobile ECG Line -->
+<div class="absolute inset-x-0 top-[42%] md:hidden opacity-10 z-10 overflow-hidden">
+    <svg viewBox="0 0 1200 120" class="w-full h-12">
+        <path
+            d="M0 60 H180 L220 60 L250 20 L290 100 L330 60 H480 L520 60 L550 30 L590 90 L630 60 H1200"
+            fill="none"
+            stroke="white"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+        </path>
+    </svg>
+</div>
         <!-- Hero Content -->
         <div class="relative z-20 flex-grow flex flex-col justify-center items-start max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-10">
             <div class="max-w-3xl reveal active">
-                <div class="inline-block px-4 py-1 mb-4 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm text-white text-sm font-semibold tracking-wide shadow-glass ">
+                <div class="inline-block px-4 py-1 mb-4 rounded-full border border-white/30 bg-white/15 shadow-xl backdrop-blur-sm text-white text-sm font-semibold tracking-wide shadow-glass ">
                     <i class="fa-solid fa-shield-halved text-medical-green mr-2"></i> ISO Certified | Since 1997
                 </div>
                 <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight drop-shadow-lg">
@@ -272,18 +299,30 @@
                     <span>Trauma Centre </span> <span class="text-white md:inline">•</span>
                     <span>Emergency Services</span>
                 </h2>
-                <p class="text-gray-100 text-lg mb-8 line-clamp-3 md:line-clamp-none max-w-2xl drop-shadow-md font-medium">
-                    Serving Varanasi since 1997 with trusted healthcare, advanced surgical procedures, emergency care, critical care facilities, and Ayushman Bharat supported treatments.
+<p class="text-gray-100 text-base sm:text-lg mb-8 max-w-2xl drop-shadow-md font-medium leading-relaxed">
+                        Serving Varanasi since 1997 with trusted healthcare, advanced surgical procedures, emergency care, critical care facilities, and Ayushman Bharat supported treatments.
                 </p>
                 
                 <div class="flex flex-col sm:flex-row gap-4 mb-8">
-                    <button onclick="document.getElementById('appointment-modal').classList.remove('hidden')" class="px-8 py-4 bg-medical-green text-white font-bold rounded-lg shadow-glow hover:bg-emerald-600 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                    <button onclick="document.getElementById('appointment-modal').classList.remove('hidden')" class="px-8 py-4 bg-gradient-to-br from-medical-dark via-medical-blue to-medical-green text-white font-bold rounded-lg shadow-glow hover:bg-emerald-600 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2">
                         <i class="fa-regular fa-calendar-check"></i> Book Appointment
                     </button>
                     <a href="tel:8542929429" class="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-medical-blue transition-all flex items-center justify-center gap-2 backdrop-blur-sm bg-white/5">
                         <i class="fa-solid fa-truck-medical"></i> Emergency Contact
                     </a>
                 </div>
+                <!-- Mobile Hero Image Slider -->
+<div class="block md:hidden my-8">
+    <div id="mobile-hero-slider"
+     class="relative w-full aspect-[16/9]
+            rounded-3xl
+            overflow-hidden
+            shadow-2xl
+            border border-white/20
+            bg-white/10
+            backdrop-blur-sm">
+</div>
+</div>
             </div>
         </div>
 
@@ -918,8 +957,8 @@
                                 </div>
                                 <div>
                                     <h4 class="font-bold text-gray-800 text-lg">Phone Numbers</h4>
-                                    <p class="text-gray-600 mt-1">Primary/Emergency: <a href="tel:8542929429" class="font-bold text-medical-green hover:text-medical-blue">8542929429</a></p>
-                                    <p class="text-gray-600 text-sm mt-1">Others: 9874054557, 9838916689, 9651796001</p>
+                                    <p class="text-gray-600 mt-1">Primary/Emergency: <a href="tel:9651796001" class="font-bold text-medical-green hover:text-medical-blue">9651796001</a></p>
+                                    <p class="text-gray-600 text-sm mt-1">Others: 9874054557, 8542929429</p>
                                 </div>
                             </div>
 
@@ -1070,10 +1109,10 @@
                             <label class="block text-sm font-medium text-gray-700 mb-1">Date</label>
                             <input type="date" id="b-date" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-medical-green outline-none">
                         </div>
-                        <div>
+                        <!-- <div>
                             <label class="block text-sm font-medium text-gray-700 mb-1">Time</label>
                             <input type="time" id="b-time" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-medical-green outline-none">
-                        </div>
+                        </div> -->
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1">Problem Description</label>
@@ -1088,7 +1127,7 @@
     </div>
 
     <!-- Floating WhatsApp -->
-    <a href="https://wa.me/918542929429?text=Hello%20Janseva%20Hospital,%20I%20would%20like%20to%20know%20more%20about%20your%20services." target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-[0_0_20px_rgba(34,197,94,0.5)] hover:scale-110 transition-transform pulse-emergency" style="animation: pulse-glow 2s infinite, float 6s ease-in-out infinite;">
+    <a href="https://wa.me/919651796001?text=Hello%20Janseva%20Hospital,%20I%20would%20like%20to%20know%20more%20about%20your%20services." target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-[0_0_20px_rgba(34,197,94,0.5)] hover:scale-110 transition-transform pulse-emergency" style="animation: pulse-glow 2s infinite, float 6s ease-in-out infinite;">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
@@ -1158,7 +1197,6 @@
                 nav.style.background = 'rgba(255, 255, 255, 0.85)';
             }
         });
-
         // Mobile Menu Toggle
         document.getElementById('mobile-menu-btn').addEventListener('click', () => {
             document.getElementById('mobile-menu').classList.toggle('hidden');
@@ -1190,6 +1228,57 @@
         }
         setInterval(nextSlide, 3000); 
 
+        const mobileHeroSlider =
+document.getElementById("mobile-hero-slider");
+
+let mobileCurrent = 0;
+function showMobileHeroSlide() {
+
+    // Remove old image
+    mobileHeroSlider.innerHTML = "";
+
+    // Create image
+    const img = document.createElement("img");
+
+    // Use the same hero images
+    img.src = heroImages[mobileCurrent];
+
+    img.alt = "Janseva Hospital";
+
+    img.className =
+    "absolute inset-0 w-full h-full object-cover rounded-3xl transition-all duration-700 opacity-0 scale-105";
+
+    mobileHeroSlider.appendChild(img);
+
+    // Fade In
+    setTimeout(() => {
+    img.classList.remove("opacity-0");
+    img.classList.remove("scale-105");
+
+    img.classList.add("opacity-100");
+    img.classList.add("scale-100");
+}, 50);
+
+}
+// Show first image
+
+if (window.innerWidth < 768) {
+
+    showMobileHeroSlide();
+
+    setInterval(() => {
+
+        mobileCurrent++;
+
+        if (mobileCurrent >= heroImages.length) {
+            mobileCurrent = 0;
+        }
+
+        showMobileHeroSlide();
+
+    }, 2000);
+
+}
         // 4. Scroll Reveal & Counters
         const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
         const observer = new IntersectionObserver((entries) => {
@@ -1367,12 +1456,12 @@
             const dept = document.getElementById('b-dept').value;
             const doc = document.getElementById('b-doc').value;
             const date = document.getElementById('b-date').value;
-            const time = document.getElementById('b-time').value;
+          //  const time = document.getElementById('b-time').value;
             const desc = document.getElementById('b-desc').value;
 
-            const message = `*NEW APPOINTMENT REQUEST*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Department:* ${dept}%0A*Doctor:* ${doc || 'Any Available'}%0A*Date:* ${date}%0A*Time:* ${time}%0A*Problem:* ${desc}`;
+            const message = `*NEW APPOINTMENT REQUEST*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Department:* ${dept}%0A*Doctor:* ${doc || 'Any Available'}%0A*Date:* ${date}%0A*Problem:* ${desc}`;
             
-            window.open(`https://wa.me/918542929429?text=${message}`, '_blank');
+            window.open(`https://wa.me/919651796001?text=${message}`, '_blank');
             document.getElementById('appointment-modal').classList.add('hidden');
             document.getElementById('booking-form').reset();
         }
