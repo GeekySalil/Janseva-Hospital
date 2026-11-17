@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -60,11 +62,15 @@
 
     <!-- Custom Styling & Advanced Animations -->
     <style>
+        html {
+            overflow-x: clip;
+            scroll-padding-top: 5.5rem;
+        }
         body {
             font-family: 'Inter', sans-serif;
             background-color: #F8FBFC;
             color: #1E293B;
-            overflow-x: hidden;
+            overflow-x: clip;
         }
         h1, h2, h3, h4, .font-display {
             font-family: 'Plus Jakarta Sans', sans-serif;
@@ -82,7 +88,7 @@
             transition: width 0.1s linear;
         }
 
-        /* Animated Mesh Background for Hero */
+        /* Animated Mesh Background for Hero & Facilities */
         .hero-mesh {
             background-color: #041C32;
             background-image: 
@@ -94,16 +100,31 @@
 
         /* Glassmorphism Variants */
         .glass-nav {
-            background: rgba(255, 255, 255, 0.86);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
             border-bottom: 1px solid rgba(10, 58, 102, 0.08);
+        }
+        .glass-nav.scrolled {
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 12px 32px -12px rgba(4, 28, 50, 0.16);
         }
         .glass-dark-card {
             background: rgba(255, 255, 255, 0.06);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.14);
+        }
+
+        /* Active Nav Link Pill */
+        .nav-link.nav-active {
+            color: #0D9488;
+            background-color: rgba(230, 244, 241, 0.85);
+            font-weight: 700;
         }
 
         /* Spotlight Hover Effect on Bento Cards */
@@ -115,7 +136,7 @@
             content: "";
             position: absolute;
             inset: 0;
-            background: radial-gradient(500px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(13, 148, 136, 0.10), transparent 45%);
+            background: radial-gradient(500px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(13, 148, 136, 0.12), transparent 45%);
             opacity: 0;
             transition: opacity 0.35s ease;
             pointer-events: none;
@@ -125,10 +146,52 @@
             opacity: 1;
         }
 
+        /* Button Diagonal Sheen Sweep */
+        .btn-sheen {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-sheen::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -75%;
+            width: 50%;
+            height: 200%;
+            background: linear-gradient(115deg, transparent 0%, rgba(255, 255, 255, 0.28) 50%, transparent 100%);
+            transform: rotate(25deg);
+            transition: left 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+            pointer-events: none;
+        }
+        .btn-sheen:hover::after {
+            left: 130%;
+        }
+
+        /* 3D Interactive Tilt Card */
+        .tilt-card {
+            transition: transform 0.25s ease-out, box-shadow 0.3s ease;
+            transform-style: preserve-3d;
+            will-change: transform;
+        }
+
+        /* Kinetic Text Gradient Shimmer */
+        @keyframes textGradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        .kinetic-gradient-text {
+            background-size: 200% auto;
+            animation: textGradientShift 6s ease infinite;
+        }
+
         /* Keyframe Animations */
         @keyframes floatSlow {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
+        }
+        @keyframes orbDrift {
+            0%, 100% { transform: translate(0px, 0px) scale(1); }
+            50% { transform: translate(18px, -14px) scale(1.06); }
         }
         @keyframes pulseRing {
             0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
@@ -143,14 +206,22 @@
             0% { transform: translateX(0%); }
             100% { transform: translateX(-50%); }
         }
-        @keyframes fadeImageIn {
-            from { opacity: 0.35; }
-            to { opacity: 1; }
+        @keyframes fadeImageZoom {
+            0% { opacity: 0.25; transform: scale(0.975); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        @keyframes particleRise {
+            0% { transform: translateY(0) translateX(0); opacity: 0; }
+            20% { opacity: 0.35; }
+            80% { opacity: 0.25; }
+            100% { transform: translateY(-70px) translateX(12px); opacity: 0; }
         }
 
         .animate-float { animation: floatSlow 5.5s ease-in-out infinite; }
+        .animate-orb { animation: orbDrift 10s ease-in-out infinite; }
         .animate-pulse-ring { animation: pulseRing 2.2s infinite; }
-        .fade-img-in { animation: fadeImageIn 0.6s ease-out; }
+        .fade-img-in { animation: fadeImageZoom 0.65s cubic-bezier(0.22, 1, 0.36, 1); }
+
         .ecg-path {
             stroke-dasharray: 1200;
             stroke-dashoffset: 1200;
@@ -165,11 +236,21 @@
             animation-play-state: paused;
         }
 
+        /* Ambient Particles */
+        .ambient-particle {
+            position: absolute;
+            border-radius: 9999px;
+            background: radial-gradient(circle, rgba(45, 212, 191, 0.55), transparent 70%);
+            pointer-events: none;
+            animation: particleRise var(--dur, 7s) ease-in-out var(--delay, 0s) infinite;
+        }
+
         /* Staggered Scroll Reveal */
         .reveal {
             opacity: 0;
-            transform: translateY(32px) scale(0.98);
+            transform: translateY(30px) scale(0.98);
             transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1), transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+            transition-delay: var(--reveal-delay, 0ms);
         }
         .reveal.active {
             opacity: 1;
@@ -198,6 +279,16 @@
             background-size: 24px 24px;
         }
 
+        /* Back to Top Button */
+        #back-to-top {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        #back-to-top.hidden-btn {
+            opacity: 0;
+            transform: translateY(16px);
+            pointer-events: none;
+        }
+
         /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #F1F5F9; }
@@ -207,6 +298,15 @@
         /* Hide horizontal scrollbar on tab strips */
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Respect Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
     </style>
 
     <!-- Structured Data -->
@@ -245,7 +345,7 @@
     <div id="scroll-progress"></div>
 
     <!-- Top Live Hospital Updates Bar (Extra Place 1: NABH Approved) -->
-    <div class="bg-medical-navy text-white text-xs py-2 border-b border-white/10 relative z-50">
+    <div class="bg-medical-navy text-white text-xs py-2 border-b border-white/10 relative z-40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
             <div class="flex items-center gap-2 shrink-0">
                 <span class="relative flex h-2 w-2">
@@ -273,15 +373,15 @@
         </div>
     </div>
 
-    <!-- Sticky Glass Navbar (Notices & Ayushman removed from menu) -->
-    <nav id="navbar" class="sticky top-0 w-full z-40 glass-nav transition-all duration-300">
+    <!-- Always Sticky Top Glass Navbar -->
+    <nav id="navbar" class="sticky top-0 w-full z-50 glass-nav transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16 md:h-20">
                 <!-- Logo & Title -->
                 <a href="#home" class="flex items-center gap-3 group">
                     <div class="relative">
-                        <div class="absolute -inset-1 bg-gradient-to-tr from-medical-teal to-medical-blue rounded-full opacity-20 group-hover:opacity-40 blur transition-opacity"></div>
-                        <img src="Images/logo-modified.png" alt="Janseva Logo" class="relative h-11 w-11 object-contain rounded-full bg-white p-0.5 shadow-sm" onerror="this.src='https://placehold.co/100x100/0A3A66/ffffff?text=JH'">
+                        <div class="absolute -inset-1 bg-gradient-to-tr from-medical-teal to-medical-blue rounded-full opacity-20 group-hover:opacity-45 blur transition-opacity"></div>
+                        <img src="Images/logo-modified.png" alt="Janseva Logo" class="relative h-11 w-11 object-contain rounded-full bg-white p-0.5 shadow-sm group-hover:scale-105 transition-transform" onerror="this.src='https://placehold.co/100x100/0A3A66/ffffff?text=JH'">
                     </div>
                     <div>
                         <span class="block font-display font-extrabold text-medical-navy text-sm sm:text-base tracking-tight leading-none">JANSEVA HOSPITAL</span>
@@ -290,19 +390,19 @@
                 </a>
 
                 <!-- Desktop Navigation -->
-                <div class="hidden lg:flex items-center space-x-1 font-medium text-sm text-slate-700">
-                    <a href="#home" class="nav-link px-3 py-2 rounded-lg hover:text-medical-teal hover:bg-medical-mint/60 transition-all">Home</a>
-                    <a href="#about" class="nav-link px-3 py-2 rounded-lg hover:text-medical-teal hover:bg-medical-mint/60 transition-all">About</a>
-                    <a href="#specialities" class="nav-link px-3 py-2 rounded-lg hover:text-medical-teal hover:bg-medical-mint/60 transition-all">Departments</a>
-                    <a href="#doctors" class="nav-link px-3 py-2 rounded-lg hover:text-medical-teal hover:bg-medical-mint/60 transition-all">Doctors</a>
-                    <a href="#testimonials" class="nav-link px-3 py-2 rounded-lg hover:text-medical-teal hover:bg-medical-mint/60 transition-all">Reviews</a>
-                    <a href="#faqs" class="nav-link px-3 py-2 rounded-lg hover:text-medical-teal hover:bg-medical-mint/60 transition-all">FAQs</a>
-                    <a href="#contact" class="nav-link px-3 py-2 rounded-lg hover:text-medical-teal hover:bg-medical-mint/60 transition-all">Contact</a>
+                <div class="hidden lg:flex items-center space-x-1 font-medium text-sm text-slate-700" id="desktop-nav">
+                    <a href="#home" data-section="home" class="nav-link nav-active px-3 py-2 rounded-lg hover:text-medical-teal hover:bg-medical-mint/60 transition-all">Home</a>
+                    <a href="#about" data-section="about" class="nav-link px-3 py-2 rounded-lg hover:text-medical-teal hover:bg-medical-mint/60 transition-all">About</a>
+                    <a href="#specialities" data-section="specialities" class="nav-link px-3 py-2 rounded-lg hover:text-medical-teal hover:bg-medical-mint/60 transition-all">Departments</a>
+                    <a href="#doctors" data-section="doctors" class="nav-link px-3 py-2 rounded-lg hover:text-medical-teal hover:bg-medical-mint/60 transition-all">Doctors</a>
+                    <a href="#testimonials" data-section="testimonials" class="nav-link px-3 py-2 rounded-lg hover:text-medical-teal hover:bg-medical-mint/60 transition-all">Reviews</a>
+                    <a href="#faqs" data-section="faqs" class="nav-link px-3 py-2 rounded-lg hover:text-medical-teal hover:bg-medical-mint/60 transition-all">FAQs</a>
+                    <a href="#contact" data-section="contact" class="nav-link px-3 py-2 rounded-lg hover:text-medical-teal hover:bg-medical-mint/60 transition-all">Contact</a>
                 </div>
 
                 <!-- Right Actions -->
                 <div class="hidden md:flex items-center gap-3">
-                    <button onclick="openBooking()" class="px-4 py-2.5 rounded-xl bg-medical-navy text-white text-xs font-bold tracking-wide hover:bg-medical-blue transition-all shadow-sm hover:-translate-y-0.5 flex items-center gap-2">
+                    <button onclick="openBooking()" class="btn-sheen px-4 py-2.5 rounded-xl bg-medical-navy text-white text-xs font-bold tracking-wide hover:bg-medical-blue transition-all shadow-sm hover:-translate-y-0.5 flex items-center gap-2">
                         <i class="fa-regular fa-calendar-check text-emerald-400"></i> Book OPD
                     </button>
                     <a href="tel:8542929429" class="px-4 py-2.5 rounded-xl bg-emergency text-white text-xs font-bold tracking-wide animate-pulse-ring hover:bg-red-700 transition-all flex items-center gap-2">
@@ -349,9 +449,12 @@
             </svg>
         </div>
 
-        <!-- Ambient Floating Glows -->
-        <div class="absolute -top-24 -left-24 w-96 h-96 bg-medical-teal/20 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute bottom-0 right-0 w-[30rem] h-[30rem] bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <!-- Ambient Drifting Glow Orbs & Particles -->
+        <div class="absolute -top-24 -left-24 w-96 h-96 bg-medical-teal/20 rounded-full blur-3xl pointer-events-none animate-orb"></div>
+        <div class="absolute bottom-0 right-0 w-[30rem] h-[30rem] bg-sky-500/10 rounded-full blur-3xl pointer-events-none animate-orb" style="animation-delay: 3s;"></div>
+        <div class="ambient-particle w-4 h-4 left-[12%] top-[72%]" style="--dur: 6s; --delay: 0s;"></div>
+        <div class="ambient-particle w-6 h-6 left-[42%] top-[85%]" style="--dur: 8s; --delay: 1.5s;"></div>
+        <div class="ambient-particle w-3 h-3 left-[78%] top-[78%]" style="--dur: 7s; --delay: 2.5s;"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -359,13 +462,13 @@
                 <!-- Left Editorial Column -->
                 <div class="lg:col-span-6 reveal active">
                     <div class="inline-flex flex-wrap items-center gap-2.5 px-4 py-1.5 rounded-full glass-dark-card text-xs font-semibold tracking-wider uppercase text-emerald-300 mb-6">
-                        <!-- <i class="fa-solid fa-certificate text-amber-400"></i> -->
+                        <i class="fa-solid fa-certificate text-amber-400"></i>
                         <span>NABH Approved • ISO 9001:2015 Certified • Since 1997</span>
                     </div>
 
                     <h1 class="font-display text-4xl sm:text-5xl xl:text-6xl font-extrabold tracking-tight leading-[1.1] mb-5">
                         JANSEVA HOSPITAL <br>
-                        <span class="bg-gradient-to-r from-emerald-300 via-teal-200 to-sky-300 bg-clip-text text-transparent">&amp; TRAUMA CENTRE</span>
+                        <span class="kinetic-gradient-text bg-gradient-to-r from-emerald-300 via-sky-300 to-teal-200 bg-clip-text text-transparent">&amp; TRAUMA CENTRE</span>
                     </h1>
 
                     <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-base sm:text-lg font-semibold text-teal-200 mb-6">
@@ -382,12 +485,12 @@
 
                     <!-- Primary Hero CTAs -->
                     <div class="flex flex-col sm:flex-row gap-4 mb-10">
-                        <button onclick="openBooking()" class="group px-7 py-4 rounded-2xl bg-gradient-to-r from-medical-teal to-emerald-500 text-white font-bold shadow-glow-teal hover:shadow-xl hover:-translate-y-1 transition-all flex items-center justify-center gap-3">
+                        <button onclick="openBooking()" class="btn-sheen group px-7 py-4 rounded-2xl bg-gradient-to-r from-medical-teal to-emerald-500 text-white font-bold shadow-glow-teal hover:shadow-xl hover:-translate-y-1 transition-all flex items-center justify-center gap-3">
                             <i class="fa-regular fa-calendar-check text-lg"></i>
                             <span>Book Appointment</span>
                             <i class="fa-solid fa-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i>
                         </button>
-                        <a href="tel:8542929429" class="px-7 py-4 rounded-2xl glass-dark-card hover:bg-white hover:text-medical-navy text-white font-bold transition-all flex items-center justify-center gap-3">
+                        <a href="tel:8542929429" class="px-7 py-4 rounded-2xl glass-dark-card hover:bg-white hover:text-medical-navy text-white font-bold transition-all hover:-translate-y-0.5 flex items-center justify-center gap-3">
                             <i class="fa-solid fa-phone-volume text-red-400"></i>
                             <span>Emergency: 85429 29429</span>
                         </a>
@@ -395,13 +498,13 @@
 
                     <!-- Quick Interactive Pills -->
                     <div class="flex flex-wrap items-center gap-3 text-xs text-slate-300">
-                        <a href="#ayushman" class="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/15 border border-white/10 transition-colors flex items-center gap-2">
+                        <a href="#ayushman" class="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/15 border border-white/10 transition-all hover:-translate-y-0.5 flex items-center gap-2">
                             <i class="fa-solid fa-hands-holding-child text-emerald-400"></i> Ayushman Bharat Empanelled
                         </a>
-                        <a href="#doctors" class="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/15 border border-white/10 transition-colors flex items-center gap-2">
+                        <a href="#doctors" class="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/15 border border-white/10 transition-all hover:-translate-y-0.5 flex items-center gap-2">
                             <i class="fa-solid fa-user-doctor text-sky-400"></i> Meet 10+ Specialists
                         </a>
-                        <a href="#contact" class="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/15 border border-white/10 transition-colors flex items-center gap-2">
+                        <a href="#contact" class="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/15 border border-white/10 transition-all hover:-translate-y-0.5 flex items-center gap-2">
                             <i class="fa-solid fa-location-dot text-amber-400"></i> GT Road, Varanasi
                         </a>
                     </div>
@@ -423,7 +526,7 @@
 
                         <!-- Adaptive Full-Image Showcase Container -->
                         <div class="rounded-2xl overflow-hidden bg-medical-dark/60 flex items-center justify-center">
-                            <img id="hero-active-img" src="Images/2.png" alt="Janseva Hospital Varanasi" class="w-full h-auto max-h-[520px] object-contain block fade-img-in" onerror="this.src='https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=80'">
+                            <img id="hero-active-img" src="Images/2.png" fetchpriority="high" alt="Janseva Hospital Varanasi" class="w-full h-auto max-h-[520px] object-contain block fade-img-in" onerror="this.src='https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=80'">
                         </div>
 
                         <!-- Caption & Dots Strip (Below Image, Not Overlaying Image) -->
@@ -435,25 +538,25 @@
                 </div>
             </div>
 
-            <!-- Integrated Trust Metric Dock -->
-            <div class="mt-14 lg:mt-20 grid grid-cols-2 md:grid-cols-5 gap-4 reveal">
-                <div class="glass-dark-card rounded-2xl p-5 text-center hover:bg-white/10 transition-colors">
+            <!-- Integrated Trust Metric Dock (Staggered Cascade) -->
+            <div class="mt-14 lg:mt-20 grid grid-cols-2 md:grid-cols-5 gap-4">
+                <div class="reveal glass-dark-card rounded-2xl p-5 text-center hover:bg-white/10 hover:-translate-y-1 transition-all" style="--reveal-delay: 0ms;">
                     <div class="font-display text-3xl font-extrabold text-white mb-1" data-counter="25">25+</div>
                     <div class="text-[11px] font-semibold uppercase tracking-widest text-teal-200">Years Excellence</div>
                 </div>
-                <div class="glass-dark-card rounded-2xl p-5 text-center hover:bg-white/10 transition-colors">
+                <div class="reveal glass-dark-card rounded-2xl p-5 text-center hover:bg-white/10 hover:-translate-y-1 transition-all" style="--reveal-delay: 80ms;">
                     <div class="font-display text-3xl font-extrabold text-white mb-1" data-counter="10">10+</div>
                     <div class="text-[11px] font-semibold uppercase tracking-widest text-teal-200">Specialists</div>
                 </div>
-                <div class="glass-dark-card rounded-2xl p-5 text-center hover:bg-white/10 transition-colors border-red-400/30">
+                <div class="reveal glass-dark-card rounded-2xl p-5 text-center hover:bg-white/10 hover:-translate-y-1 transition-all border-red-400/30" style="--reveal-delay: 160ms;">
                     <div class="font-display text-3xl font-extrabold text-red-400 mb-1">24×7</div>
                     <div class="text-[11px] font-semibold uppercase tracking-widest text-red-200">Emergency Care</div>
                 </div>
-                <div class="glass-dark-card rounded-2xl p-5 text-center hover:bg-white/10 transition-colors">
+                <div class="reveal glass-dark-card rounded-2xl p-5 text-center hover:bg-white/10 hover:-translate-y-1 transition-all" style="--reveal-delay: 240ms;">
                     <div class="font-display text-3xl font-extrabold text-white mb-1" data-counter="5000">5000+</div>
                     <div class="text-[11px] font-semibold uppercase tracking-widest text-teal-200">Procedures</div>
                 </div>
-                <div class="col-span-2 md:col-span-1 glass-dark-card rounded-2xl p-5 flex flex-col items-center justify-center hover:bg-white/10 transition-colors border-emerald-400/30">
+                <div class="reveal col-span-2 md:col-span-1 glass-dark-card rounded-2xl p-5 flex flex-col items-center justify-center hover:bg-white/10 hover:-translate-y-1 transition-all border-emerald-400/30" style="--reveal-delay: 320ms;">
                     <div class="text-emerald-400 text-2xl mb-1"><i class="fa-solid fa-hands-holding-child"></i></div>
                     <div class="text-xs font-extrabold tracking-wider text-white uppercase">Ayushman Bharat</div>
                 </div>
@@ -468,13 +571,13 @@
                 
                 <!-- Left Image & Kept Bottom Floating Card -->
                 <div class="lg:col-span-6 relative reveal">
-                    <div class="absolute -inset-4 bg-gradient-to-tr from-medical-teal/20 to-sky-400/20 rounded-[2rem] blur-2xl"></div>
-                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white">
-                        <img src="Images/9.png" alt="Janseva Hospital Building" class="w-full h-auto block hover:scale-[1.02] transition-transform duration-700" onerror="this.src='https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1000&q=80'">
+                    <div class="absolute -inset-4 bg-gradient-to-tr from-medical-teal/20 to-sky-400/20 rounded-[2rem] blur-2xl animate-orb"></div>
+                    <div class="tilt-card relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white">
+                        <img src="Images/9.png" loading="lazy" alt="Janseva Hospital Building" class="w-full h-auto block hover:scale-[1.02] transition-transform duration-700" onerror="this.src='https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1000&q=80'">
                     </div>
 
                     <!-- Floating Accreditation Card (Extra Place 2: NABH Approved — Retained as requested) -->
-                    <div class="mt-4 sm:mt-0 sm:absolute sm:-bottom-6 sm:-right-4 bg-white p-4 sm:p-5 rounded-2xl shadow-card-hover border border-slate-100 flex items-center gap-4 z-20 relative">
+                    <div class="mt-4 sm:mt-0 sm:absolute sm:-bottom-6 sm:-right-4 bg-white p-4 sm:p-5 rounded-2xl shadow-card-hover border border-slate-100 flex items-center gap-4 z-20 relative animate-float">
                         <div class="h-12 w-12 rounded-xl bg-gradient-to-br from-medical-blue to-medical-teal flex items-center justify-center text-white text-xl shadow-md shrink-0">
                             <i class="fa-solid fa-certificate"></i>
                         </div>
@@ -486,7 +589,7 @@
                 </div>
 
                 <!-- Right Editorial Narrative -->
-                <div class="lg:col-span-6 reveal">
+                <div class="lg:col-span-6 reveal" style="--reveal-delay: 120ms;">
                     <div class="inline-flex items-center gap-2 text-medical-teal font-bold text-xs uppercase tracking-widest mb-3">
                         <span class="w-8 h-[2px] bg-medical-teal"></span> About Us
                     </div>
@@ -506,19 +609,19 @@
 
                     <!-- 4 Core Pillar Cards -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                        <div class="p-4 rounded-2xl bg-medical-light border border-teal-100/70 flex items-center gap-3.5 hover:shadow-md transition-shadow">
+                        <div class="p-4 rounded-2xl bg-medical-light border border-teal-100/70 flex items-center gap-3.5 hover:shadow-md hover:-translate-y-0.5 transition-all">
                             <div class="w-10 h-10 rounded-xl bg-white text-medical-teal flex items-center justify-center shadow-sm"><i class="fa-solid fa-truck-medical"></i></div>
                             <span class="font-bold text-medical-navy text-sm">Trauma Care</span>
                         </div>
-                        <div class="p-4 rounded-2xl bg-medical-light border border-teal-100/70 flex items-center gap-3.5 hover:shadow-md transition-shadow">
+                        <div class="p-4 rounded-2xl bg-medical-light border border-teal-100/70 flex items-center gap-3.5 hover:shadow-md hover:-translate-y-0.5 transition-all">
                             <div class="w-10 h-10 rounded-xl bg-white text-medical-blue flex items-center justify-center shadow-sm"><i class="fa-solid fa-stethoscope"></i></div>
                             <span class="font-bold text-medical-navy text-sm">Surgical Hub</span>
                         </div>
-                        <div class="p-4 rounded-2xl bg-medical-light border border-teal-100/70 flex items-center gap-3.5 hover:shadow-md transition-shadow">
+                        <div class="p-4 rounded-2xl bg-medical-light border border-teal-100/70 flex items-center gap-3.5 hover:shadow-md hover:-translate-y-0.5 transition-all">
                             <div class="w-10 h-10 rounded-xl bg-white text-medical-teal flex items-center justify-center shadow-sm"><i class="fa-solid fa-bed-pulse"></i></div>
                             <span class="font-bold text-medical-navy text-sm">Critical Care</span>
                         </div>
-                        <div class="p-4 rounded-2xl bg-medical-light border border-teal-100/70 flex items-center gap-3.5 hover:shadow-md transition-shadow">
+                        <div class="p-4 rounded-2xl bg-medical-light border border-teal-100/70 flex items-center gap-3.5 hover:shadow-md hover:-translate-y-0.5 transition-all">
                             <div class="w-10 h-10 rounded-xl bg-white text-medical-blue flex items-center justify-center shadow-sm"><i class="fa-solid fa-hand-holding-heart"></i></div>
                             <span class="font-bold text-medical-navy text-sm">Community Focus</span>
                         </div>
@@ -526,7 +629,7 @@
 
                     <a href="#specialities" class="inline-flex items-center gap-2.5 font-bold text-medical-blue hover:text-medical-teal transition-colors group">
                         <span>Explore Our Departments</span>
-                        <span class="w-8 h-8 rounded-full bg-medical-mint flex items-center justify-center group-hover:bg-medical-teal group-hover:text-white transition-all">
+                        <span class="w-8 h-8 rounded-full bg-medical-mint flex items-center justify-center group-hover:bg-medical-teal group-hover:text-white group-hover:translate-x-1 transition-all">
                             <i class="fa-solid fa-arrow-right text-xs"></i>
                         </span>
                     </a>
@@ -537,13 +640,13 @@
 
     <!-- AYUSHMAN BHARAT PM-JAY SECTION -->
     <section id="ayushman" class="py-24 bg-gradient-to-b from-medical-light to-white relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-96 h-96 bg-emerald-200/20 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute bottom-0 left-0 w-96 h-96 bg-sky-200/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-0 right-0 w-96 h-96 bg-emerald-200/20 rounded-full blur-3xl pointer-events-none animate-orb"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-sky-200/20 rounded-full blur-3xl pointer-events-none animate-orb" style="animation-delay: 2s;"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <!-- Header -->
             <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-                <img src="Images/ayush.png" alt="Ayushman Bharat Logo" class="h-20 w-auto max-w-full mx-auto mb-5 object-contain" onerror="this.style.display='none'">
+                <img src="Images/ayush.png" loading="lazy" alt="Ayushman Bharat Logo" class="h-20 w-auto max-w-full mx-auto mb-5 object-contain" onerror="this.style.display='none'">
                 <span class="inline-block px-4 py-1 rounded-full bg-emerald-100 text-medical-green font-bold text-xs uppercase tracking-widest mb-3">PM-JAY Empanelled Hospital</span>
                 <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-medical-navy mb-3">Ayushman Bharat PM-JAY</h2>
                 <p class="text-xl font-bold text-medical-teal mb-3">100% Cashless Treatment</p>
@@ -552,93 +655,98 @@
                 </p>
             </div>
 
-            <!-- Interactive 6-Step Cashless Journey -->
+            <!-- Interactive 6-Step Cashless Journey with Progress Bar -->
             <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-soft border border-slate-100 mb-14 reveal">
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-8">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
                     <h3 class="font-display text-xl font-bold text-medical-navy">Simple 6-Step Cashless Process</h3>
                     <span class="text-xs font-semibold text-medical-teal">Click any step to preview</span>
                 </div>
 
+                <!-- Animated Progress Track -->
+                <div class="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden mb-6">
+                    <div id="ayushman-progress" class="h-full bg-gradient-to-r from-medical-teal to-emerald-400 rounded-full transition-all duration-500" style="width: 16.66%;"></div>
+                </div>
+
                 <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 relative" id="ayushman-steps">
-                    <button type="button" onclick="selectAyushmanStep(0)" class="ayush-step active group p-4 rounded-2xl border-2 border-medical-teal bg-medical-mint/60 text-center transition-all">
+                    <button type="button" onclick="selectAyushmanStep(0)" class="ayush-step active group p-4 rounded-2xl border-2 border-medical-teal bg-medical-mint/60 text-center transition-all hover:-translate-y-1">
                         <div class="w-12 h-12 mx-auto rounded-xl bg-medical-teal text-white flex items-center justify-center text-xl mb-3 shadow-sm"><i class="fa-solid fa-id-card"></i></div>
                         <p class="font-bold text-xs sm:text-sm text-medical-navy">1. Registration</p>
                     </button>
-                    <button type="button" onclick="selectAyushmanStep(1)" class="ayush-step group p-4 rounded-2xl border border-slate-200 bg-white hover:border-medical-teal/60 text-center transition-all">
+                    <button type="button" onclick="selectAyushmanStep(1)" class="ayush-step group p-4 rounded-2xl border border-slate-200 bg-white hover:border-medical-teal/60 text-center transition-all hover:-translate-y-1">
                         <div class="w-12 h-12 mx-auto rounded-xl bg-slate-100 text-medical-blue group-hover:bg-medical-teal group-hover:text-white flex items-center justify-center text-xl mb-3 transition-colors"><i class="fa-solid fa-fingerprint"></i></div>
                         <p class="font-bold text-xs sm:text-sm text-medical-navy">2. Verification</p>
                     </button>
-                    <button type="button" onclick="selectAyushmanStep(2)" class="ayush-step group p-4 rounded-2xl border border-slate-200 bg-white hover:border-medical-teal/60 text-center transition-all">
+                    <button type="button" onclick="selectAyushmanStep(2)" class="ayush-step group p-4 rounded-2xl border border-slate-200 bg-white hover:border-medical-teal/60 text-center transition-all hover:-translate-y-1">
                         <div class="w-12 h-12 mx-auto rounded-xl bg-slate-100 text-amber-600 group-hover:bg-medical-teal group-hover:text-white flex items-center justify-center text-xl mb-3 transition-colors"><i class="fa-solid fa-file-signature"></i></div>
                         <p class="font-bold text-xs sm:text-sm text-medical-navy">3. Approval</p>
                     </button>
-                    <button type="button" onclick="selectAyushmanStep(3)" class="ayush-step group p-4 rounded-2xl border border-slate-200 bg-white hover:border-medical-teal/60 text-center transition-all">
+                    <button type="button" onclick="selectAyushmanStep(3)" class="ayush-step group p-4 rounded-2xl border border-slate-200 bg-white hover:border-medical-teal/60 text-center transition-all hover:-translate-y-1">
                         <div class="w-12 h-12 mx-auto rounded-xl bg-slate-100 text-sky-600 group-hover:bg-medical-teal group-hover:text-white flex items-center justify-center text-xl mb-3 transition-colors"><i class="fa-solid fa-bed-pulse"></i></div>
                         <p class="font-bold text-xs sm:text-sm text-medical-navy">4. Treatment</p>
                     </button>
-                    <button type="button" onclick="selectAyushmanStep(4)" class="ayush-step group p-4 rounded-2xl border border-slate-200 bg-white hover:border-medical-teal/60 text-center transition-all">
+                    <button type="button" onclick="selectAyushmanStep(4)" class="ayush-step group p-4 rounded-2xl border border-slate-200 bg-white hover:border-medical-teal/60 text-center transition-all hover:-translate-y-1">
                         <div class="w-12 h-12 mx-auto rounded-xl bg-slate-100 text-purple-600 group-hover:bg-medical-teal group-hover:text-white flex items-center justify-center text-xl mb-3 transition-colors"><i class="fa-solid fa-house-medical-circle-check"></i></div>
                         <p class="font-bold text-xs sm:text-sm text-medical-navy">5. Discharge</p>
                     </button>
-                    <button type="button" onclick="selectAyushmanStep(5)" class="ayush-step group p-4 rounded-2xl border border-slate-200 bg-white hover:border-medical-teal/60 text-center transition-all">
+                    <button type="button" onclick="selectAyushmanStep(5)" class="ayush-step group p-4 rounded-2xl border border-slate-200 bg-white hover:border-medical-teal/60 text-center transition-all hover:-translate-y-1">
                         <div class="w-12 h-12 mx-auto rounded-xl bg-slate-100 text-emerald-600 group-hover:bg-medical-teal group-hover:text-white flex items-center justify-center text-xl mb-3 transition-colors"><i class="fa-solid fa-check-double"></i></div>
                         <p class="font-bold text-xs sm:text-sm text-medical-navy">6. Settlement</p>
                     </button>
                 </div>
 
                 <!-- Dynamic Step Helper Banner -->
-                <div id="ayushman-step-info" class="mt-6 p-4 rounded-2xl bg-medical-navy text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-sm">
+                <div id="ayushman-step-info" class="mt-6 p-4 rounded-2xl bg-medical-navy text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-sm transition-all">
                     <div class="flex items-center gap-3">
                         <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-300 flex items-center justify-center shrink-0"><i class="fa-solid fa-circle-info"></i></span>
                         <span id="ayushman-step-text"><strong>Step 1 — Registration:</strong> Bring your Ayushman Bharat Golden Card / Aadhaar to our dedicated PM-JAY helpdesk at reception.</span>
                     </div>
-                    <button onclick="openBooking('General')" class="shrink-0 px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-white font-bold text-xs transition-colors">Verify Card Now</button>
+                    <button onclick="openBooking('General')" class="btn-sheen shrink-0 px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-white font-bold text-xs transition-colors">Verify Card Now</button>
                 </div>
             </div>
 
             <!-- Covered Procedures Bento Grid -->
             <div class="bg-medical-navy rounded-[2rem] p-8 sm:p-12 text-white shadow-2xl relative overflow-hidden reveal">
-                <div class="absolute top-0 right-0 w-72 h-72 bg-medical-teal/20 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute top-0 right-0 w-72 h-72 bg-medical-teal/20 rounded-full blur-3xl pointer-events-none animate-orb"></div>
                 <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 relative z-10">
                     <div>
                         <p class="text-emerald-300 text-xs font-bold uppercase tracking-widest mb-2">Cashless Coverage</p>
                         <h3 class="font-display text-2xl sm:text-3xl font-extrabold">Covered Procedures &amp; Treatments</h3>
                     </div>
-                    <button onclick="openBooking('General')" class="px-6 py-3 rounded-xl bg-white text-medical-navy font-bold text-sm hover:bg-emerald-300 transition-colors shadow-lg shrink-0">
+                    <button onclick="openBooking('General')" class="btn-sheen px-6 py-3 rounded-xl bg-white text-medical-navy font-bold text-sm hover:bg-emerald-300 transition-colors shadow-lg shrink-0">
                         Verify Your Ayushman Card Now
                     </button>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 relative z-10">
-                    <div class="spotlight-card glass-dark-card p-5 rounded-2xl flex items-center gap-4 hover:border-emerald-400/50 transition-all">
+                    <div class="spotlight-card glass-dark-card p-5 rounded-2xl flex items-center gap-4 hover:border-emerald-400/50 hover:-translate-y-1 transition-all">
                         <div class="w-12 h-12 rounded-xl bg-sky-500/20 text-sky-300 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-bone"></i></div>
                         <span class="font-semibold text-sm sm:text-base">Knee Replacement</span>
                     </div>
-                    <div class="spotlight-card glass-dark-card p-5 rounded-2xl flex items-center gap-4 hover:border-emerald-400/50 transition-all">
+                    <div class="spotlight-card glass-dark-card p-5 rounded-2xl flex items-center gap-4 hover:border-emerald-400/50 hover:-translate-y-1 transition-all">
                         <div class="w-12 h-12 rounded-xl bg-sky-500/20 text-sky-300 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-person-walking"></i></div>
                         <span class="font-semibold text-sm sm:text-base">Hip Replacement</span>
                     </div>
-                    <div class="spotlight-card glass-dark-card p-5 rounded-2xl flex items-center gap-4 hover:border-emerald-400/50 transition-all">
+                    <div class="spotlight-card glass-dark-card p-5 rounded-2xl flex items-center gap-4 hover:border-emerald-400/50 hover:-translate-y-1 transition-all">
                         <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-bandage"></i></div>
                         <span class="font-semibold text-sm sm:text-base">Hernia Surgery</span>
                     </div>
-                    <div class="spotlight-card glass-dark-card p-5 rounded-2xl flex items-center gap-4 hover:border-emerald-400/50 transition-all">
+                    <div class="spotlight-card glass-dark-card p-5 rounded-2xl flex items-center gap-4 hover:border-emerald-400/50 hover:-translate-y-1 transition-all">
                         <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-scissors"></i></div>
                         <span class="font-semibold text-sm sm:text-base">Appendix Surgery</span>
                     </div>
-                    <div class="spotlight-card glass-dark-card p-5 rounded-2xl flex items-center gap-4 hover:border-emerald-400/50 transition-all">
+                    <div class="spotlight-card glass-dark-card p-5 rounded-2xl flex items-center gap-4 hover:border-emerald-400/50 hover:-translate-y-1 transition-all">
                         <div class="w-12 h-12 rounded-xl bg-teal-500/20 text-teal-300 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-bed-pulse"></i></div>
                         <span class="font-semibold text-sm sm:text-base">Gall Bladder Surgery</span>
                     </div>
-                    <div class="spotlight-card glass-dark-card p-5 rounded-2xl flex items-center gap-4 hover:border-emerald-400/50 transition-all">
+                    <div class="spotlight-card glass-dark-card p-5 rounded-2xl flex items-center gap-4 hover:border-emerald-400/50 hover:-translate-y-1 transition-all">
                         <div class="w-12 h-12 rounded-xl bg-rose-500/20 text-rose-300 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-viruses"></i></div>
                         <span class="font-semibold text-sm sm:text-base">Typhoid Treatment</span>
                     </div>
-                    <div class="spotlight-card glass-dark-card p-5 rounded-2xl flex items-center gap-4 hover:border-emerald-400/50 transition-all">
+                    <div class="spotlight-card glass-dark-card p-5 rounded-2xl flex items-center gap-4 hover:border-emerald-400/50 hover:-translate-y-1 transition-all">
                         <div class="w-12 h-12 rounded-xl bg-rose-500/20 text-rose-300 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-mosquito"></i></div>
                         <span class="font-semibold text-sm sm:text-base">Malaria Treatment</span>
                     </div>
-                    <div class="spotlight-card glass-dark-card p-5 rounded-2xl flex items-center gap-4 hover:border-emerald-400/50 transition-all">
+                    <div class="spotlight-card glass-dark-card p-5 rounded-2xl flex items-center gap-4 hover:border-emerald-400/50 hover:-translate-y-1 transition-all">
                         <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-300 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-face-flushed"></i></div>
                         <span class="font-semibold text-sm sm:text-base">Jaundice Treatment</span>
                     </div>
@@ -658,9 +766,9 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
                 <!-- Orthopedics -->
-                <div class="spotlight-card group bg-white rounded-3xl p-8 border border-slate-200/80 shadow-soft hover:shadow-card-hover hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between reveal">
+                <div class="spotlight-card group bg-white rounded-3xl p-8 border border-slate-200/80 shadow-soft hover:shadow-card-hover hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between reveal" style="--reveal-delay: 0ms;">
                     <div>
-                        <div class="w-14 h-14 rounded-2xl bg-sky-50 text-medical-blue flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-blue group-hover:text-white transition-colors">
+                        <div class="w-14 h-14 rounded-2xl bg-sky-50 text-medical-blue flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-blue group-hover:text-white group-hover:scale-110 transition-all">
                             <i class="fa-solid fa-bone"></i>
                         </div>
                         <h3 class="font-display text-xl font-bold text-medical-navy mb-2">Orthopedics &amp; Joint Replacement</h3>
@@ -673,14 +781,14 @@
                         </ul>
                     </div>
                     <button onclick="openBooking('Orthopedics')" class="w-full py-3 rounded-xl bg-medical-light text-medical-blue font-bold text-sm hover:bg-medical-teal hover:text-white transition-colors flex items-center justify-center gap-2">
-                        Book Consultation <i class="fa-solid fa-arrow-right text-xs"></i>
+                        Book Consultation <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
                     </button>
                 </div>
 
                 <!-- Neurosurgery -->
-                <div class="spotlight-card group bg-white rounded-3xl p-8 border border-slate-200/80 shadow-soft hover:shadow-card-hover hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between reveal">
+                <div class="spotlight-card group bg-white rounded-3xl p-8 border border-slate-200/80 shadow-soft hover:shadow-card-hover hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between reveal" style="--reveal-delay: 80ms;">
                     <div>
-                        <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-medical-teal flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-teal group-hover:text-white transition-colors">
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-medical-teal flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-teal group-hover:text-white group-hover:scale-110 transition-all">
                             <i class="fa-solid fa-brain"></i>
                         </div>
                         <h3 class="font-display text-xl font-bold text-medical-navy mb-2">Neurosurgery</h3>
@@ -692,14 +800,14 @@
                         </ul>
                     </div>
                     <button onclick="openBooking('Neurosurgery')" class="w-full py-3 rounded-xl bg-medical-light text-medical-blue font-bold text-sm hover:bg-medical-teal hover:text-white transition-colors flex items-center justify-center gap-2">
-                        Book Consultation <i class="fa-solid fa-arrow-right text-xs"></i>
+                        Book Consultation <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
                     </button>
                 </div>
 
                 <!-- Urology -->
-                <div class="spotlight-card group bg-white rounded-3xl p-8 border border-slate-200/80 shadow-soft hover:shadow-card-hover hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between reveal">
+                <div class="spotlight-card group bg-white rounded-3xl p-8 border border-slate-200/80 shadow-soft hover:shadow-card-hover hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between reveal" style="--reveal-delay: 160ms;">
                     <div>
-                        <div class="w-14 h-14 rounded-2xl bg-sky-50 text-medical-blue flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-blue group-hover:text-white transition-colors">
+                        <div class="w-14 h-14 rounded-2xl bg-sky-50 text-medical-blue flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-blue group-hover:text-white group-hover:scale-110 transition-all">
                             <i class="fa-solid fa-vial"></i>
                         </div>
                         <h3 class="font-display text-xl font-bold text-medical-navy mb-2">Urology</h3>
@@ -711,14 +819,14 @@
                         </ul>
                     </div>
                     <button onclick="openBooking('Urology')" class="w-full py-3 rounded-xl bg-medical-light text-medical-blue font-bold text-sm hover:bg-medical-teal hover:text-white transition-colors flex items-center justify-center gap-2">
-                        Book Consultation <i class="fa-solid fa-arrow-right text-xs"></i>
+                        Book Consultation <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
                     </button>
                 </div>
 
                 <!-- General Surgery -->
-                <div class="spotlight-card group bg-white rounded-3xl p-8 border border-slate-200/80 shadow-soft hover:shadow-card-hover hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between reveal">
+                <div class="spotlight-card group bg-white rounded-3xl p-8 border border-slate-200/80 shadow-soft hover:shadow-card-hover hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between reveal" style="--reveal-delay: 240ms;">
                     <div>
-                        <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-medical-teal flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-teal group-hover:text-white transition-colors">
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-medical-teal flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-teal group-hover:text-white group-hover:scale-110 transition-all">
                             <i class="fa-solid fa-syringe"></i>
                         </div>
                         <h3 class="font-display text-xl font-bold text-medical-navy mb-2">General Surgery</h3>
@@ -730,14 +838,14 @@
                         </ul>
                     </div>
                     <button onclick="openBooking('General Surgery')" class="w-full py-3 rounded-xl bg-medical-light text-medical-blue font-bold text-sm hover:bg-medical-teal hover:text-white transition-colors flex items-center justify-center gap-2">
-                        Book Consultation <i class="fa-solid fa-arrow-right text-xs"></i>
+                        Book Consultation <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
                     </button>
                 </div>
 
                 <!-- Obstetrics & Gynecology -->
-                <div class="spotlight-card group bg-white rounded-3xl p-8 border border-slate-200/80 shadow-soft hover:shadow-card-hover hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between reveal">
+                <div class="spotlight-card group bg-white rounded-3xl p-8 border border-slate-200/80 shadow-soft hover:shadow-card-hover hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between reveal" style="--reveal-delay: 320ms;">
                     <div>
-                        <div class="w-14 h-14 rounded-2xl bg-pink-50 text-pink-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-pink-600 group-hover:text-white transition-colors">
+                        <div class="w-14 h-14 rounded-2xl bg-pink-50 text-pink-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-pink-600 group-hover:text-white group-hover:scale-110 transition-all">
                             <i class="fa-solid fa-person-pregnant"></i>
                         </div>
                         <h3 class="font-display text-xl font-bold text-medical-navy mb-2">Obstetrics &amp; Gynecology</h3>
@@ -749,12 +857,12 @@
                         </ul>
                     </div>
                     <button onclick="openBooking('Gynecology')" class="w-full py-3 rounded-xl bg-medical-light text-medical-blue font-bold text-sm hover:bg-medical-teal hover:text-white transition-colors flex items-center justify-center gap-2">
-                        Book Consultation <i class="fa-solid fa-arrow-right text-xs"></i>
+                        Book Consultation <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
                     </button>
                 </div>
 
                 <!-- Other Specialized Centers -->
-                <div class="rounded-3xl p-8 bg-gradient-to-br from-medical-navy via-medical-blue to-medical-teal text-white shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between relative overflow-hidden reveal">
+                <div class="rounded-3xl p-8 bg-gradient-to-br from-medical-navy via-medical-blue to-medical-teal text-white shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between relative overflow-hidden reveal" style="--reveal-delay: 400ms;">
                     <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
                     <div class="relative z-10">
                         <div class="w-14 h-14 rounded-2xl bg-white/15 backdrop-blur-md text-white flex items-center justify-center text-2xl mb-6">
@@ -769,7 +877,7 @@
                             <span class="text-xs font-semibold bg-white/15 px-3 py-1.5 rounded-full border border-white/25">General Medicine</span>
                         </div>
                     </div>
-                    <button onclick="openBooking('General')" class="relative z-10 w-full py-3 rounded-xl bg-white text-medical-navy font-bold text-sm hover:bg-emerald-300 transition-colors shadow-md">
+                    <button onclick="openBooking('General')" class="btn-sheen relative z-10 w-full py-3 rounded-xl bg-white text-medical-navy font-bold text-sm hover:bg-emerald-300 transition-colors shadow-md">
                         Book Specialist Consultation
                     </button>
                 </div>
@@ -798,9 +906,9 @@
                 
                 <!-- Featured Lead Doctor: Dr. Alok Singh (Full Uncut Image) -->
                 <div class="lg:col-span-4 reveal">
-                    <div class="bg-white rounded-3xl overflow-hidden shadow-card-hover border border-slate-100 flex flex-col">
+                    <div class="tilt-card bg-white rounded-3xl overflow-hidden shadow-card-hover border border-slate-100 flex flex-col">
                         <div class="bg-gradient-to-b from-medical-mint/60 to-white overflow-hidden group">
-                            <img src="Images/13.png" alt="Dr. Alok Singh" class="w-full h-auto block group-hover:scale-[1.02] transition-transform duration-700" onerror="this.src='https://placehold.co/600x600/0A3A66/ffffff?text=Dr.+Alok+Singh'">
+                            <img src="Images/13.png" loading="lazy" alt="Dr. Alok Singh" class="w-full h-auto block group-hover:scale-[1.02] transition-transform duration-700" onerror="this.src='https://placehold.co/600x600/0A3A66/ffffff?text=Dr.+Alok+Singh'">
                         </div>
                         <div class="p-6 flex-grow flex flex-col justify-between border-t border-slate-100">
                             <div>
@@ -816,7 +924,7 @@
                                     <div class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-medical-teal"></i> <span>Orthopedic Procedures</span></div>
                                 </div>
                             </div>
-                            <button onclick="openBooking('Orthopedics', 'Dr. Alok Singh')" class="w-full py-3.5 rounded-xl bg-medical-navy text-white font-bold text-sm hover:bg-medical-teal transition-colors shadow-md flex items-center justify-center gap-2">
+                            <button onclick="openBooking('Orthopedics', 'Dr. Alok Singh')" class="btn-sheen w-full py-3.5 rounded-xl bg-medical-navy text-white font-bold text-sm hover:bg-medical-teal transition-colors shadow-md flex items-center justify-center gap-2">
                                 <i class="fa-regular fa-calendar-check"></i> Book Appointment
                             </button>
                         </div>
@@ -824,9 +932,9 @@
                 </div>
 
                 <!-- Specialist Grid -->
-                <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4 reveal" id="doctors-grid">
+                <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4 reveal" style="--reveal-delay: 120ms;" id="doctors-grid">
                     <!-- Dr. Mamta Singh -->
-                    <div class="doctor-card spotlight-card bg-white p-5 rounded-2xl border border-slate-200/80 shadow-soft hover:shadow-lg transition-all flex flex-col justify-between" data-category="women-child">
+                    <div class="doctor-card spotlight-card bg-white p-5 rounded-2xl border border-slate-200/80 shadow-soft hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col justify-between" data-category="women-child">
                         <div>
                             <div class="flex items-start justify-between gap-3 mb-3">
                                 <div>
@@ -844,7 +952,7 @@
                     </div>
 
                     <!-- Dr. Deepak Agrahari -->
-                    <div class="doctor-card spotlight-card bg-white p-5 rounded-2xl border border-slate-200/80 shadow-soft hover:shadow-lg transition-all flex flex-col justify-between" data-category="surgery super">
+                    <div class="doctor-card spotlight-card bg-white p-5 rounded-2xl border border-slate-200/80 shadow-soft hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col justify-between" data-category="surgery super">
                         <div>
                             <div class="flex items-start justify-between gap-3 mb-3">
                                 <div>
@@ -861,7 +969,7 @@
                     </div>
 
                     <!-- Dr. S. K. Dubey -->
-                    <div class="doctor-card spotlight-card bg-white p-5 rounded-2xl border border-slate-200/80 shadow-soft hover:shadow-lg transition-all flex items-center justify-between gap-3" data-category="surgery super">
+                    <div class="doctor-card spotlight-card bg-white p-5 rounded-2xl border border-slate-200/80 shadow-soft hover:shadow-lg hover:-translate-y-1 transition-all flex items-center justify-between gap-3" data-category="surgery super">
                         <div class="flex items-center gap-3.5">
                             <div class="w-11 h-11 rounded-xl bg-emerald-50 text-medical-teal flex items-center justify-center text-lg shrink-0"><i class="fa-solid fa-brain"></i></div>
                             <div>
@@ -875,7 +983,7 @@
                     </div>
 
                     <!-- Dr. P. K. Keshri -->
-                    <div class="doctor-card spotlight-card bg-white p-5 rounded-2xl border border-slate-200/80 shadow-soft hover:shadow-lg transition-all flex items-center justify-between gap-3" data-category="super">
+                    <div class="doctor-card spotlight-card bg-white p-5 rounded-2xl border border-slate-200/80 shadow-soft hover:shadow-lg hover:-translate-y-1 transition-all flex items-center justify-between gap-3" data-category="super">
                         <div class="flex items-center gap-3.5">
                             <div class="w-11 h-11 rounded-xl bg-sky-50 text-medical-blue flex items-center justify-center text-lg shrink-0"><i class="fa-solid fa-vial"></i></div>
                             <div>
@@ -889,7 +997,7 @@
                     </div>
 
                     <!-- Dr. H. S. Singh -->
-                    <div class="doctor-card spotlight-card bg-white p-5 rounded-2xl border border-slate-200/80 shadow-soft hover:shadow-lg transition-all flex items-center justify-between gap-3" data-category="surgery super">
+                    <div class="doctor-card spotlight-card bg-white p-5 rounded-2xl border border-slate-200/80 shadow-soft hover:shadow-lg hover:-translate-y-1 transition-all flex items-center justify-between gap-3" data-category="surgery super">
                         <div class="flex items-center gap-3.5">
                             <div class="w-11 h-11 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-lg shrink-0"><i class="fa-solid fa-staff-snake"></i></div>
                             <div>
@@ -903,7 +1011,7 @@
                     </div>
 
                     <!-- Dr. S. N. Singh -->
-                    <div class="doctor-card spotlight-card bg-white p-5 rounded-2xl border border-slate-200/80 shadow-soft hover:shadow-lg transition-all flex items-center justify-between gap-3" data-category="women-child">
+                    <div class="doctor-card spotlight-card bg-white p-5 rounded-2xl border border-slate-200/80 shadow-soft hover:shadow-lg hover:-translate-y-1 transition-all flex items-center justify-between gap-3" data-category="women-child">
                         <div class="flex items-center gap-3.5">
                             <div class="w-11 h-11 rounded-xl bg-emerald-50 text-medical-teal flex items-center justify-center text-lg shrink-0"><i class="fa-solid fa-children"></i></div>
                             <div>
@@ -917,7 +1025,7 @@
                     </div>
 
                     <!-- Dr. Abhishek Agrahari -->
-                    <div class="doctor-card spotlight-card bg-white p-5 rounded-2xl border border-slate-200/80 shadow-soft hover:shadow-lg transition-all flex items-center justify-between gap-3" data-category="women-child">
+                    <div class="doctor-card spotlight-card bg-white p-5 rounded-2xl border border-slate-200/80 shadow-soft hover:shadow-lg hover:-translate-y-1 transition-all flex items-center justify-between gap-3" data-category="women-child">
                         <div class="flex items-center gap-3.5">
                             <div class="w-11 h-11 rounded-xl bg-sky-50 text-medical-blue flex items-center justify-center text-lg shrink-0"><i class="fa-solid fa-child-reaching"></i></div>
                             <div>
@@ -931,7 +1039,7 @@
                     </div>
 
                     <!-- Dr. Sunil Singh -->
-                    <div class="doctor-card spotlight-card bg-white p-5 rounded-2xl border border-slate-200/80 shadow-soft hover:shadow-lg transition-all flex items-center justify-between gap-3" data-category="surgery">
+                    <div class="doctor-card spotlight-card bg-white p-5 rounded-2xl border border-slate-200/80 shadow-soft hover:shadow-lg hover:-translate-y-1 transition-all flex items-center justify-between gap-3" data-category="surgery">
                         <div class="flex items-center gap-3.5">
                             <div class="w-11 h-11 rounded-xl bg-emerald-50 text-medical-teal flex items-center justify-center text-lg shrink-0"><i class="fa-solid fa-syringe"></i></div>
                             <div>
@@ -950,6 +1058,8 @@
 
     <!-- FACILITIES SECTION -->
     <section id="facilities" class="py-24 hero-mesh text-white relative overflow-hidden">
+        <div class="ambient-particle w-5 h-5 left-[18%] top-[78%]" style="--dur: 7.5s; --delay: 0.4s;"></div>
+        <div class="ambient-particle w-4 h-4 left-[82%] top-[74%]" style="--dur: 6.5s; --delay: 1.8s;"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center max-w-2xl mx-auto mb-16 reveal">
                 <span class="text-emerald-300 font-bold text-xs uppercase tracking-widest">Infrastructure</span>
@@ -957,44 +1067,44 @@
                 <p class="text-slate-300">Equipped with state-of-the-art medical technology to provide comprehensive care around the clock.</p>
             </div>
 
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5 reveal">
-                <div class="glass-dark-card p-6 rounded-2xl text-center hover:-translate-y-1.5 hover:bg-white/10 transition-all">
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
+                <div class="reveal tilt-card glass-dark-card p-6 rounded-2xl text-center hover:-translate-y-1.5 hover:bg-white/10 transition-all" style="--reveal-delay: 0ms;">
                     <div class="w-12 h-12 mx-auto rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-2xl mb-3"><i class="fa-solid fa-bed-pulse"></i></div>
                     <h5 class="font-bold text-sm">Advanced ICU</h5>
                 </div>
-                <div class="glass-dark-card p-6 rounded-2xl text-center hover:-translate-y-1.5 hover:bg-white/10 transition-all">
+                <div class="reveal tilt-card glass-dark-card p-6 rounded-2xl text-center hover:-translate-y-1.5 hover:bg-white/10 transition-all" style="--reveal-delay: 60ms;">
                     <div class="w-12 h-12 mx-auto rounded-xl bg-sky-500/20 text-sky-300 flex items-center justify-center text-2xl mb-3"><i class="fa-solid fa-baby"></i></div>
                     <h5 class="font-bold text-sm">NICU Facility</h5>
                 </div>
-                <div class="glass-dark-card p-6 rounded-2xl text-center hover:-translate-y-1.5 hover:bg-white/10 transition-all">
+                <div class="reveal tilt-card glass-dark-card p-6 rounded-2xl text-center hover:-translate-y-1.5 hover:bg-white/10 transition-all" style="--reveal-delay: 120ms;">
                     <div class="w-12 h-12 mx-auto rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-2xl mb-3"><i class="fa-solid fa-scissors"></i></div>
                     <h5 class="font-bold text-sm">Modern OTs</h5>
                 </div>
-                <div class="glass-dark-card p-6 rounded-2xl text-center hover:-translate-y-1.5 hover:bg-white/10 transition-all">
+                <div class="reveal tilt-card glass-dark-card p-6 rounded-2xl text-center hover:-translate-y-1.5 hover:bg-white/10 transition-all" style="--reveal-delay: 180ms;">
                     <div class="w-12 h-12 mx-auto rounded-xl bg-sky-500/20 text-sky-300 flex items-center justify-center text-2xl mb-3"><i class="fa-solid fa-microscope"></i></div>
                     <h5 class="font-bold text-sm">Pathology</h5>
                 </div>
-                <div class="glass-dark-card p-6 rounded-2xl text-center hover:-translate-y-1.5 hover:bg-white/10 transition-all">
+                <div class="reveal tilt-card glass-dark-card p-6 rounded-2xl text-center hover:-translate-y-1.5 hover:bg-white/10 transition-all" style="--reveal-delay: 240ms;">
                     <div class="w-12 h-12 mx-auto rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-2xl mb-3"><i class="fa-solid fa-x-ray"></i></div>
                     <h5 class="font-bold text-sm">Digital X-Ray</h5>
                 </div>
-                <div class="glass-dark-card p-6 rounded-2xl text-center hover:-translate-y-1.5 hover:bg-white/10 transition-all">
+                <div class="reveal tilt-card glass-dark-card p-6 rounded-2xl text-center hover:-translate-y-1.5 hover:bg-white/10 transition-all" style="--reveal-delay: 300ms;">
                     <div class="w-12 h-12 mx-auto rounded-xl bg-sky-500/20 text-sky-300 flex items-center justify-center text-2xl mb-3"><i class="fa-solid fa-heart-pulse"></i></div>
                     <h5 class="font-bold text-sm">ECG Services</h5>
                 </div>
-                <div class="glass-dark-card p-6 rounded-2xl text-center hover:-translate-y-1.5 hover:bg-white/10 transition-all">
+                <div class="reveal tilt-card glass-dark-card p-6 rounded-2xl text-center hover:-translate-y-1.5 hover:bg-white/10 transition-all" style="--reveal-delay: 360ms;">
                     <div class="w-12 h-12 mx-auto rounded-xl bg-amber-500/20 text-amber-300 flex items-center justify-center text-2xl mb-3"><i class="fa-solid fa-sun"></i></div>
                     <h5 class="font-bold text-sm">Day Care</h5>
                 </div>
-                <div class="glass-dark-card p-6 rounded-2xl text-center hover:-translate-y-1.5 hover:bg-white/10 transition-all">
+                <div class="reveal tilt-card glass-dark-card p-6 rounded-2xl text-center hover:-translate-y-1.5 hover:bg-white/10 transition-all" style="--reveal-delay: 420ms;">
                     <div class="w-12 h-12 mx-auto rounded-xl bg-sky-500/20 text-sky-300 flex items-center justify-center text-2xl mb-3"><i class="fa-solid fa-user-nurse"></i></div>
                     <h5 class="font-bold text-sm">OPD &amp; IPD</h5>
                 </div>
-                <div class="glass-dark-card p-6 rounded-2xl text-center hover:-translate-y-1.5 hover:bg-white/10 transition-all">
+                <div class="reveal tilt-card glass-dark-card p-6 rounded-2xl text-center hover:-translate-y-1.5 hover:bg-white/10 transition-all" style="--reveal-delay: 480ms;">
                     <div class="w-12 h-12 mx-auto rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-2xl mb-3"><i class="fa-solid fa-pills"></i></div>
                     <h5 class="font-bold text-sm">24x7 Pharmacy</h5>
                 </div>
-                <div class="glass-dark-card p-6 rounded-2xl text-center hover:-translate-y-1.5 bg-red-500/20 border-red-400/40 transition-all">
+                <div class="reveal tilt-card glass-dark-card p-6 rounded-2xl text-center hover:-translate-y-1.5 bg-red-500/20 border-red-400/40 transition-all" style="--reveal-delay: 540ms;">
                     <div class="w-12 h-12 mx-auto rounded-xl bg-red-500/30 text-white flex items-center justify-center text-2xl mb-3"><i class="fa-solid fa-ambulance"></i></div>
                     <h5 class="font-bold text-sm">24x7 Ambulance</h5>
                 </div>
@@ -1015,10 +1125,10 @@
                 </div>
             </div>
             <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-                <a href="tel:8542929429" class="px-7 py-3.5 rounded-xl bg-white text-emergency font-extrabold text-lg shadow-lg hover:bg-red-50 transition-colors flex items-center justify-center gap-2.5">
+                <a href="tel:8542929429" class="btn-sheen px-7 py-3.5 rounded-xl bg-white text-emergency font-extrabold text-lg shadow-lg hover:bg-red-50 transition-colors flex items-center justify-center gap-2.5">
                     <i class="fa-solid fa-phone-volume"></i> 85429 29429
                 </a>
-                <a href="tel:9874054557" class="px-7 py-3.5 rounded-xl bg-medical-navy/90 text-white font-extrabold text-lg shadow-lg hover:bg-medical-navy transition-colors flex items-center justify-center gap-2.5">
+                <a href="tel:9874054557" class="btn-sheen px-7 py-3.5 rounded-xl bg-medical-navy/90 text-white font-extrabold text-lg shadow-lg hover:bg-medical-navy transition-colors flex items-center justify-center gap-2.5">
                     <i class="fa-solid fa-phone"></i> 9874054557
                 </a>
             </div>
@@ -1039,19 +1149,19 @@
                     </p>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                        <div class="bg-white p-4 rounded-2xl shadow-soft border border-slate-100 flex items-center gap-3.5">
+                        <div class="bg-white p-4 rounded-2xl shadow-soft border border-slate-100 flex items-center gap-3.5 hover:-translate-y-0.5 transition-transform">
                             <div class="w-10 h-10 rounded-xl bg-emerald-50 text-medical-teal flex items-center justify-center shrink-0"><i class="fa-solid fa-tent"></i></div>
                             <span class="font-bold text-medical-navy text-sm">Free Village Health Camps</span>
                         </div>
-                        <div class="bg-white p-4 rounded-2xl shadow-soft border border-slate-100 flex items-center gap-3.5">
+                        <div class="bg-white p-4 rounded-2xl shadow-soft border border-slate-100 flex items-center gap-3.5 hover:-translate-y-0.5 transition-transform">
                             <div class="w-10 h-10 rounded-xl bg-sky-50 text-medical-blue flex items-center justify-center shrink-0"><i class="fa-solid fa-users"></i></div>
                             <span class="font-bold text-medical-navy text-sm">Rural Healthcare Programs</span>
                         </div>
-                        <div class="bg-white p-4 rounded-2xl shadow-soft border border-slate-100 flex items-center gap-3.5">
+                        <div class="bg-white p-4 rounded-2xl shadow-soft border border-slate-100 flex items-center gap-3.5 hover:-translate-y-0.5 transition-transform">
                             <div class="w-10 h-10 rounded-xl bg-emerald-50 text-medical-teal flex items-center justify-center shrink-0"><i class="fa-solid fa-stethoscope"></i></div>
                             <span class="font-bold text-medical-navy text-sm">Community Checkup Drives</span>
                         </div>
-                        <div class="bg-white p-4 rounded-2xl shadow-soft border border-slate-100 flex items-center gap-3.5">
+                        <div class="bg-white p-4 rounded-2xl shadow-soft border border-slate-100 flex items-center gap-3.5 hover:-translate-y-0.5 transition-transform">
                             <div class="w-10 h-10 rounded-xl bg-sky-50 text-medical-blue flex items-center justify-center shrink-0"><i class="fa-solid fa-shield-virus"></i></div>
                             <span class="font-bold text-medical-navy text-sm">Preventive Healthcare Initiatives</span>
                         </div>
@@ -1071,16 +1181,16 @@
                 </div>
 
                 <!-- Right Column: Community Camp Full Uncut Image -->
-                <div class="lg:col-span-6 reveal">
-                    <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white group">
-                        <img src="Images/7.png" alt="Health Camp" class="w-full h-auto block group-hover:scale-[1.02] transition-transform duration-700" onerror="this.src='https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1000&q=80'">
+                <div class="lg:col-span-6 reveal" style="--reveal-delay: 120ms;">
+                    <div class="tilt-card rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white group">
+                        <img src="Images/7.png" loading="lazy" alt="Health Camp" class="w-full h-auto block group-hover:scale-[1.02] transition-transform duration-700" onerror="this.src='https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1000&q=80'">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- TESTIMONIALS SECTION -->
+    <!-- TESTIMONIALS SECTION (Auto-rotates ONLY when visible in viewport) -->
     <section id="testimonials" class="py-24 bg-white relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14 reveal">
@@ -1104,8 +1214,8 @@
         </div>
     </section>
 
-    <!-- HOSPITAL INFRASTRUCTURE GALLERY (Adaptive Uncut Frame) -->
-    <section id="gallery" class="py-24 bg-medical-navy text-white relative">
+    <!-- HOSPITAL INFRASTRUCTURE GALLERY (Auto-rotates ONLY when visible in viewport) -->
+    <section id="gallery" class="py-24 bg-medical-navy text-white relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 reveal">
                 <div>
@@ -1147,9 +1257,9 @@
                 <p class="text-slate-600 text-sm sm:text-base">Quick answers about our accreditations, cashless treatments, timings, and appointments.</p>
             </div>
 
-            <div class="space-y-4 reveal" id="faq-accordion">
+            <div class="space-y-4" id="faq-accordion">
                 <!-- FAQ 1: NABH Approved & ISO -->
-                <div class="faq-item open bg-medical-light/60 border border-slate-200/80 rounded-2xl transition-all">
+                <div class="reveal faq-item open bg-medical-light/60 border border-slate-200/80 rounded-2xl transition-all hover:border-medical-teal/50" style="--reveal-delay: 0ms;">
                     <button type="button" onclick="toggleFaq(this)" class="w-full px-6 py-5 text-left flex items-center justify-between gap-4">
                         <span class="font-display font-bold text-medical-navy text-base sm:text-lg">Is Janseva Hospital &amp; Trauma Centre NABH Approved and certified?</span>
                         <span class="faq-icon w-8 h-8 rounded-full bg-white text-medical-teal flex items-center justify-center shrink-0 shadow-sm transition-transform duration-300">
@@ -1166,7 +1276,7 @@
                 </div>
 
                 <!-- FAQ 2: Ayushman Bharat -->
-                <div class="faq-item bg-medical-light/60 border border-slate-200/80 rounded-2xl transition-all">
+                <div class="reveal faq-item bg-medical-light/60 border border-slate-200/80 rounded-2xl transition-all hover:border-medical-teal/50" style="--reveal-delay: 60ms;">
                     <button type="button" onclick="toggleFaq(this)" class="w-full px-6 py-5 text-left flex items-center justify-between gap-4">
                         <span class="font-display font-bold text-medical-navy text-base sm:text-lg">Is cashless treatment available under Ayushman Bharat PM-JAY?</span>
                         <span class="faq-icon w-8 h-8 rounded-full bg-white text-medical-teal flex items-center justify-center shrink-0 shadow-sm transition-transform duration-300">
@@ -1183,7 +1293,7 @@
                 </div>
 
                 <!-- FAQ 3: Timings & Emergency -->
-                <div class="faq-item bg-medical-light/60 border border-slate-200/80 rounded-2xl transition-all">
+                <div class="reveal faq-item bg-medical-light/60 border border-slate-200/80 rounded-2xl transition-all hover:border-medical-teal/50" style="--reveal-delay: 120ms;">
                     <button type="button" onclick="toggleFaq(this)" class="w-full px-6 py-5 text-left flex items-center justify-between gap-4">
                         <span class="font-display font-bold text-medical-navy text-base sm:text-lg">What are the OPD timings and 24×7 emergency services?</span>
                         <span class="faq-icon w-8 h-8 rounded-full bg-white text-medical-teal flex items-center justify-center shrink-0 shadow-sm transition-transform duration-300">
@@ -1200,7 +1310,7 @@
                 </div>
 
                 <!-- FAQ 4: Specialities -->
-                <div class="faq-item bg-medical-light/60 border border-slate-200/80 rounded-2xl transition-all">
+                <div class="reveal faq-item bg-medical-light/60 border border-slate-200/80 rounded-2xl transition-all hover:border-medical-teal/50" style="--reveal-delay: 180ms;">
                     <button type="button" onclick="toggleFaq(this)" class="w-full px-6 py-5 text-left flex items-center justify-between gap-4">
                         <span class="font-display font-bold text-medical-navy text-base sm:text-lg">Which medical and surgical departments are available?</span>
                         <span class="faq-icon w-8 h-8 rounded-full bg-white text-medical-teal flex items-center justify-center shrink-0 shadow-sm transition-transform duration-300">
@@ -1217,7 +1327,7 @@
                 </div>
 
                 <!-- FAQ 5: Booking -->
-                <div class="faq-item bg-medical-light/60 border border-slate-200/80 rounded-2xl transition-all">
+                <div class="reveal faq-item bg-medical-light/60 border border-slate-200/80 rounded-2xl transition-all hover:border-medical-teal/50" style="--reveal-delay: 240ms;">
                     <button type="button" onclick="toggleFaq(this)" class="w-full px-6 py-5 text-left flex items-center justify-between gap-4">
                         <span class="font-display font-bold text-medical-navy text-base sm:text-lg">How do I book an appointment or visit the hospital?</span>
                         <span class="faq-icon w-8 h-8 rounded-full bg-white text-medical-teal flex items-center justify-center shrink-0 shadow-sm transition-transform duration-300">
@@ -1290,8 +1400,8 @@
                     <div class="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between">
                         <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Connect With Us</span>
                         <div class="flex gap-3">
-                            <a href="https://www.facebook.com/jansevahospitalvaranasi.in" target="_blank" aria-label="Facebook" class="w-10 h-10 rounded-xl bg-medical-blue text-white flex items-center justify-center hover:opacity-90 transition-opacity shadow-sm"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="https://www.instagram.com/jansevahospitalvaranasi/" target="_blank" aria-label="Instagram" class="w-10 h-10 rounded-xl bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 text-white flex items-center justify-center hover:opacity-90 transition-opacity shadow-sm"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/jansevahospitalvaranasi.in" target="_blank" aria-label="Facebook" class="w-10 h-10 rounded-xl bg-medical-blue text-white flex items-center justify-center hover:opacity-90 hover:-translate-y-0.5 transition-all shadow-sm"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/jansevahospitalvaranasi/" target="_blank" aria-label="Instagram" class="w-10 h-10 rounded-xl bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 text-white flex items-center justify-center hover:opacity-90 hover:-translate-y-0.5 transition-all shadow-sm"><i class="fa-brands fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
@@ -1311,7 +1421,7 @@
                 <!-- Branding -->
                 <div>
                     <div class="flex items-center gap-3 mb-5">
-                        <img src="Images/logo-modified.png" alt="Janseva Logo" class="h-11 w-11 object-contain bg-white rounded-full p-0.5" onerror="this.src='https://placehold.co/100x100/ffffff/0A3A66?text=JH'">
+                        <img src="Images/logo-modified.png" loading="lazy" alt="Janseva Logo" class="h-11 w-11 object-contain bg-white rounded-full p-0.5" onerror="this.src='https://placehold.co/100x100/ffffff/0A3A66?text=JH'">
                         <h3 class="font-display text-white font-bold text-lg leading-tight">Janseva Hospital &amp;<br>Trauma Centre</h3>
                     </div>
                     <p class="text-sm text-slate-400 leading-relaxed mb-4">A legacy of trust since 1997. Providing advanced, accessible, and affordable healthcare to Eastern Uttar Pradesh.</p>
@@ -1413,7 +1523,7 @@
                         <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1.5">Problem Description</label>
                         <textarea id="b-desc" rows="2" placeholder="Briefly describe symptoms or consultation need..." class="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-medical-teal outline-none"></textarea>
                     </div>
-                    <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3.5 rounded-xl transition-colors shadow-lg flex items-center justify-center gap-2">
+                    <button type="submit" class="btn-sheen w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3.5 rounded-xl transition-colors shadow-lg flex items-center justify-center gap-2">
                         <i class="fa-brands fa-whatsapp text-xl"></i> Book via WhatsApp
                     </button>
                 </form>
@@ -1427,8 +1537,13 @@
         <img id="lightbox-img" src="" alt="Gallery Preview" class="max-w-full max-h-[88vh] rounded-2xl shadow-2xl object-contain" onclick="event.stopPropagation()">
     </div>
 
+    <!-- BACK TO TOP BUTTON -->
+    <button id="back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})" aria-label="Back to Top" class="hidden-btn fixed bottom-24 right-6 z-40 w-12 h-12 rounded-2xl bg-white text-medical-navy border border-slate-200 shadow-lg hover:bg-medical-navy hover:text-white transition-all flex items-center justify-center">
+        <i class="fa-solid fa-arrow-up text-sm"></i>
+    </button>
+
     <!-- FLOATING WHATSAPP BUTTON -->
-    <a href="https://wa.me/919651796001?text=Hello%20Janseva%20Hospital,%20I%20would%20like%20to%20know%20more%20about%20your%20services." target="_blank" aria-label="Chat on WhatsApp" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-2xl flex items-center justify-center text-3xl shadow-xl hover:scale-110 transition-all animate-float">
+    <a href="https://wa.me/919651796001?text=Hello%20Janseva%20Hospital,%20I%20would%20like%20to%20know%20more%20about%20your%20services." target="_blank" aria-label="Chat on WhatsApp" class="fixed bottom-6 right-6 z-40 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-2xl flex items-center justify-center text-3xl shadow-xl hover:scale-110 transition-all animate-float">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
@@ -1468,7 +1583,7 @@
         </div>
     </div>
 
-    <button onclick="toggleChatbot()" id="chat-toggle-btn" aria-label="Open Janseva Assistant" class="fixed bottom-6 left-6 z-50 bg-medical-navy hover:bg-medical-teal text-white px-4 h-14 rounded-2xl flex items-center gap-2.5 shadow-xl hover:scale-105 transition-all">
+    <button onclick="toggleChatbot()" id="chat-toggle-btn" aria-label="Open Janseva Assistant" class="fixed bottom-6 left-6 z-40 bg-medical-navy hover:bg-medical-teal text-white px-4 h-14 rounded-2xl flex items-center gap-2.5 shadow-xl hover:scale-105 transition-all">
         <i class="fa-solid fa-message text-lg text-emerald-300"></i>
         <span class="hidden sm:inline font-display font-bold text-xs tracking-wide">Ask Assistant</span>
     </button>
@@ -1477,13 +1592,40 @@
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // 1. Scroll Progress Bar
+        // 1. Scroll Progress Bar + Sticky Navbar Elevation + Back to Top + Active Nav Highlight
+        const navbarEl = document.getElementById('navbar');
+        const backToTopBtn = document.getElementById('back-to-top');
+        const navLinks = document.querySelectorAll('#desktop-nav .nav-link');
+        const trackedSections = ['home', 'about', 'specialities', 'doctors', 'testimonials', 'faqs', 'contact']
+            .map(id => document.getElementById(id))
+            .filter(Boolean);
+
         window.addEventListener('scroll', () => {
             const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
             document.getElementById('scroll-progress').style.width = scrolled + '%';
-        });
+
+            navbarEl.classList.toggle('scrolled', winScroll > 36);
+
+            if (winScroll > 500) {
+                backToTopBtn.classList.remove('hidden-btn');
+            } else {
+                backToTopBtn.classList.add('hidden-btn');
+            }
+
+            // Active nav tracking
+            const scrollPos = winScroll + 140;
+            let activeId = 'home';
+            for (const sec of trackedSections) {
+                if (sec.offsetTop <= scrollPos) {
+                    activeId = sec.id;
+                }
+            }
+            navLinks.forEach(link => {
+                link.classList.toggle('nav-active', link.dataset.section === activeId);
+            });
+        }, { passive: true });
 
         // 2. Mobile Menu Toggle
         const mobileMenu = document.getElementById('mobile-menu');
@@ -1495,7 +1637,7 @@
             link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
         });
 
-        // 3. Spotlight Card Cursor Tracking
+        // 3. Spotlight Card Cursor Tracking & Subtle 3D Tilt on Desktop
         document.querySelectorAll('.spotlight-card').forEach(card => {
             card.addEventListener('mousemove', e => {
                 const rect = card.getBoundingClientRect();
@@ -1504,7 +1646,21 @@
             });
         });
 
-        // 4. Adaptive Full-Image Hero Showcase Slider (No Cut / No Crop)
+        if (window.matchMedia('(pointer: fine)').matches) {
+            document.querySelectorAll('.tilt-card').forEach(card => {
+                card.addEventListener('mousemove', e => {
+                    const rect = card.getBoundingClientRect();
+                    const x = (e.clientX - rect.left) / rect.width - 0.5;
+                    const y = (e.clientY - rect.top) / rect.height - 0.5;
+                    card.style.transform = `perspective(900px) rotateX(${(-y * 5).toFixed(2)}deg) rotateY(${(x * 5).toFixed(2)}deg) translateY(-3px)`;
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = '';
+                });
+            });
+        }
+
+        // 4. Adaptive Full-Image Hero Showcase Slider (Runs ONLY when #home is visible)
         const heroSlidesData = [
             { src: 'Images/2.png', caption: 'Multi-Speciality Surgical & Trauma Care Centre', fallback: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=80' },
             { src: 'Images/9.png', caption: 'Trusted Healthcare in Varanasi Since 1997', fallback: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80' },
@@ -1516,12 +1672,17 @@
         const heroDotsEl = document.getElementById('hero-slider-dots');
         const heroCaptionEl = document.getElementById('hero-slide-caption');
         let currentHeroSlide = 0;
+        let isHeroVisible = true;
+        let heroTimer = null;
 
         heroSlidesData.forEach((item, i) => {
             const dot = document.createElement('button');
             dot.setAttribute('aria-label', `Slide ${i + 1}`);
             dot.className = `h-1.5 rounded-full transition-all ${i === 0 ? 'w-6 bg-emerald-400' : 'w-2 bg-white/40'}`;
-            dot.onclick = () => goToHeroSlide(i);
+            dot.onclick = () => {
+                goToHeroSlide(i);
+                resetHeroTimer();
+            };
             heroDotsEl.appendChild(dot);
         });
 
@@ -1539,7 +1700,26 @@
             dots[currentHeroSlide].className = 'h-1.5 w-6 rounded-full bg-emerald-400 transition-all';
             heroCaptionEl.textContent = slide.caption;
         }
-        setInterval(() => goToHeroSlide((currentHeroSlide + 1) % heroSlidesData.length), 3600);
+
+        function syncHeroPlayback() {
+            const shouldPlay = isHeroVisible && !document.hidden;
+            if (shouldPlay && !heroTimer) {
+                heroTimer = setInterval(() => {
+                    goToHeroSlide((currentHeroSlide + 1) % heroSlidesData.length);
+                }, 3600);
+            } else if (!shouldPlay && heroTimer) {
+                clearInterval(heroTimer);
+                heroTimer = null;
+            }
+        }
+
+        function resetHeroTimer() {
+            if (heroTimer) {
+                clearInterval(heroTimer);
+                heroTimer = null;
+            }
+            syncHeroPlayback();
+        }
 
         // 5. Scroll Reveal & Counter Animation
         const revealObserver = new IntersectionObserver((entries) => {
@@ -1570,7 +1750,7 @@
             requestAnimationFrame(tick);
         }
 
-        // 6. Ayushman Bharat Interactive Step Info
+        // 6. Ayushman Bharat Interactive Step Info + Progress Bar
         const ayushmanStepDetails = [
             "<strong>Step 1 — Registration:</strong> Bring your Ayushman Bharat Golden Card / Aadhaar to our dedicated PM-JAY helpdesk at reception.",
             "<strong>Step 2 — Verification:</strong> Quick biometric / e-KYC verification is completed immediately by our Ayushman Mitra team.",
@@ -1585,14 +1765,15 @@
             buttons.forEach((btn, i) => {
                 const iconBox = btn.querySelector('div');
                 if (i === idx) {
-                    btn.className = 'ayush-step active group p-4 rounded-2xl border-2 border-medical-teal bg-medical-mint/60 text-center transition-all shadow-sm';
+                    btn.className = 'ayush-step active group p-4 rounded-2xl border-2 border-medical-teal bg-medical-mint/60 text-center transition-all shadow-sm hover:-translate-y-1';
                     iconBox.className = 'w-12 h-12 mx-auto rounded-xl bg-medical-teal text-white flex items-center justify-center text-xl mb-3 shadow-sm';
                 } else {
-                    btn.className = 'ayush-step group p-4 rounded-2xl border border-slate-200 bg-white hover:border-medical-teal/60 text-center transition-all';
+                    btn.className = 'ayush-step group p-4 rounded-2xl border border-slate-200 bg-white hover:border-medical-teal/60 text-center transition-all hover:-translate-y-1';
                     iconBox.className = 'w-12 h-12 mx-auto rounded-xl bg-slate-100 text-medical-blue group-hover:bg-medical-teal group-hover:text-white flex items-center justify-center text-xl mb-3 transition-colors';
                 }
             });
             document.getElementById('ayushman-step-text').innerHTML = ayushmanStepDetails[idx];
+            document.getElementById('ayushman-progress').style.width = (((idx + 1) / 6) * 100).toFixed(2) + '%';
         }
 
         // 7. Doctor Category Filter
@@ -1612,7 +1793,7 @@
             });
         }
 
-        // 8. Testimonials Carousel
+        // 8. Testimonials Carousel (Runs ONLY when #testimonials is visible in viewport)
         const reviews = [
             { name: "Jyoti Yadav", time: "4 weeks ago", text: "It is a very good hospital. My mother had a free operation for kidney stones done by Ayushman. Then my aunt's bone operation was done very well." },
             { name: "Anoop", time: "3 months ago", text: "Staffs and doctors behaviour are so good. Cleaning and hygiene is so fair in the hospital." },
@@ -1626,6 +1807,9 @@
         const testSlider = document.getElementById('testimonial-slider');
         const testDots = document.getElementById('testimonial-dots');
         let currentTest = 0;
+        let isTestVisible = false;
+        let isTestHovered = false;
+        let testTimer = null;
 
         reviews.forEach((r, i) => {
             const slide = document.createElement('div');
@@ -1655,7 +1839,10 @@
             const dot = document.createElement('button');
             dot.setAttribute('aria-label', `Review ${i + 1}`);
             dot.className = `h-2 rounded-full transition-all ${i === 0 ? 'w-7 bg-medical-teal' : 'w-2 bg-slate-300'}`;
-            dot.onclick = () => goToTestimonial(i);
+            dot.onclick = () => {
+                goToTestimonial(i);
+                resetTestTimer();
+            };
             testDots.appendChild(dot);
         });
 
@@ -1673,30 +1860,49 @@
             });
         }
 
+        function syncTestPlayback() {
+            const shouldPlay = isTestVisible && !isTestHovered && !document.hidden;
+            if (shouldPlay && !testTimer) {
+                testTimer = setInterval(() => {
+                    const next = currentTest >= getTestMaxIndex() ? 0 : currentTest + 1;
+                    goToTestimonial(next);
+                }, 4000);
+            } else if (!shouldPlay && testTimer) {
+                clearInterval(testTimer);
+                testTimer = null;
+            }
+        }
+
+        function resetTestTimer() {
+            if (testTimer) {
+                clearInterval(testTimer);
+                testTimer = null;
+            }
+            syncTestPlayback();
+        }
+
         document.getElementById('test-next').onclick = () => {
             const next = currentTest >= getTestMaxIndex() ? 0 : currentTest + 1;
             goToTestimonial(next);
+            resetTestTimer();
         };
         document.getElementById('test-prev').onclick = () => {
             const prev = currentTest <= 0 ? getTestMaxIndex() : currentTest - 1;
             goToTestimonial(prev);
+            resetTestTimer();
         };
 
-        let testInterval = setInterval(() => {
-            const next = currentTest >= getTestMaxIndex() ? 0 : currentTest + 1;
-            goToTestimonial(next);
-        }, 4000);
-
-        document.getElementById('testimonial-wrapper').addEventListener('mouseenter', () => clearInterval(testInterval));
+        document.getElementById('testimonial-wrapper').addEventListener('mouseenter', () => {
+            isTestHovered = true;
+            syncTestPlayback();
+        });
         document.getElementById('testimonial-wrapper').addEventListener('mouseleave', () => {
-            testInterval = setInterval(() => {
-                const next = currentTest >= getTestMaxIndex() ? 0 : currentTest + 1;
-                goToTestimonial(next);
-            }, 4000);
+            isTestHovered = false;
+            syncTestPlayback();
         });
         window.addEventListener('resize', () => goToTestimonial(currentTest));
 
-        // 9. Adaptive Uncut Infrastructure Gallery + Lightbox
+        // 9. Adaptive Uncut Infrastructure Gallery + Lightbox (Runs ONLY when #gallery is visible in viewport)
         const galleryData = {
             'Building': ['Images/1.png', 'Images/5.png', 'Images/2.png', 'Images/7.png'],
             'OT': ['https://images.unsplash.com/photo-1551076805-e1869033e561', 'Images/6.png', 'Images/5.png'],
@@ -1707,7 +1913,9 @@
         const galThumbs = document.getElementById('gallery-thumbs');
         let currentGalIndex = 0;
         let currentCategory = 'Building';
-        let galInterval;
+        let isGalleryVisible = false;
+        let isLightboxOpen = false;
+        let galTimer = null;
 
         function buildImgUrl(src) {
             return src.startsWith('http') ? `${src}?auto=format&fit=crop&w=1200&q=80` : src;
@@ -1722,14 +1930,18 @@
                 const fullUrl = buildImgUrl(src);
                 const thumb = document.createElement('button');
                 thumb.className = `h-14 sm:h-16 rounded-xl overflow-hidden border-2 bg-black/30 p-0.5 shrink-0 transition-all ${i === 0 ? 'border-emerald-400 scale-105 opacity-100' : 'border-transparent opacity-60 hover:opacity-100'}`;
-                thumb.innerHTML = `<img src="${fullUrl}" alt="Thumbnail ${i + 1}" class="h-full w-auto max-w-[110px] object-contain">`;
-                thumb.onclick = () => { currentGalIndex = i; updateGalleryDisplay(); resetGalInterval(); };
+                thumb.innerHTML = `<img src="${fullUrl}" loading="lazy" alt="Thumbnail ${i + 1}" class="h-full w-auto max-w-[110px] object-contain">`;
+                thumb.onclick = () => {
+                    currentGalIndex = i;
+                    updateGalleryDisplay();
+                    resetGalTimer();
+                };
                 galThumbs.appendChild(thumb);
             });
 
             currentGalIndex = 0;
             updateGalleryDisplay();
-            resetGalInterval();
+            resetGalTimer();
         }
 
         function updateGalleryDisplay() {
@@ -1757,13 +1969,27 @@
             currentGalIndex = (currentGalIndex - 1 + len) % len;
             updateGalleryDisplay();
         }
-        function resetGalInterval() {
-            clearInterval(galInterval);
-            galInterval = setInterval(nextGalImage, 3500);
+
+        function syncGalleryPlayback() {
+            const shouldPlay = isGalleryVisible && !isLightboxOpen && !document.hidden;
+            if (shouldPlay && !galTimer) {
+                galTimer = setInterval(nextGalImage, 3500);
+            } else if (!shouldPlay && galTimer) {
+                clearInterval(galTimer);
+                galTimer = null;
+            }
         }
 
-        document.getElementById('gal-next').onclick = () => { nextGalImage(); resetGalInterval(); };
-        document.getElementById('gal-prev').onclick = () => { prevGalImage(); resetGalInterval(); };
+        function resetGalTimer() {
+            if (galTimer) {
+                clearInterval(galTimer);
+                galTimer = null;
+            }
+            syncGalleryPlayback();
+        }
+
+        document.getElementById('gal-next').onclick = () => { nextGalImage(); resetGalTimer(); };
+        document.getElementById('gal-prev').onclick = () => { prevGalImage(); resetGalTimer(); };
 
         document.querySelectorAll('.gallery-tab').forEach(btn => {
             btn.onclick = (e) => {
@@ -1776,16 +2002,48 @@
         });
 
         function openLightbox(src) {
+            isLightboxOpen = true;
+            syncGalleryPlayback();
             document.getElementById('lightbox-img').src = src;
             document.getElementById('lightbox-modal').classList.remove('hidden');
         }
         function closeLightbox() {
+            isLightboxOpen = false;
             document.getElementById('lightbox-modal').classList.add('hidden');
+            syncGalleryPlayback();
         }
 
         loadGallery('Building');
 
-        // 10. FAQ Accordion Logic
+        // 10. Viewport Visibility Observer for Hero, Reviews & Virtual Tour Gallery
+        const playbackObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const id = entry.target.id;
+                if (id === 'home') {
+                    isHeroVisible = entry.isIntersecting;
+                    syncHeroPlayback();
+                } else if (id === 'testimonials') {
+                    isTestVisible = entry.isIntersecting;
+                    syncTestPlayback();
+                } else if (id === 'gallery') {
+                    isGalleryVisible = entry.isIntersecting;
+                    syncGalleryPlayback();
+                }
+            });
+        }, { threshold: 0.15 });
+
+        ['home', 'testimonials', 'gallery'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) playbackObserver.observe(el);
+        });
+
+        document.addEventListener('visibilitychange', () => {
+            syncHeroPlayback();
+            syncTestPlayback();
+            syncGalleryPlayback();
+        });
+
+        // 11. FAQ Accordion Logic
         function toggleFaq(buttonEl) {
             const item = buttonEl.closest('.faq-item');
             const isOpen = item.classList.contains('open');
@@ -1795,7 +2053,7 @@
             }
         }
 
-        // 11. Booking Modal & WhatsApp Submission
+        // 12. Booking Modal & WhatsApp Submission
         function openBooking(dept = 'General', doc = '') {
             const modal = document.getElementById('appointment-modal');
             modal.classList.remove('hidden');
@@ -1835,7 +2093,7 @@
             }
         });
 
-        // 12. Janseva AI Assistant Chatbot
+        // 13. Janseva AI Assistant Chatbot
         let chatOpen = false;
         function toggleChatbot() {
             const container = document.getElementById('chatbot-container');
