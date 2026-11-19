@@ -1,17 +1,15 @@
-
-
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Janseva Hospital & Trauma Centre Varanasi | Multi-Speciality Surgical Care</title>
-    <meta name="description" content="Janseva Hospital & Research Centre (Pvt.) Ltd. in Varanasi since 1997. Advanced surgical care, trauma centre, emergency services, and Ayushman Bharat empanelled.">
-    <meta name="keywords" content="Best Hospital in Varanasi, Trauma Centre in Varanasi, Joint Replacement Hospital Varanasi, Neurosurgery Hospital Varanasi, Urology Hospital Varanasi, Ayushman Bharat Hospital Varanasi, Orthopedic Hospital Varanasi, Emergency Hospital Varanasi">
+    <title>Janseva Hospital & Trauma Centre Varanasi | Multi-Speciality Surgical & Critical Care</title>
+    <meta name="description" content="Janseva Hospital & Research Centre (Pvt.) Ltd. in Varanasi since 1997. 24x7 ICU & Critical Care, Orthopedics, Neurosurgery, Laparoscopic Surgery, Ayushman Bharat PM-JAY cashless treatment.">
+    <meta name="keywords" content="Best Hospital in Varanasi, Trauma Centre in Varanasi, ICU Hospital Varanasi, Joint Replacement Hospital Varanasi, Neurosurgery Hospital Varanasi, Urology Hospital Varanasi, Ayushman Bharat Hospital Varanasi, Orthopedic Hospital Varanasi, Emergency Hospital Varanasi, Nephrology Varanasi, Oncology Varanasi">
     
     <!-- Open Graph / Social Media -->
     <meta property="og:title" content="Janseva Hospital & Trauma Centre | Varanasi">
-    <meta property="og:description" content="25+ Years of Healthcare Excellence. ISO Certified, Ayushman Bharat Empanelled.">
+    <meta property="og:description" content="25+ Years of Healthcare Excellence. ISO Certified, Ayushman Bharat Empanelled Multi-Speciality & Trauma Centre.">
     <meta property="og:image" content="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGdXLM9hpCjpHW9DFA0yQ2TDAzYdhchYBM6cuiPdy3eB4PWvvEnISlcgwSxcMLsdcEh2iMeZ9Dy-UwXDiaOdEkoL2eOXUU8nFTRGh1SYokGhnsE4fYjw_6VSZntRBFaQzZOHjW34A=s1360-w1360-h1020-rw">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
@@ -51,8 +49,8 @@
                     },
                     boxShadow: {
                         'soft': '0 10px 40px -10px rgba(6, 40, 71, 0.08)',
-                        'card-hover': '0 22px 45px -12px rgba(10, 58, 102, 0.16)',
-                        'glow-teal': '0 0 30px rgba(13, 148, 136, 0.35)',
+                        'card-hover': '0 22px 45px -12px rgba(10, 58, 102, 0.22)',
+                        'glow-teal': '0 0 32px rgba(13, 148, 136, 0.42)',
                         'glow-red': '0 0 25px rgba(220, 38, 38, 0.45)',
                     }
                 }
@@ -83,19 +81,51 @@
             left: 0;
             height: 3px;
             width: 0%;
-            background: linear-gradient(90deg, #0D9488, #38BDF8, #107C64);
+            background: linear-gradient(90deg, #0D9488, #38BDF8, #10B981);
             z-index: 100;
             transition: width 0.1s linear;
         }
 
-        /* Animated Mesh Background for Hero & Facilities */
+        /* Rich Dark Clinical Mesh Background (Hero & Infrastructure) */
         .hero-mesh {
-            background-color: #041C32;
+            background-color: #03192E;
             background-image: 
-                radial-gradient(at 15% 20%, rgba(16, 124, 100, 0.28) 0px, transparent 50%),
-                radial-gradient(at 85% 15%, rgba(14, 116, 144, 0.25) 0px, transparent 45%),
-                radial-gradient(at 70% 85%, rgba(10, 58, 102, 0.45) 0px, transparent 50%),
-                radial-gradient(at 20% 80%, rgba(13, 148, 136, 0.18) 0px, transparent 45%);
+                radial-gradient(at 14% 18%, rgba(13, 148, 136, 0.34) 0px, transparent 48%),
+                radial-gradient(at 86% 16%, rgba(14, 165, 233, 0.24) 0px, transparent 46%),
+                radial-gradient(at 68% 84%, rgba(10, 58, 102, 0.55) 0px, transparent 52%),
+                radial-gradient(at 22% 82%, rgba(16, 185, 129, 0.22) 0px, transparent 46%),
+                linear-gradient(135deg, #031527 0%, #062847 52%, #05223C 100%);
+        }
+
+        /* Dark Interactive Card Surface (Used in About, Doctors, Departments) */
+        .dark-clinical-card {
+            background: linear-gradient(145deg, #06243F 0%, #041A2E 100%);
+            border: 1px solid rgba(45, 212, 191, 0.18);
+            transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+                        border-color 0.32s ease,
+                        box-shadow 0.32s ease,
+                        background 0.32s ease;
+        }
+        .dark-clinical-card:hover {
+            transform: translateY(-6px);
+            background: linear-gradient(145deg, #093358 0%, #062540 100%);
+            border-color: rgba(45, 212, 191, 0.55);
+            box-shadow: 0 20px 42px -12px rgba(4, 28, 50, 0.55), 0 0 24px rgba(13, 148, 136, 0.22);
+        }
+
+        /* Uniform Hero Stats Bar Card */
+        .stat-dock-card {
+            background: rgba(7, 42, 71, 0.82);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(45, 212, 191, 0.24);
+            transition: all 0.3s ease;
+        }
+        .stat-dock-card:hover {
+            background: rgba(11, 58, 97, 0.92);
+            border-color: rgba(45, 212, 191, 0.6);
+            transform: translateY(-4px);
+            box-shadow: 0 14px 30px -10px rgba(13, 148, 136, 0.3);
         }
 
         /* Glassmorphism Variants */
@@ -104,30 +134,30 @@
             position: sticky;
             top: 0;
             z-index: 50;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(18px);
             -webkit-backdrop-filter: blur(18px);
             border-bottom: 1px solid rgba(10, 58, 102, 0.08);
         }
         .glass-nav.scrolled {
-            background: rgba(255, 255, 255, 0.97);
+            background: rgba(255, 255, 255, 0.98);
             box-shadow: 0 12px 32px -12px rgba(4, 28, 50, 0.16);
         }
         .glass-dark-card {
-            background: rgba(255, 255, 255, 0.06);
+            background: rgba(7, 40, 68, 0.58);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.14);
+            border: 1px solid rgba(255, 255, 255, 0.16);
         }
 
         /* Active Nav Link Pill */
         .nav-link.nav-active {
             color: #0D9488;
-            background-color: rgba(230, 244, 241, 0.85);
-            font-weight: 700;
+            background-color: rgba(230, 244, 241, 0.9);
+            font-weight: 800;
         }
 
-        /* Spotlight Hover Effect on Bento Cards */
+        /* Spotlight Cursor Hover Effect */
         .spotlight-card {
             position: relative;
             overflow: hidden;
@@ -136,7 +166,7 @@
             content: "";
             position: absolute;
             inset: 0;
-            background: radial-gradient(500px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(13, 148, 136, 0.12), transparent 45%);
+            background: radial-gradient(480px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(45, 212, 191, 0.16), transparent 45%);
             opacity: 0;
             transition: opacity 0.35s ease;
             pointer-events: none;
@@ -207,20 +237,20 @@
             100% { transform: translateX(-50%); }
         }
         @keyframes fadeImageZoom {
-            0% { opacity: 0.25; transform: scale(0.975); }
+            0% { opacity: 0.25; transform: scale(0.98); }
             100% { opacity: 1; transform: scale(1); }
         }
         @keyframes particleRise {
             0% { transform: translateY(0) translateX(0); opacity: 0; }
-            20% { opacity: 0.35; }
-            80% { opacity: 0.25; }
+            20% { opacity: 0.4; }
+            80% { opacity: 0.3; }
             100% { transform: translateY(-70px) translateX(12px); opacity: 0; }
         }
 
         .animate-float { animation: floatSlow 5.5s ease-in-out infinite; }
         .animate-orb { animation: orbDrift 10s ease-in-out infinite; }
         .animate-pulse-ring { animation: pulseRing 2.2s infinite; }
-        .fade-img-in { animation: fadeImageZoom 0.65s cubic-bezier(0.22, 1, 0.36, 1); }
+        .fade-img-in { animation: fadeImageZoom 0.55s cubic-bezier(0.22, 1, 0.36, 1); }
 
         .ecg-path {
             stroke-dasharray: 1200;
@@ -248,8 +278,8 @@
         /* Staggered Scroll Reveal */
         .reveal {
             opacity: 0;
-            transform: translateY(30px) scale(0.98);
-            transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1), transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+            transform: translateY(28px) scale(0.985);
+            transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
             transition-delay: var(--reveal-delay, 0ms);
         }
         .reveal.active {
@@ -275,7 +305,7 @@
 
         /* Subtle Dot Grid Pattern */
         .dot-grid {
-            background-image: radial-gradient(rgba(10, 58, 102, 0.12) 1px, transparent 1px);
+            background-image: radial-gradient(rgba(10, 58, 102, 0.11) 1px, transparent 1px);
             background-size: 24px 24px;
         }
 
@@ -317,9 +347,9 @@
       "name": "Janseva Hospital & Research Centre (Pvt.) Ltd.",
       "alternateName": "जनसेवा हॉस्पिटल एवं रिसर्च सेन्टर",
       "url": "https://jansevahospital.com",
-      "logo": "logo.png",
+      "logo": "Images/logo-modified.png",
       "foundingDate": "1997",
-      "description": "25+ Years of Trusted Healthcare Excellence. Multi-Speciality, Trauma Centre, and Ayushman Bharat Empanelled Hospital in Varanasi.",
+      "description": "25+ Years of Trusted Healthcare Excellence. Multi-Speciality, ICU & Critical Care, Trauma Centre, and Ayushman Bharat Empanelled Hospital in Varanasi.",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "In Front of Krishi Bhawan, GT Road, Churamanpur, Chandpur",
@@ -373,7 +403,7 @@
         </div>
     </div>
 
-    <!-- Always Sticky Top Glass Navbar -->
+    <!-- Always Sticky Top Glass Navbar (Menu Items in CAPITALS) -->
     <nav id="navbar" class="sticky top-0 w-full z-50 glass-nav transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16 md:h-20">
@@ -389,24 +419,24 @@
                     </div>
                 </a>
 
-                <!-- Desktop Navigation -->
-                <div class="hidden lg:flex items-center space-x-1 font-medium text-sm text-slate-700" id="desktop-nav">
-                    <a href="#home" data-section="home" class="nav-link nav-active px-3 py-2 rounded-lg hover:text-medical-teal hover:bg-medical-mint/60 transition-all">Home</a>
-                    <a href="#about" data-section="about" class="nav-link px-3 py-2 rounded-lg hover:text-medical-teal hover:bg-medical-mint/60 transition-all">About</a>
-                    <a href="#specialities" data-section="specialities" class="nav-link px-3 py-2 rounded-lg hover:text-medical-teal hover:bg-medical-mint/60 transition-all">Departments</a>
-                    <a href="#doctors" data-section="doctors" class="nav-link px-3 py-2 rounded-lg hover:text-medical-teal hover:bg-medical-mint/60 transition-all">Doctors</a>
-                    <a href="#testimonials" data-section="testimonials" class="nav-link px-3 py-2 rounded-lg hover:text-medical-teal hover:bg-medical-mint/60 transition-all">Reviews</a>
-                    <a href="#faqs" data-section="faqs" class="nav-link px-3 py-2 rounded-lg hover:text-medical-teal hover:bg-medical-mint/60 transition-all">FAQs</a>
-                    <a href="#contact" data-section="contact" class="nav-link px-3 py-2 rounded-lg hover:text-medical-teal hover:bg-medical-mint/60 transition-all">Contact</a>
+                <!-- Desktop Navigation (IN CAPITALS) -->
+                <div class="hidden lg:flex items-center space-x-1 font-bold text-xs tracking-wider uppercase text-slate-700" id="desktop-nav">
+                    <a href="#home" data-section="home" class="nav-link nav-active px-3 py-2 rounded-lg hover:text-medical-teal hover:bg-medical-mint/60 transition-all">HOME</a>
+                    <a href="#about" data-section="about" class="nav-link px-3 py-2 rounded-lg hover:text-medical-teal hover:bg-medical-mint/60 transition-all">ABOUT</a>
+                    <a href="#doctors" data-section="doctors" class="nav-link px-3 py-2 rounded-lg hover:text-medical-teal hover:bg-medical-mint/60 transition-all">DOCTORS</a>
+                    <a href="#specialities" data-section="specialities" class="nav-link px-3 py-2 rounded-lg hover:text-medical-teal hover:bg-medical-mint/60 transition-all">DEPARTMENTS</a>
+                    <a href="#testimonials" data-section="testimonials" class="nav-link px-3 py-2 rounded-lg hover:text-medical-teal hover:bg-medical-mint/60 transition-all">REVIEWS</a>
+                    <a href="#faqs" data-section="faqs" class="nav-link px-3 py-2 rounded-lg hover:text-medical-teal hover:bg-medical-mint/60 transition-all">FAQS</a>
+                    <a href="#contact" data-section="contact" class="nav-link px-3 py-2 rounded-lg hover:text-medical-teal hover:bg-medical-mint/60 transition-all">CONTACT</a>
                 </div>
 
                 <!-- Right Actions -->
                 <div class="hidden md:flex items-center gap-3">
-                    <button onclick="openBooking()" class="btn-sheen px-4 py-2.5 rounded-xl bg-medical-navy text-white text-xs font-bold tracking-wide hover:bg-medical-blue transition-all shadow-sm hover:-translate-y-0.5 flex items-center gap-2">
-                        <i class="fa-regular fa-calendar-check text-emerald-400"></i> Book OPD
+                    <button onclick="openBooking()" class="btn-sheen px-4 py-2.5 rounded-xl bg-medical-navy text-white text-xs font-bold uppercase tracking-wider hover:bg-medical-blue transition-all shadow-sm hover:-translate-y-0.5 flex items-center gap-2">
+                        <i class="fa-regular fa-calendar-check text-emerald-400"></i> BOOK OPD
                     </button>
-                    <a href="tel:8542929429" class="px-4 py-2.5 rounded-xl bg-emergency text-white text-xs font-bold tracking-wide animate-pulse-ring hover:bg-red-700 transition-all flex items-center gap-2">
-                        <i class="fa-solid fa-phone-volume"></i> 24×7 Emergency
+                    <a href="tel:8542929429" class="px-4 py-2.5 rounded-xl bg-emergency text-white text-xs font-bold uppercase tracking-wider animate-pulse-ring hover:bg-red-700 transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-phone-volume"></i> 24×7 EMERGENCY
                     </a>
                 </div>
 
@@ -422,25 +452,25 @@
             </div>
         </div>
 
-        <!-- Mobile Menu Drawer -->
+        <!-- Mobile Menu Drawer (IN CAPITALS) -->
         <div id="mobile-menu" class="hidden lg:hidden bg-white/95 backdrop-blur-xl border-t border-slate-100 shadow-2xl absolute w-full left-0">
-            <div class="px-4 py-4 space-y-1.5">
-                <a href="#home" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-slate-700 font-medium hover:bg-medical-mint hover:text-medical-teal">Home</a>
-                <a href="#about" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-slate-700 font-medium hover:bg-medical-mint hover:text-medical-teal">About Hospital</a>
-                <a href="#specialities" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-slate-700 font-medium hover:bg-medical-mint hover:text-medical-teal">Departments</a>
-                <a href="#doctors" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-slate-700 font-medium hover:bg-medical-mint hover:text-medical-teal">Doctors</a>
-                <a href="#testimonials" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-slate-700 font-medium hover:bg-medical-mint hover:text-medical-teal">Testimonials</a>
-                <a href="#faqs" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-slate-700 font-medium hover:bg-medical-mint hover:text-medical-teal">FAQs</a>
-                <a href="#contact" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-slate-700 font-medium hover:bg-medical-mint hover:text-medical-teal">Contact &amp; Map</a>
+            <div class="px-4 py-4 space-y-1.5 text-xs font-bold tracking-wider uppercase">
+                <a href="#home" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-slate-700 hover:bg-medical-mint hover:text-medical-teal">HOME</a>
+                <a href="#about" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-slate-700 hover:bg-medical-mint hover:text-medical-teal">ABOUT HOSPITAL</a>
+                <a href="#doctors" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-slate-700 hover:bg-medical-mint hover:text-medical-teal">DOCTORS</a>
+                <a href="#specialities" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-slate-700 hover:bg-medical-mint hover:text-medical-teal">DEPARTMENTS</a>
+                <a href="#testimonials" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-slate-700 hover:bg-medical-mint hover:text-medical-teal">REVIEWS</a>
+                <a href="#faqs" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-slate-700 hover:bg-medical-mint hover:text-medical-teal">FAQS</a>
+                <a href="#contact" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-slate-700 hover:bg-medical-mint hover:text-medical-teal">CONTACT &amp; MAP</a>
                 <div class="pt-3 grid grid-cols-2 gap-2">
-                    <button onclick="openBooking(); toggleMobileMenu();" class="py-3 rounded-xl bg-medical-navy text-white font-bold text-sm">Book Appointment</button>
-                    <a href="tel:8542929429" class="py-3 rounded-xl bg-emergency text-white font-bold text-sm text-center"><i class="fa-solid fa-phone mr-1"></i> 85429 29429</a>
+                    <button onclick="openBooking(); toggleMobileMenu();" class="py-3 rounded-xl bg-medical-navy text-white font-bold text-xs uppercase">BOOK APPOINTMENT</button>
+                    <a href="tel:8542929429" class="py-3 rounded-xl bg-emergency text-white font-bold text-xs text-center uppercase"><i class="fa-solid fa-phone mr-1"></i> 85429 29429</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- HERO SECTION (Hero Place: NABH Approved) -->
+    <!-- 1. HERO SECTION (Rich Dark Clinical Mesh + Uniform Stats Bar) -->
     <header id="home" class="relative hero-mesh text-white overflow-hidden pt-10 pb-16 lg:pt-16 lg:pb-24">
         <!-- Animated ECG Heartbeat Backdrop -->
         <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 opacity-15 pointer-events-none">
@@ -450,42 +480,45 @@
         </div>
 
         <!-- Ambient Drifting Glow Orbs & Particles -->
-        <div class="absolute -top-24 -left-24 w-96 h-96 bg-medical-teal/20 rounded-full blur-3xl pointer-events-none animate-orb"></div>
-        <div class="absolute bottom-0 right-0 w-[30rem] h-[30rem] bg-sky-500/10 rounded-full blur-3xl pointer-events-none animate-orb" style="animation-delay: 3s;"></div>
+        <div class="absolute -top-24 -left-24 w-96 h-96 bg-teal-500/25 rounded-full blur-3xl pointer-events-none animate-orb"></div>
+        <div class="absolute bottom-0 right-0 w-[30rem] h-[30rem] bg-sky-500/15 rounded-full blur-3xl pointer-events-none animate-orb" style="animation-delay: 3s;"></div>
         <div class="ambient-particle w-4 h-4 left-[12%] top-[72%]" style="--dur: 6s; --delay: 0s;"></div>
         <div class="ambient-particle w-6 h-6 left-[42%] top-[85%]" style="--dur: 8s; --delay: 1.5s;"></div>
         <div class="ambient-particle w-3 h-3 left-[78%] top-[78%]" style="--dur: 7s; --delay: 2.5s;"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
                 
                 <!-- Left Editorial Column -->
                 <div class="lg:col-span-6 reveal active">
-                    <div class="inline-flex flex-wrap items-center gap-2.5 px-4 py-1.5 rounded-full glass-dark-card text-xs font-semibold tracking-wider uppercase text-emerald-300 mb-6">
-                        <!-- <i class="fa-solid fa-certificate text-amber-400"></i> -->
-                        <span>• NABH Approved • ISO 9001:2015 Certified • Since 1997</span>
+                    <div class="inline-flex flex-wrap items-center gap-2 px-4 py-1.5 rounded-full bg-teal-500/15 border border-teal-400/35 text-xs font-bold tracking-wider uppercase text-emerald-300 mb-6 shadow-sm">
+                        <!-- <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> -->
+                        <span> • NABH Approved • ISO 9001:2015 Certified • Since 1997</span>
                     </div>
 
-                    <h1 class="font-display text-4xl sm:text-5xl xl:text-6xl font-extrabold tracking-tight leading-[1.1] mb-5">
+                    <h1 class="font-display text-3xl sm:text-5xl xl:text-6xl font-extrabold tracking-tight leading-[1.12] mb-5 text-white">
                         JANSEVA HOSPITAL <br>
-                        <span class="kinetic-gradient-text bg-gradient-to-r from-emerald-300 via-sky-300 to-teal-200 bg-clip-text text-transparent">&amp; TRAUMA CENTRE</span>
+                        <span class="kinetic-gradient-text bg-gradient-to-r from-teal-300 via-cyan-200 to-emerald-300 bg-clip-text text-transparent">&amp; TRAUMA CENTRE</span>
                     </h1>
 
-                    <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-base sm:text-lg font-semibold text-teal-200 mb-6">
-                        <span class="inline-flex items-center gap-2"><i class="fa-solid fa-scalpel text-xs text-emerald-400"></i> Advanced Surgical Care</span>
+                    <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm sm:text-lg font-semibold text-cyan-200 mb-6">
+                        <span class="inline-flex items-center gap-2"><i class="fa-solid fa-user-doctor text-xs text-emerald-400"></i> Advanced Surgical Care</span>
                         <span class="text-white/30">•</span>
-                        <span class="inline-flex items-center gap-2"><i class="fa-solid fa-truck-medical text-xs text-red-400"></i> Trauma Centre</span>
+                        <span class="inline-flex items-center gap-2"><i class="fa-solid fa-heart-pulse text-xs text-red-400"></i> Trauma Centre</span>
                         <span class="text-white/30">•</span>
-                        <span class="inline-flex items-center gap-2"><i class="fa-solid fa-heart-pulse text-xs text-sky-400"></i> Emergency Services</span>
+                        <span class="inline-flex items-center gap-2"><i class="fa-solid fa-truck-medical text-xs text-sky-400"></i> Emergency Services</span>
+                        <span class="text-white/30">•</span>
+                        <span class="inline-flex items-center gap-2"><i class="fa-solid fa-user-plus text-xs text-sky-400"></i> Multiple TPAs</span>
+                        
                     </div>
 
-                    <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mb-8">
+                    <p class="text-slate-200/90 text-sm sm:text-lg leading-relaxed max-w-2xl mb-8">
                         Serving Varanasi since 1997 with trusted healthcare, advanced surgical procedures, emergency care, critical care facilities, and Ayushman Bharat supported treatments.
                     </p>
 
                     <!-- Primary Hero CTAs -->
-                    <div class="flex flex-col sm:flex-row gap-4 mb-10">
-                        <button onclick="openBooking()" class="btn-sheen group px-7 py-4 rounded-2xl bg-gradient-to-r from-medical-teal to-emerald-500 text-white font-bold shadow-glow-teal hover:shadow-xl hover:-translate-y-1 transition-all flex items-center justify-center gap-3">
+                    <div class="flex flex-col sm:flex-row gap-3.5 sm:gap-4 mb-9">
+                        <button onclick="openBooking()" class="btn-sheen group px-7 py-4 rounded-2xl bg-gradient-to-r from-teal-500 to-emerald-500 text-white font-bold shadow-glow-teal hover:shadow-xl hover:-translate-y-1 transition-all flex items-center justify-center gap-3">
                             <i class="fa-regular fa-calendar-check text-lg"></i>
                             <span>Book Appointment</span>
                             <i class="fa-solid fa-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i>
@@ -497,14 +530,14 @@
                     </div>
 
                     <!-- Quick Interactive Pills -->
-                    <div class="flex flex-wrap items-center gap-3 text-xs text-slate-300">
-                        <a href="#ayushman" class="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/15 border border-white/10 transition-all hover:-translate-y-0.5 flex items-center gap-2">
+                    <div class="flex flex-wrap items-center gap-2.5 text-xs text-slate-200">
+                        <a href="#ayushman" class="px-3.5 py-2 rounded-xl bg-white/10 hover:bg-teal-500/30 border border-white/15 transition-all hover:-translate-y-0.5 flex items-center gap-2">
                             <i class="fa-solid fa-hands-holding-child text-emerald-400"></i> Ayushman Bharat Empanelled
                         </a>
-                        <a href="#doctors" class="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/15 border border-white/10 transition-all hover:-translate-y-0.5 flex items-center gap-2">
+                        <a href="#doctors" class="px-3.5 py-2 rounded-xl bg-white/10 hover:bg-teal-500/30 border border-white/15 transition-all hover:-translate-y-0.5 flex items-center gap-2">
                             <i class="fa-solid fa-user-doctor text-sky-400"></i> Meet 10+ Specialists
                         </a>
-                        <a href="#contact" class="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/15 border border-white/10 transition-all hover:-translate-y-0.5 flex items-center gap-2">
+                        <a href="#contact" class="px-3.5 py-2 rounded-xl bg-white/10 hover:bg-teal-500/30 border border-white/15 transition-all hover:-translate-y-0.5 flex items-center gap-2">
                             <i class="fa-solid fa-location-dot text-amber-400"></i> GT Road, Varanasi
                         </a>
                     </div>
@@ -514,7 +547,7 @@
                 <div class="lg:col-span-6 relative reveal active">
                     <div class="rounded-3xl p-3 glass-dark-card shadow-2xl">
                         <!-- Top Status Header Bar (Above Image) -->
-                        <div class="flex items-center justify-between px-2 pb-2.5 text-xs">
+                        <div class="flex flex-wrap items-center justify-between gap-2 px-2 pb-2.5 text-xs">
                             <span class="inline-flex items-center gap-2 font-semibold text-emerald-300">
                                 <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
                                 Varanasi's Trusted Care
@@ -525,8 +558,8 @@
                         </div>
 
                         <!-- Adaptive Full-Image Showcase Container -->
-                        <div class="rounded-2xl overflow-hidden bg-medical-dark/60 flex items-center justify-center">
-                            <img id="hero-active-img" src="Images/2.png" fetchpriority="high" alt="Janseva Hospital Varanasi" class="w-full h-auto max-h-[520px] object-contain block fade-img-in" onerror="this.src='https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=80'">
+                        <div class="rounded-2xl overflow-hidden bg-medical-navy/70 flex items-center justify-center">
+                            <img id="hero-active-img" src="Images/2.png" fetchpriority="high" alt="Janseva Hospital Varanasi" class="w-full h-auto max-h-[500px] object-contain block fade-img-in" onerror="this.src='https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=80'">
                         </div>
 
                         <!-- Caption & Dots Strip (Below Image, Not Overlaying Image) -->
@@ -538,34 +571,34 @@
                 </div>
             </div>
 
-            <!-- Integrated Trust Metric Dock (Staggered Cascade) -->
-            <div class="mt-14 lg:mt-20 grid grid-cols-2 md:grid-cols-5 gap-4">
-                <div class="reveal glass-dark-card rounded-2xl p-5 text-center hover:bg-white/10 hover:-translate-y-1 transition-all" style="--reveal-delay: 0ms;">
-                    <div class="font-display text-3xl font-extrabold text-white mb-1" data-counter="25">25+</div>
-                    <div class="text-[11px] font-semibold uppercase tracking-widest text-teal-200">Years Excellence</div>
+            <!-- Integrated Trust Metric Dock (ALL 5 CARDS SAME BACKGROUND COLOR) -->
+            <div class="mt-12 lg:mt-16 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5 sm:gap-4">
+                <div class="reveal stat-dock-card rounded-2xl p-5 text-center" style="--reveal-delay: 0ms;">
+                    <div class="font-display text-2xl sm:text-3xl font-extrabold text-white mb-1" data-counter="25">25+</div>
+                    <div class="text-[11px] font-bold uppercase tracking-widest text-teal-200">Years Excellence</div>
                 </div>
-                <div class="reveal glass-dark-card rounded-2xl p-5 text-center hover:bg-white/10 hover:-translate-y-1 transition-all" style="--reveal-delay: 80ms;">
-                    <div class="font-display text-3xl font-extrabold text-white mb-1" data-counter="10">10+</div>
-                    <div class="text-[11px] font-semibold uppercase tracking-widest text-teal-200">Specialists</div>
+                <div class="reveal stat-dock-card rounded-2xl p-5 text-center" style="--reveal-delay: 80ms;">
+                    <div class="font-display text-2xl sm:text-3xl font-extrabold text-white mb-1" data-counter="10">10+</div>
+                    <div class="text-[11px] font-bold uppercase tracking-widest text-teal-200">Specialists</div>
                 </div>
-                <div class="reveal glass-dark-card rounded-2xl p-5 text-center hover:bg-white/10 hover:-translate-y-1 transition-all border-red-400/30" style="--reveal-delay: 160ms;">
-                    <div class="font-display text-3xl font-extrabold text-red-400 mb-1">24×7</div>
-                    <div class="text-[11px] font-semibold uppercase tracking-widest text-red-200">Emergency Care</div>
+                <div class="reveal stat-dock-card rounded-2xl p-5 text-center" style="--reveal-delay: 160ms;">
+                    <div class="font-display text-2xl sm:text-3xl font-extrabold text-red-400 mb-1">24×7</div>
+                    <div class="text-[11px] font-bold uppercase tracking-widest text-teal-200">Emergency Care</div>
                 </div>
-                <div class="reveal glass-dark-card rounded-2xl p-5 text-center hover:bg-white/10 hover:-translate-y-1 transition-all" style="--reveal-delay: 240ms;">
-                    <div class="font-display text-3xl font-extrabold text-white mb-1" data-counter="5000">5000+</div>
-                    <div class="text-[11px] font-semibold uppercase tracking-widest text-teal-200">Procedures</div>
+                <div class="reveal stat-dock-card rounded-2xl p-5 text-center" style="--reveal-delay: 240ms;">
+                    <div class="font-display text-2xl sm:text-3xl font-extrabold text-white mb-1" data-counter="10000" data-suffix="K+">10000+</div>
+                    <div class="text-[11px] font-bold uppercase tracking-widest text-teal-200">Patients</div>
                 </div>
-                <div class="reveal col-span-2 md:col-span-1 glass-dark-card rounded-2xl p-5 flex flex-col items-center justify-center hover:bg-white/10 hover:-translate-y-1 transition-all border-emerald-400/30" style="--reveal-delay: 320ms;">
+                <div class="reveal col-span-2 sm:col-span-1 stat-dock-card rounded-2xl p-5 flex flex-col items-center justify-center" style="--reveal-delay: 320ms;">
                     <div class="text-emerald-400 text-2xl mb-1"><i class="fa-solid fa-hands-holding-child"></i></div>
-                    <div class="text-xs font-extrabold tracking-wider text-white uppercase">Ayushman Bharat</div>
+                    <div class="text-[11px] font-extrabold tracking-widest text-teal-200 uppercase">Ayushman Bharat</div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- ABOUT SECTION (Full Uncut Image + Keeps Bottom Floating Accreditation Card) -->
-    <section id="about" class="py-20 lg:py-28 bg-white relative dot-grid">
+    <!-- 2. ABOUT SECTION (Full Uncut Image + Keeps Bottom Floating Card + ALL 4 PILLAR CARDS DARK) -->
+    <section id="about" class="py-16 sm:py-24 bg-white relative dot-grid">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
                 
@@ -576,7 +609,7 @@
                         <img src="Images/9.png" loading="lazy" alt="Janseva Hospital Building" class="w-full h-auto block hover:scale-[1.02] transition-transform duration-700" onerror="this.src='https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1000&q=80'">
                     </div>
 
-                    <!-- Floating Accreditation Card (Extra Place 2: NABH Approved — Retained as requested) -->
+                    <!-- Floating Accreditation Card (Extra Place 2: NABH Approved — Retained in About Us) -->
                     <div class="mt-4 sm:mt-0 sm:absolute sm:-bottom-6 sm:-right-4 bg-white p-4 sm:p-5 rounded-2xl shadow-card-hover border border-slate-100 flex items-center gap-4 z-20 relative animate-float">
                         <div class="h-12 w-12 rounded-xl bg-gradient-to-br from-medical-blue to-medical-teal flex items-center justify-center text-white text-xl shadow-md shrink-0">
                             <i class="fa-solid fa-certificate"></i>
@@ -593,12 +626,12 @@
                     <div class="inline-flex items-center gap-2 text-medical-teal font-bold text-xs uppercase tracking-widest mb-3">
                         <span class="w-8 h-[2px] bg-medical-teal"></span> About Us
                     </div>
-                    <h2 class="font-display text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-medical-navy leading-tight mb-3">
+                    <h2 class="font-display text-2xl sm:text-4xl lg:text-[42px] font-extrabold text-medical-navy leading-tight mb-3">
                         Janseva Hospital &amp; Trauma Centre Pvt Ltd.
                     </h2>
-                    <p class="text-lg font-semibold text-medical-teal mb-6">A Legacy of Trust Since 1997 (Incorporated 2001)</p>
+                    <p class="text-base sm:text-lg font-semibold text-medical-teal mb-6">A Legacy of Trust Since 1997 (Incorporated 2001)</p>
 
-                    <div class="space-y-4 text-slate-600 leading-relaxed mb-8">
+                    <div class="space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed mb-8">
                         <p>
                             Janseva Hospital &amp; Trauma Centre has been serving patients since 1997 (Incorporated 2001) with a resolute commitment to affordable, accessible, and advanced healthcare.
                         </p>
@@ -607,23 +640,23 @@
                         </p>
                     </div>
 
-                    <!-- 4 Core Pillar Cards -->
+                    <!-- 4 Core Pillar Cards (ALL 4 DARK CARDS) -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                        <div class="p-4 rounded-2xl bg-medical-light border border-teal-100/70 flex items-center gap-3.5 hover:shadow-md hover:-translate-y-0.5 transition-all">
-                            <div class="w-10 h-10 rounded-xl bg-white text-medical-teal flex items-center justify-center shadow-sm"><i class="fa-solid fa-truck-medical"></i></div>
-                            <span class="font-bold text-medical-navy text-sm">Trauma Care</span>
+                        <div class="spotlight-card dark-clinical-card p-4 rounded-2xl flex items-center gap-3.5 text-white group">
+                            <div class="w-11 h-11 rounded-xl bg-teal-500/20 text-teal-300 group-hover:bg-teal-400 group-hover:text-medical-navy flex items-center justify-center text-lg transition-colors shrink-0"><i class="fa-solid fa-truck-medical"></i></div>
+                            <span class="font-bold text-white text-sm">Trauma Care</span>
                         </div>
-                        <div class="p-4 rounded-2xl bg-medical-light border border-teal-100/70 flex items-center gap-3.5 hover:shadow-md hover:-translate-y-0.5 transition-all">
-                            <div class="w-10 h-10 rounded-xl bg-white text-medical-blue flex items-center justify-center shadow-sm"><i class="fa-solid fa-stethoscope"></i></div>
-                            <span class="font-bold text-medical-navy text-sm">Surgical Hub</span>
+                        <div class="spotlight-card dark-clinical-card p-4 rounded-2xl flex items-center gap-3.5 text-white group">
+                            <div class="w-11 h-11 rounded-xl bg-sky-500/20 text-sky-300 group-hover:bg-sky-400 group-hover:text-medical-navy flex items-center justify-center text-lg transition-colors shrink-0"><i class="fa-solid fa-stethoscope"></i></div>
+                            <span class="font-bold text-white text-sm">Surgical Hub</span>
                         </div>
-                        <div class="p-4 rounded-2xl bg-medical-light border border-teal-100/70 flex items-center gap-3.5 hover:shadow-md hover:-translate-y-0.5 transition-all">
-                            <div class="w-10 h-10 rounded-xl bg-white text-medical-teal flex items-center justify-center shadow-sm"><i class="fa-solid fa-bed-pulse"></i></div>
-                            <span class="font-bold text-medical-navy text-sm">Critical Care</span>
+                        <div class="spotlight-card dark-clinical-card p-4 rounded-2xl flex items-center gap-3.5 text-white group">
+                            <div class="w-11 h-11 rounded-xl bg-emerald-500/20 text-emerald-300 group-hover:bg-emerald-400 group-hover:text-medical-navy flex items-center justify-center text-lg transition-colors shrink-0"><i class="fa-solid fa-bed-pulse"></i></div>
+                            <span class="font-bold text-white text-sm">Critical Care & ICU</span>
                         </div>
-                        <div class="p-4 rounded-2xl bg-medical-light border border-teal-100/70 flex items-center gap-3.5 hover:shadow-md hover:-translate-y-0.5 transition-all">
-                            <div class="w-10 h-10 rounded-xl bg-white text-medical-blue flex items-center justify-center shadow-sm"><i class="fa-solid fa-hand-holding-heart"></i></div>
-                            <span class="font-bold text-medical-navy text-sm">Community Focus</span>
+                        <div class="spotlight-card dark-clinical-card p-4 rounded-2xl flex items-center gap-3.5 text-white group">
+                            <div class="w-11 h-11 rounded-xl bg-amber-500/20 text-amber-300 group-hover:bg-amber-400 group-hover:text-medical-navy flex items-center justify-center text-lg transition-colors shrink-0"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                            <span class="font-bold text-white text-sm">Community Focus</span>
                         </div>
                     </div>
 
@@ -638,15 +671,716 @@
         </div>
     </section>
 
-    <!-- AYUSHMAN BHARAT PM-JAY SECTION -->
-    <section id="ayushman" class="py-24 bg-gradient-to-b from-medical-light to-white relative overflow-hidden">
+    <!-- 3. INFRASTRUCTURE / WORLD-CLASS FACILITIES SECTION (Moved After About Us; Day Care replaced with Private/General Wards) -->
+    <section id="facilities" class="py-20 sm:py-24 hero-mesh text-white relative overflow-hidden">
+        <div class="ambient-particle w-5 h-5 left-[18%] top-[78%]" style="--dur: 7.5s; --delay: 0.4s;"></div>
+        <div class="ambient-particle w-4 h-4 left-[82%] top-[74%]" style="--dur: 6.5s; --delay: 1.8s;"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+                <span class="text-emerald-300 font-bold text-xs uppercase tracking-widest">Infrastructure</span>
+                <h2 class="font-display text-3xl sm:text-5xl font-extrabold mt-2 mb-4">World-Class Facilities</h2>
+                <p class="text-slate-300 text-sm sm:text-base">Equipped with state-of-the-art medical technology to provide comprehensive care around the clock.</p>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5 sm:gap-5">
+                <div class="reveal tilt-card glass-dark-card p-5 sm:p-6 rounded-2xl text-center hover:-translate-y-1.5 hover:border-teal-400/50 transition-all" style="--reveal-delay: 0ms;">
+                    <div class="w-12 h-12 mx-auto rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-2xl mb-3"><i class="fa-solid fa-bed-pulse"></i></div>
+                    <h5 class="font-bold text-xs sm:text-sm">Advanced ICU</h5>
+                </div>
+                <div class="reveal tilt-card glass-dark-card p-5 sm:p-6 rounded-2xl text-center hover:-translate-y-1.5 hover:border-teal-400/50 transition-all" style="--reveal-delay: 60ms;">
+                    <div class="w-12 h-12 mx-auto rounded-xl bg-sky-500/20 text-sky-300 flex items-center justify-center text-2xl mb-3"><i class="fa-solid fa-baby"></i></div>
+                    <h5 class="font-bold text-xs sm:text-sm">NICU Facility</h5>
+                </div>
+                <div class="reveal tilt-card glass-dark-card p-5 sm:p-6 rounded-2xl text-center hover:-translate-y-1.5 hover:border-teal-400/50 transition-all" style="--reveal-delay: 120ms;">
+                    <div class="w-12 h-12 mx-auto rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-2xl mb-3"><i class="fa-solid fa-scissors"></i></div>
+                    <h5 class="font-bold text-xs sm:text-sm">Modern OTs</h5>
+                </div>
+                <div class="reveal tilt-card glass-dark-card p-5 sm:p-6 rounded-2xl text-center hover:-translate-y-1.5 hover:border-teal-400/50 transition-all" style="--reveal-delay: 180ms;">
+                    <div class="w-12 h-12 mx-auto rounded-xl bg-sky-500/20 text-sky-300 flex items-center justify-center text-2xl mb-3"><i class="fa-solid fa-microscope"></i></div>
+                    <h5 class="font-bold text-xs sm:text-sm">Pathology</h5>
+                </div>
+                <div class="reveal tilt-card glass-dark-card p-5 sm:p-6 rounded-2xl text-center hover:-translate-y-1.5 hover:border-teal-400/50 transition-all" style="--reveal-delay: 240ms;">
+                    <div class="w-12 h-12 mx-auto rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-2xl mb-3"><i class="fa-solid fa-x-ray"></i></div>
+                    <h5 class="font-bold text-xs sm:text-sm">Digital X-Ray</h5>
+                </div>
+                <div class="reveal tilt-card glass-dark-card p-5 sm:p-6 rounded-2xl text-center hover:-translate-y-1.5 hover:border-teal-400/50 transition-all" style="--reveal-delay: 300ms;">
+                    <div class="w-12 h-12 mx-auto rounded-xl bg-sky-500/20 text-sky-300 flex items-center justify-center text-2xl mb-3"><i class="fa-solid fa-heart-pulse"></i></div>
+                    <h5 class="font-bold text-xs sm:text-sm">ECG Services</h5>
+                </div>
+                <div class="reveal tilt-card glass-dark-card p-5 sm:p-6 rounded-2xl text-center hover:-translate-y-1.5 hover:border-teal-400/50 transition-all" style="--reveal-delay: 360ms;">
+                    <div class="w-12 h-12 mx-auto rounded-xl bg-amber-500/20 text-amber-300 flex items-center justify-center text-2xl mb-3"><i class="fa-solid fa-bed"></i></div>
+                    <h5 class="font-bold text-xs sm:text-sm">Private / General Wards</h5>
+                </div>
+                <div class="reveal tilt-card glass-dark-card p-5 sm:p-6 rounded-2xl text-center hover:-translate-y-1.5 hover:border-teal-400/50 transition-all" style="--reveal-delay: 420ms;">
+                    <div class="w-12 h-12 mx-auto rounded-xl bg-sky-500/20 text-sky-300 flex items-center justify-center text-2xl mb-3"><i class="fa-solid fa-user-nurse"></i></div>
+                    <h5 class="font-bold text-xs sm:text-sm">OPD &amp; IPD</h5>
+                </div>
+                <div class="reveal tilt-card glass-dark-card p-5 sm:p-6 rounded-2xl text-center hover:-translate-y-1.5 hover:border-teal-400/50 transition-all" style="--reveal-delay: 480ms;">
+                    <div class="w-12 h-12 mx-auto rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-2xl mb-3"><i class="fa-solid fa-pills"></i></div>
+                    <h5 class="font-bold text-xs sm:text-sm">24x7 Pharmacy</h5>
+                </div>
+                <div class="reveal tilt-card glass-dark-card p-5 sm:p-6 rounded-2xl text-center hover:-translate-y-1.5 bg-red-500/20 border-red-400/40 transition-all" style="--reveal-delay: 540ms;">
+                    <div class="w-12 h-12 mx-auto rounded-xl bg-red-500/30 text-white flex items-center justify-center text-2xl mb-3"><i class="fa-solid fa-ambulance"></i></div>
+                    <h5 class="font-bold text-xs sm:text-sm">24x7 Ambulance</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SINGLE UNIFIED GALLERY SECTION (No Tabs, Changes Every 2 Seconds When Visible) -->
+    <section id="gallery" class="py-20 sm:py-24 bg-medical-navy text-white relative overflow-hidden border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12 reveal">
+                <span class="text-emerald-300 font-bold text-xs uppercase tracking-widest">Virtual Tour</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-extrabold mt-2">Hospital Infrastructure Gallery</h2>
+                <p class="text-slate-300 mt-2 text-sm sm:text-base">A glimpse into our building, operation theatres, ICU/NICU, and patient care environment. Click any image to expand.</p>
+            </div>
+
+            <div class="relative max-w-5xl mx-auto reveal">
+                <div class="rounded-3xl shadow-2xl border border-teal-400/25 bg-black/35 relative overflow-hidden p-2 sm:p-3">
+                    <div id="gallery-stage" class="flex items-center justify-center rounded-2xl overflow-hidden bg-black/25">
+                        <img id="gallery-active-img" src="" alt="Hospital Infrastructure" class="w-full h-auto max-h-[72vh] object-contain mx-auto block cursor-zoom-in fade-img-in">
+                    </div>
+                    <button id="gal-prev" aria-label="Previous Photo" class="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/90 text-medical-navy hover:bg-medical-teal hover:text-white transition-colors shadow-lg flex items-center justify-center z-10">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button id="gal-next" aria-label="Next Photo" class="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/90 text-medical-navy hover:bg-medical-teal hover:text-white transition-colors shadow-lg flex items-center justify-center z-10">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+                <!-- Thumbnail Strip -->
+<div id="gallery-thumbs" class="hidden sm:flex justify-start sm:justify-center gap-2.5 sm:gap-3 mt-5 overflow-x-auto no-scrollbar py-1 px-1"></div>            </div>
+        </div>
+    </section>
+
+    <!-- 5. DOCTORS SECTION (All Dark Cards, No Tabs, Highlighted Degrees Like Dr. Alok Singh, Compact Administrator Card Below) -->
+    <section id="doctors" class="py-20 sm:py-24 bg-medical-light relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+                <span class="text-medical-teal font-bold text-xs uppercase tracking-widest">Our Medical Experts</span>
+                <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-medical-navy mt-2 mb-3">Leading Specialists</h2>
+                <p class="text-slate-600 text-sm sm:text-base">Highly experienced surgeons and physicians dedicated to evidence-based clinical excellence.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Featured Lead Doctor: Dr. Alok Singh (DARK CARD + MBBS, M.S. (Ortho)) -->
+                <div class="lg:col-span-4 reveal">
+                    <div class="spotlight-card dark-clinical-card rounded-3xl overflow-hidden shadow-card-hover flex flex-col text-white">
+                        <div class="bg-gradient-to-b from-teal-900/40 to-medical-navy overflow-hidden group">
+                            <img src="Images/13.png" loading="lazy" alt="Dr. Alok Singh" class="w-full h-auto block group-hover:scale-[1.02] transition-transform duration-700" onerror="this.src='https://placehold.co/600x600/0A3A66/ffffff?text=Dr.+Alok+Singh'">
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between border-t border-teal-400/20 relative z-10">
+                            <div>
+                                <div class="flex flex-wrap items-center gap-2 mb-3">
+                                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-400 text-medical-navy text-xs font-extrabold shadow-sm">
+                                        <i class="fa-solid fa-medal"></i> Gold Medalist Surgeon
+                                    </span>
+                                    <span class="inline-flex items-center px-3 py-1 rounded-full bg-teal-500/20 border border-teal-400/40 text-teal-200 text-xs font-extrabold tracking-wide">
+                                        MBBS, M.S. (Ortho)
+                                    </span>
+                                </div>
+                                <h3 class="font-display text-2xl font-extrabold text-white tracking-tight mb-1">Dr. Alok Singh</h3>
+                                <p class="text-emerald-300 text-sm font-bold mb-4">Senior Consultant • Joint Replacement &amp; Trauma</p>
+                                <div class="space-y-2.5 text-sm text-slate-200 mb-6 pt-3 border-t border-white/10">
+                                    <div class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-emerald-400"></i> <span>Joint Replacement</span></div>
+                                    <div class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-emerald-400"></i> <span>Knee Replacement</span></div>
+                                    <div class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-emerald-400"></i> <span>Hip Replacement</span></div>
+                                    <div class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-emerald-400"></i> <span>Spine Surgery</span></div>
+                                    <div class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-emerald-400"></i> <span>Shoulder Treatments</span></div>
+                                    <div class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-emerald-400"></i> <span>ACL Tear Surgery</span></div>
+                                    <div class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-emerald-400"></i> <span>Sports Injuries</span></div>
+                                                                        <div class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-emerald-400"></i> <span>Dislocation Treatments</span></div>
+                                                                                                            <div class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-emerald-400"></i> <span>Arthroscopy</span></div>
+                                                                                                                                                <div class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-emerald-400"></i> <span>Foot & Ankle Treatments</span></div>
+                                                                                                                                                                                    <div class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-emerald-400"></i> <span>Rotator Cuff Repair</span></div>
+                                                                                                                                                                                                                        <div class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-emerald-400"></i> <span>Pediatric Orthopedics</span></div>
+                                                                                                                                                                                                                                                            <div class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-emerald-400"></i> <span>Bone Infections Treatments</span></div>
+                                                                                                                                                                                                                                                                                                <div class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-emerald-400"></i> <span>Joint Fusion (Arthrodesis)</span></div>
+                                    <div class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-emerald-400"></i> <span>Immobilization & Bracing</span></div>
+                                                                        <div class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-emerald-400"></i> <span>Rehabilitation</span></div>
+                                    <div class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-emerald-400"></i> <span>Peripheral Nerve Care</span></div>
+                                    <div class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-emerald-400"></i> <span>Orthopedic Oncology</span></div>
+                                    <div class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-emerald-400"></i> <span>Limb Deformity Correction</span></div>
+
+
+
+
+
+
+
+
+
+                                    <div class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-emerald-400"></i> <span>Trauma Surgery</span></div>
+                                    <div class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-emerald-400"></i> <span>Fracture Care</span></div>
+                                    <div class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-emerald-400"></i> <span>Orthopedic Procedures</span></div>
+                                </div>
+                            </div>
+                            <button onclick="openBooking('Orthopedics & Joint Replacement', 'Dr. Alok Singh')" class="btn-sheen w-full py-3.5 rounded-xl bg-gradient-to-r from-teal-500 to-emerald-500 text-white font-bold text-sm hover:opacity-95 transition-all shadow-md flex items-center justify-center gap-2">
+                                <i class="fa-regular fa-calendar-check"></i> Book Appointment
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- All Specialist Doctors Grid (ALL DARK CARDS, NO TABS, HIGHLIGHTED DEGREES) -->
+                <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4 reveal" style="--reveal-delay: 100ms;">
+                    
+                    <!-- Dr. Mamta Singh -->
+                    <div class="spotlight-card dark-clinical-card p-5 rounded-2xl flex flex-col justify-between text-white group">
+                        <div class="relative z-10">
+                            <div class="flex items-start justify-between gap-3 mb-2.5">
+                                <div>
+                                    <h4 class="font-display font-extrabold text-lg sm:text-xl text-white group-hover:text-teal-200 transition-colors">Dr. Mamta Singh</h4>
+                                    <span class="inline-flex items-center mt-1.5 px-3 py-0.5 rounded-full bg-teal-500/20 border border-teal-400/40 text-teal-200 text-xs font-extrabold tracking-wide">MBBS, MD</span>
+                                </div>
+                                <div class="w-10 h-10 rounded-xl bg-pink-500/20 text-pink-300 group-hover:bg-pink-500 group-hover:text-white flex items-center justify-center shrink-0 transition-colors"><i class="fa-solid fa-person-pregnant"></i></div>
+                            </div>
+                            <p class="text-sm font-bold text-emerald-300 mb-1.5">Obstetrics &amp; Gynecology Specialist</p>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-4">Expertise in Pregnancy Care, High-Risk Maternity, and Comprehensive Women's Health.</p>
+                        </div>
+                        <button onclick="openBooking('Obstetrics & Gynecology', 'Dr. Mamta Singh')" class="relative z-10 text-xs font-bold text-teal-300 group-hover:text-white flex items-center gap-1.5 transition-colors">
+                            Consult Doctor <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </div>
+
+                    <!-- Dr. Deepak Agrahari (With One-Line Description) -->
+                    <div class="spotlight-card dark-clinical-card p-5 rounded-2xl flex flex-col justify-between text-white group">
+                        <div class="relative z-10">
+                            <div class="flex items-start justify-between gap-3 mb-2.5">
+                                <div>
+                                    <h4 class="font-display font-extrabold text-lg sm:text-xl text-white group-hover:text-teal-200 transition-colors">Dr. Deepak Agrahari</h4>
+                                    <span class="inline-flex items-center mt-1.5 px-3 py-0.5 rounded-full bg-teal-500/20 border border-teal-400/40 text-teal-200 text-xs font-extrabold tracking-wide">MBBS, MS, MCh</span>
+                                </div>
+                                <div class="w-10 h-10 rounded-xl bg-sky-500/20 text-sky-300 group-hover:bg-sky-500 group-hover:text-white flex items-center justify-center shrink-0 transition-colors"><i class="fa-solid fa-user-doctor"></i></div>
+                            </div>
+                            <p class="text-sm font-bold text-emerald-300 mb-1.5">Plastic Surgeon</p>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-4">Expertise in Reconstructive, Burn Care, Trauma Repair, and Microvascular Plastic Surgery.</p>
+                        </div>
+                        <button onclick="openBooking('Plastic Surgery', 'Dr. Deepak Agrahari')" class="relative z-10 text-xs font-bold text-teal-300 group-hover:text-white flex items-center gap-1.5 transition-colors">
+                            Consult Doctor <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </div>
+
+                    <!-- Dr. Bhupendra Sharma -->
+                    <div class="spotlight-card dark-clinical-card p-5 rounded-2xl flex flex-col justify-between text-white group">
+                        <div class="relative z-10">
+                            <div class="flex items-start justify-between gap-3 mb-2.5">
+                                <div>
+                                    <h4 class="font-display font-extrabold text-lg sm:text-xl text-white group-hover:text-teal-200 transition-colors">Dr. Bhupendra Sharma</h4>
+                                    <!-- <span class="inline-flex items-center mt-1.5 px-3 py-0.5 rounded-full bg-teal-500/20 border border-teal-400/40 text-teal-200 text-xs font-extrabold tracking-wide">MBBS, M.S.</span> -->
+                                </div>
+                                <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-300 group-hover:bg-emerald-500 group-hover:text-white flex items-center justify-center shrink-0 transition-colors"><i class="fa-solid fa-syringe"></i></div>
+                            </div>
+                            <p class="text-sm font-bold text-emerald-300 mb-1.5">General &amp; Laparoscopic Surgeon</p>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-4">Expertise in Minimally Invasive Laparoscopic, Gall Bladder, Hernia, and GI Surgeries.</p>
+                        </div>
+                        <button onclick="openBooking('General & Laparoscopic Surgery', 'Dr. Bhupendra Sharma')" class="relative z-10 text-xs font-bold text-teal-300 group-hover:text-white flex items-center gap-1.5 transition-colors">
+                            Consult Doctor <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </div>
+
+                    <!-- Dr. Sunil Singh (Neuro Spine Surgeon) -->
+                    <div class="spotlight-card dark-clinical-card p-5 rounded-2xl flex flex-col justify-between text-white group">
+                        <div class="relative z-10">
+                            <div class="flex items-start justify-between gap-3 mb-2.5">
+                                <div>
+                                    <h4 class="font-display font-extrabold text-lg sm:text-xl text-white group-hover:text-teal-200 transition-colors">Dr. Sunil Singh</h4>
+                                    <!-- <span class="inline-flex items-center mt-1.5 px-3 py-0.5 rounded-full bg-teal-500/20 border border-teal-400/40 text-teal-200 text-xs font-extrabold tracking-wide">MBBS, MS, MCh</span> -->
+                                </div>
+                                <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-300 group-hover:bg-purple-500 group-hover:text-white flex items-center justify-center shrink-0 transition-colors"><i class="fa-solid fa-brain"></i></div>
+                            </div>
+                            <p class="text-sm font-bold text-emerald-300 mb-1.5">Neuro Spine Surgeon</p>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-4">Expertise in Complex Brain Surgery, Spine Disorders, Disc Procedures, and Neuro Trauma.</p>
+                        </div>
+                        <button onclick="openBooking('Neurosurgery', 'Dr. Sunil Singh')" class="relative z-10 text-xs font-bold text-teal-300 group-hover:text-white flex items-center gap-1.5 transition-colors">
+                            Consult Doctor <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </div>
+
+                    <!-- Dr. S. K. Gupta -->
+                    <div class="spotlight-card dark-clinical-card p-5 rounded-2xl flex flex-col justify-between text-white group">
+                        <div class="relative z-10">
+                            <div class="flex items-start justify-between gap-3 mb-2.5">
+                                <div>
+                                    <h4 class="font-display font-extrabold text-lg sm:text-xl text-white group-hover:text-teal-200 transition-colors">Dr. S. K. Gupta</h4>
+                                    <!-- <span class="inline-flex items-center mt-1.5 px-3 py-0.5 rounded-full bg-teal-500/20 border border-teal-400/40 text-teal-200 text-xs font-extrabold tracking-wide">MBBS, MD</span> -->
+                                </div>
+                                <div class="w-10 h-10 rounded-xl bg-sky-500/20 text-sky-300 group-hover:bg-sky-500 group-hover:text-white flex items-center justify-center shrink-0 transition-colors"><i class="fa-solid fa-stethoscope"></i></div>
+                            </div>
+                            <p class="text-sm font-bold text-emerald-300 mb-1.5">General Physician</p>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-4">Expertise in Internal Medicine, Chronic &amp; Infectious Diseases, and Critical Medical Care.</p>
+                        </div>
+                        <button onclick="openBooking('General Medicine', 'Dr. S. K. Gupta')" class="relative z-10 text-xs font-bold text-teal-300 group-hover:text-white flex items-center gap-1.5 transition-colors">
+                            Consult Doctor <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </div>
+
+                    <!-- Dr. S. K. Singh (General Surgeon) -->
+                    <div class="spotlight-card dark-clinical-card p-5 rounded-2xl flex flex-col justify-between text-white group">
+                        <div class="relative z-10">
+                            <div class="flex items-start justify-between gap-3 mb-2.5">
+                                <div>
+                                    <h4 class="font-display font-extrabold text-lg sm:text-xl text-white group-hover:text-teal-200 transition-colors">Dr. S. K. Singh</h4>
+                                    <!-- <span class="inline-flex items-center mt-1.5 px-3 py-0.5 rounded-full bg-teal-500/20 border border-teal-400/40 text-teal-200 text-xs font-extrabold tracking-wide">MBBS, M.S.</span> -->
+                                </div>
+                                <div class="w-10 h-10 rounded-xl bg-teal-500/20 text-teal-300 group-hover:bg-teal-500 group-hover:text-white flex items-center justify-center shrink-0 transition-colors"><i class="fa-solid fa-scalpel"></i></div>
+                            </div>
+                            <p class="text-sm font-bold text-emerald-300 mb-1.5">General Surgeon</p>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-4">Expertise in General &amp; Abdominal Surgeries, Hernia, Appendix, and Trauma Procedures.</p>
+                        </div>
+                        <button onclick="openBooking('General & Laparoscopic Surgery', 'Dr. S. K. Singh')" class="relative z-10 text-xs font-bold text-teal-300 group-hover:text-white flex items-center gap-1.5 transition-colors">
+                            Consult Doctor <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </div>
+
+                    <!-- Dr. P. K. Keshri -->
+                    <div class="spotlight-card dark-clinical-card p-5 rounded-2xl flex flex-col justify-between text-white group">
+                        <div class="relative z-10">
+                            <div class="flex items-start justify-between gap-3 mb-2.5">
+                                <div>
+                                    <h4 class="font-display font-extrabold text-lg sm:text-xl text-white group-hover:text-teal-200 transition-colors">Dr. P. K. Keshri</h4>
+                                    <!-- <span class="inline-flex items-center mt-1.5 px-3 py-0.5 rounded-full bg-teal-500/20 border border-teal-400/40 text-teal-200 text-xs font-extrabold tracking-wide">MBBS, MS, MCh</span> -->
+                                </div>
+                                <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-300 group-hover:bg-cyan-500 group-hover:text-white flex items-center justify-center shrink-0 transition-colors"><i class="fa-solid fa-vial"></i></div>
+                            </div>
+                            <p class="text-sm font-bold text-emerald-300 mb-1.5">Urologist</p>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-4">Expertise in Kidney Stones, Prostate Care, Urinary Tract Disorders, and Uro-Surgeries.</p>
+                        </div>
+                        <button onclick="openBooking('Urology', 'Dr. P. K. Keshri')" class="relative z-10 text-xs font-bold text-teal-300 group-hover:text-white flex items-center gap-1.5 transition-colors">
+                            Consult Doctor <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </div>
+
+                    <!-- Dr. H. S. Singh -->
+                    <div class="spotlight-card dark-clinical-card p-5 rounded-2xl flex flex-col justify-between text-white group">
+                        <div class="relative z-10">
+                            <div class="flex items-start justify-between gap-3 mb-2.5">
+                                <div>
+                                    <h4 class="font-display font-extrabold text-lg sm:text-xl text-white group-hover:text-teal-200 transition-colors">Dr. H. S. Singh</h4>
+                                    <!-- <span class="inline-flex items-center mt-1.5 px-3 py-0.5 rounded-full bg-teal-500/20 border border-teal-400/40 text-teal-200 text-xs font-extrabold tracking-wide">MBBS, MS, MCh</span> -->
+                                </div>
+                                <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-300 group-hover:bg-amber-500 group-hover:text-white flex items-center justify-center shrink-0 transition-colors"><i class="fa-solid fa-staff-snake"></i></div>
+                            </div>
+                            <p class="text-sm font-bold text-emerald-300 mb-1.5">Cancer Surgeon</p>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-4">Expertise in Surgical Oncology, Tumor Resection, and Comprehensive Cancer Care.</p>
+                        </div>
+                        <button onclick="openBooking('Oncology', 'Dr. H. S. Singh')" class="relative z-10 text-xs font-bold text-teal-300 group-hover:text-white flex items-center gap-1.5 transition-colors">
+                            Consult Doctor <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </div>
+
+                    <!-- Dr. Mandala -->
+                    <div class="spotlight-card dark-clinical-card p-5 rounded-2xl flex flex-col justify-between text-white group">
+                        <div class="relative z-10">
+                            <div class="flex items-start justify-between gap-3 mb-2.5">
+                                <div>
+                                    <h4 class="font-display font-extrabold text-lg sm:text-xl text-white group-hover:text-teal-200 transition-colors">Dr. Mandala</h4>
+                                    <!-- <span class="inline-flex items-center mt-1.5 px-3 py-0.5 rounded-full bg-teal-500/20 border border-teal-400/40 text-teal-200 text-xs font-extrabold tracking-wide">MBBS, MS, MCh</span> -->
+                                </div>
+                                <div class="w-10 h-10 rounded-xl bg-rose-500/20 text-rose-300 group-hover:bg-rose-500 group-hover:text-white flex items-center justify-center shrink-0 transition-colors"><i class="fa-solid fa-ribbon"></i></div>
+                            </div>
+                            <p class="text-sm font-bold text-emerald-300 mb-1.5">Cancer Surgeon</p>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-4">Expertise in Advanced Oncological Surgeries and Multidisciplinary Cancer Treatment.</p>
+                        </div>
+                        <button onclick="openBooking('Oncology', 'Dr. Mandala')" class="relative z-10 text-xs font-bold text-teal-300 group-hover:text-white flex items-center gap-1.5 transition-colors">
+                            Consult Doctor <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </div>
+
+                    <!-- Dr. S. N. Singh -->
+                    <div class="spotlight-card dark-clinical-card p-5 rounded-2xl flex flex-col justify-between text-white group">
+                        <div class="relative z-10">
+                            <div class="flex items-start justify-between gap-3 mb-2.5">
+                                <div>
+                                    <h4 class="font-display font-extrabold text-lg sm:text-xl text-white group-hover:text-teal-200 transition-colors">Dr. S. N. Singh</h4>
+                                    <!-- <span class="inline-flex items-center mt-1.5 px-3 py-0.5 rounded-full bg-teal-500/20 border border-teal-400/40 text-teal-200 text-xs font-extrabold tracking-wide">MBBS, MD</span> -->
+                                </div>
+                                <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-300 group-hover:bg-emerald-500 group-hover:text-white flex items-center justify-center shrink-0 transition-colors"><i class="fa-solid fa-children"></i></div>
+                            </div>
+                            <p class="text-sm font-bold text-emerald-300 mb-1.5">Pediatric Specialist</p>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-4">Expertise in Newborn &amp; NICU Care, Child Growth, and Pediatric Disease Management.</p>
+                        </div>
+                        <button onclick="openBooking('Pediatric Care & NICU', 'Dr. S. N. Singh')" class="relative z-10 text-xs font-bold text-teal-300 group-hover:text-white flex items-center gap-1.5 transition-colors">
+                            Consult Doctor <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </div>
+
+                    <!-- Dr. Abhishek Jaiswal -->
+                    <div class="spotlight-card dark-clinical-card p-5 rounded-2xl flex flex-col justify-between text-white group">
+                        <div class="relative z-10">
+                            <div class="flex items-start justify-between gap-3 mb-2.5">
+                                <div>
+                                    <h4 class="font-display font-extrabold text-lg sm:text-xl text-white group-hover:text-teal-200 transition-colors">Dr. Abhishek Jaiswal</h4>
+                                    <!-- <span class="inline-flex items-center mt-1.5 px-3 py-0.5 rounded-full bg-teal-500/20 border border-teal-400/40 text-teal-200 text-xs font-extrabold tracking-wide">MBBS, MD</span> -->
+                                </div>
+                                <div class="w-10 h-10 rounded-xl bg-sky-500/20 text-sky-300 group-hover:bg-sky-500 group-hover:text-white flex items-center justify-center shrink-0 transition-colors"><i class="fa-solid fa-child-reaching"></i></div>
+                            </div>
+                            <p class="text-sm font-bold text-emerald-300 mb-1.5">Paediatric Specialist</p>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-4">Expertise in Pediatric Intensive Care, Neonatal Health, Immunization, and Child Wellness.</p>
+                        </div>
+                        <button onclick="openBooking('Pediatric Care & NICU', 'Dr. Abhishek Jaiswal')" class="relative z-10 text-xs font-bold text-teal-300 group-hover:text-white flex items-center gap-1.5 transition-colors">
+                            Consult Doctor <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </div>
+
+                    <!-- Dr. Uday Singh -->
+                    <div class="spotlight-card dark-clinical-card p-5 rounded-2xl flex flex-col justify-between text-white group">
+                        <div class="relative z-10">
+                            <div class="flex items-start justify-between gap-3 mb-2.5">
+                                <div>
+                                    <h4 class="font-display font-extrabold text-lg sm:text-xl text-white group-hover:text-teal-200 transition-colors">Dr. Uday Singh</h4>
+                                    <!-- <span class="inline-flex items-center mt-1.5 px-3 py-0.5 rounded-full bg-teal-500/20 border border-teal-400/40 text-teal-200 text-xs font-extrabold tracking-wide">MBBS, MD</span> -->
+                                </div>
+                                <div class="w-10 h-10 rounded-xl bg-teal-500/20 text-teal-300 group-hover:bg-teal-500 group-hover:text-white flex items-center justify-center shrink-0 transition-colors"><i class="fa-solid fa-heart-pulse"></i></div>
+                            </div>
+                            <p class="text-sm font-bold text-emerald-300 mb-1.5">Anaesthetist</p>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-4">Expertise in Surgical Anaesthesia, Pain Management, Critical Care &amp; ICU Life Support.</p>
+                        </div>
+                        <button onclick="openBooking('ICU & Critical Care', 'Dr. Uday Singh')" class="relative z-10 text-xs font-bold text-teal-300 group-hover:text-white flex items-center gap-1.5 transition-colors">
+                            Consult Doctor <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Compact Horizontal Administrator Card (25% Less Height, 20% Smaller Fonts, Hospital Logo Removed) -->
+            
+<div class="mt-6 reveal">
+    <div class="spotlight-card dark-clinical-card rounded-xl overflow-hidden text-white shadow-xl">
+
+        <div class="flex flex-col md:flex-row">
+
+            <!-- Administrator Photo -->
+            <div class="w-full md:w-[125px] lg:w-[135px] shrink-0 flex justify-center items-center p-4 md:p-0 md:relative md:min-h-[128px] bg-teal-900/20">
+
+                <img
+                    src="Images/kaustubh.png"
+                    loading="lazy"
+                    alt="Mr. Kaustubh Singh"
+                    class="w-36 h-36 sm:w-40 sm:h-40 md:w-full md:h-full md:absolute md:inset-0 object-cover object-center rounded-xl md:rounded-none border border-teal-400/40 md:border-0 shadow-md md:shadow-none"
+                    onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
+                >
+
+                <!-- Image Fallback -->
+                <div class="hidden w-36 h-36 sm:w-40 sm:h-40 md:absolute md:inset-0 md:w-full md:h-full rounded-xl md:rounded-none flex-col items-center justify-center text-teal-100 bg-teal-900">
+                    <i class="fa-solid fa-user-tie text-2xl mb-1.5"></i>
+                    <span class="font-bold text-[10px]">Kaustubh Singh</span>
+                </div>
+
+            </div>
+
+            <!-- Administrator Details -->
+            <div class="flex-1 min-w-0 px-4 pb-4 pt-1 md:p-4 flex flex-col justify-center text-center md:text-left">
+
+                <span class="inline-flex items-center justify-center md:justify-start gap-1.5 text-teal-300 text-[8px] font-bold uppercase tracking-widest mb-1.5">
+                    <span class="w-3 h-[2px] bg-teal-400"></span>
+                    Administration
+                </span>
+
+                <h3 class="font-display text-lg sm:text-xl font-extrabold text-white leading-tight">
+                    Mr. Kaustubh Singh
+                </h3>
+
+                <p class="text-teal-200 font-semibold text-xs mt-1">
+                    Hospital Administrator
+                </p>
+
+                <p class="text-slate-300 text-[11px] mt-0.5">
+                    Janseva Hospital &amp; Trauma Centre
+                </p>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+        </div>
+    </section>
+
+    <!-- 6. AYUSHMAN POSTER IMAGE (Images/14.png) -->
+    <section class="py-10 sm:py-14 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+            <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-medical-mint bg-medical-navy">
+                <img src="Images/14.png" loading="lazy" alt="Ayushman Bharat Janseva Hospital Poster" class="w-full h-auto block mx-auto" onerror="this.src='Images/ayush.jpg'">
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. SPECIALITIES / DEPARTMENTS SECTION (ALL DARK CARDS, ICU & Critical Care First, Includes New Departments, Removed "Other Specialized Centers") -->
+    <section id="specialities" class="py-20 sm:py-24 bg-white relative dot-grid">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+                <span class="text-medical-teal font-bold text-xs uppercase tracking-widest">Our Specialities</span>
+                <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-medical-navy mt-2 mb-4">Advanced Medical Departments</h2>
+                <p class="text-slate-600 text-sm sm:text-base">Comprehensive critical care, surgical, trauma, and super-speciality medical departments under one roof.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- 1. ICU & Critical Care (FIRST CARD) -->
+                <div class="spotlight-card dark-clinical-card group rounded-3xl p-7 text-white flex flex-col justify-between reveal" style="--reveal-delay: 0ms;">
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 rounded-2xl bg-red-500/20 text-red-300 flex items-center justify-center text-2xl mb-5 group-hover:bg-red-500 group-hover:text-white group-hover:scale-110 transition-all">
+                            <i class="fa-solid fa-bed-pulse"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-extrabold text-white mb-2">ICU &amp; Critical Care</h3>
+                        <p class="text-slate-300 text-sm mb-5">24×7 intensive life support and multi-parameter critical patient management.</p>
+                        <ul class="text-sm text-slate-200 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> Advanced Ventilator &amp; Life Support</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> Emergency &amp; Poly-Trauma ICU</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> 24×7 Critical Care Monitoring</li>
+                        </ul>
+                    </div>
+                    <button onclick="openBooking('ICU & Critical Care')" class="relative z-10 w-full py-3 rounded-xl bg-white/10 border border-white/15 text-white font-bold text-sm group-hover:bg-medical-teal group-hover:border-medical-teal transition-all flex items-center justify-center gap-2">
+                        Book Consultation <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </div>
+
+                <!-- 2. Orthopedics & Joint Replacement -->
+                <div class="spotlight-card dark-clinical-card group rounded-3xl p-7 text-white flex flex-col justify-between reveal" style="--reveal-delay: 60ms;">
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 rounded-2xl bg-sky-500/20 text-sky-300 flex items-center justify-center text-2xl mb-5 group-hover:bg-sky-500 group-hover:text-white group-hover:scale-110 transition-all">
+                            <i class="fa-solid fa-bone"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-extrabold text-white mb-2">Orthopedics &amp; Joint Replacement</h3>
+                        <p class="text-slate-300 text-sm mb-5">Advanced surgical care for bone, joint, fracture, and spine disorders.</p>
+                        <ul class="text-sm text-slate-200 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> Total Knee &amp; Hip Replacement</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> Complex Fracture Management</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> Orthopedic Trauma Surgery</li>
+                        </ul>
+                    </div>
+                    <button onclick="openBooking('Orthopedics & Joint Replacement')" class="relative z-10 w-full py-3 rounded-xl bg-white/10 border border-white/15 text-white font-bold text-sm group-hover:bg-medical-teal group-hover:border-medical-teal transition-all flex items-center justify-center gap-2">
+                        Book Consultation <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </div>
+
+                <!-- 3. Neurosurgery -->
+                <div class="spotlight-card dark-clinical-card group rounded-3xl p-7 text-white flex flex-col justify-between reveal" style="--reveal-delay: 120ms;">
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-2xl mb-5 group-hover:bg-emerald-500 group-hover:text-white group-hover:scale-110 transition-all">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-extrabold text-white mb-2">Neurosurgery</h3>
+                        <p class="text-slate-300 text-sm mb-5">State-of-the-art surgical procedures for brain, spine, and neuro-trauma.</p>
+                        <ul class="text-sm text-slate-200 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> Brain &amp; Head Injury Surgery</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> Neuro Spine &amp; Disc Surgery</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> 24×7 Neuro Trauma Care</li>
+                        </ul>
+                    </div>
+                    <button onclick="openBooking('Neurosurgery')" class="relative z-10 w-full py-3 rounded-xl bg-white/10 border border-white/15 text-white font-bold text-sm group-hover:bg-medical-teal group-hover:border-medical-teal transition-all flex items-center justify-center gap-2">
+                        Book Consultation <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </div>
+
+                <!-- 4. General & Laparoscopic Surgery -->
+                <div class="spotlight-card dark-clinical-card group rounded-3xl p-7 text-white flex flex-col justify-between reveal" style="--reveal-delay: 180ms;">
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 rounded-2xl bg-teal-500/20 text-teal-300 flex items-center justify-center text-2xl mb-5 group-hover:bg-teal-500 group-hover:text-white group-hover:scale-110 transition-all">
+                            <i class="fa-solid fa-syringe"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-extrabold text-white mb-2">General &amp; Laparoscopic Surgery</h3>
+                        <p class="text-slate-300 text-sm mb-5">Minimally invasive keyhole and open surgical solutions for rapid recovery.</p>
+                        <ul class="text-sm text-slate-200 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> Appendix &amp; Hernia Surgery</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> Laparoscopic Gall Bladder Surgery</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> GI &amp; Abdominal Procedures</li>
+                        </ul>
+                    </div>
+                    <button onclick="openBooking('General & Laparoscopic Surgery')" class="relative z-10 w-full py-3 rounded-xl bg-white/10 border border-white/15 text-white font-bold text-sm group-hover:bg-medical-teal group-hover:border-medical-teal transition-all flex items-center justify-center gap-2">
+                        Book Consultation <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </div>
+
+                <!-- 5. Urology -->
+                <div class="spotlight-card dark-clinical-card group rounded-3xl p-7 text-white flex flex-col justify-between reveal" style="--reveal-delay: 240ms;">
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 rounded-2xl bg-cyan-500/20 text-cyan-300 flex items-center justify-center text-2xl mb-5 group-hover:bg-cyan-500 group-hover:text-white group-hover:scale-110 transition-all">
+                            <i class="fa-solid fa-vial"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-extrabold text-white mb-2">Urology</h3>
+                        <p class="text-slate-300 text-sm mb-5">Comprehensive diagnosis and surgical care for urinary tract disorders.</p>
+                        <ul class="text-sm text-slate-200 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> Kidney &amp; Ureteric Stone Surgery</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> Prostate &amp; Bladder Procedures</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> Endo-Urology Treatments</li>
+                        </ul>
+                    </div>
+                    <button onclick="openBooking('Urology')" class="relative z-10 w-full py-3 rounded-xl bg-white/10 border border-white/15 text-white font-bold text-sm group-hover:bg-medical-teal group-hover:border-medical-teal transition-all flex items-center justify-center gap-2">
+                        Book Consultation <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </div>
+
+                <!-- 6. Obstetrics & Gynecology -->
+                <div class="spotlight-card dark-clinical-card group rounded-3xl p-7 text-white flex flex-col justify-between reveal" style="--reveal-delay: 300ms;">
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 rounded-2xl bg-pink-500/20 text-pink-300 flex items-center justify-center text-2xl mb-5 group-hover:bg-pink-500 group-hover:text-white group-hover:scale-110 transition-all">
+                            <i class="fa-solid fa-person-pregnant"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-extrabold text-white mb-2">Obstetrics &amp; Gynecology</h3>
+                        <p class="text-slate-300 text-sm mb-5">Complete healthcare for women from maternity to advanced gynecology.</p>
+                        <ul class="text-sm text-slate-200 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> Normal &amp; C-Section Delivery</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> High-Risk Pregnancy Management</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> Gynecological Surgeries</li>
+                        </ul>
+                    </div>
+                    <button onclick="openBooking('Obstetrics & Gynecology')" class="relative z-10 w-full py-3 rounded-xl bg-white/10 border border-white/15 text-white font-bold text-sm group-hover:bg-medical-teal group-hover:border-medical-teal transition-all flex items-center justify-center gap-2">
+                        Book Consultation <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </div>
+
+                <!-- 7. Pediatric Care & NICU -->
+                <div class="spotlight-card dark-clinical-card group rounded-3xl p-7 text-white flex flex-col justify-between reveal" style="--reveal-delay: 360ms;">
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 rounded-2xl bg-amber-500/20 text-amber-300 flex items-center justify-center text-2xl mb-5 group-hover:bg-amber-500 group-hover:text-white group-hover:scale-110 transition-all">
+                            <i class="fa-solid fa-baby"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-extrabold text-white mb-2">Pediatric Care &amp; NICU</h3>
+                        <p class="text-slate-300 text-sm mb-5">Dedicated neonatal intensive care and complete child healthcare services.</p>
+                        <ul class="text-sm text-slate-200 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> Advanced NICU for Newborns</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> Pediatric Emergency &amp; Fever Care</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> Child Growth &amp; Immunization</li>
+                        </ul>
+                    </div>
+                    <button onclick="openBooking('Pediatric Care & NICU')" class="relative z-10 w-full py-3 rounded-xl bg-white/10 border border-white/15 text-white font-bold text-sm group-hover:bg-medical-teal group-hover:border-medical-teal transition-all flex items-center justify-center gap-2">
+                        Book Consultation <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </div>
+
+                <!-- 8. General Medicine -->
+                <div class="spotlight-card dark-clinical-card group rounded-3xl p-7 text-white flex flex-col justify-between reveal" style="--reveal-delay: 420ms;">
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 rounded-2xl bg-sky-500/20 text-sky-300 flex items-center justify-center text-2xl mb-5 group-hover:bg-sky-500 group-hover:text-white group-hover:scale-110 transition-all">
+                            <i class="fa-solid fa-stethoscope"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-extrabold text-white mb-2">General Medicine</h3>
+                        <p class="text-slate-300 text-sm mb-5">Holistic internal medicine, infectious disease, and chronic care management.</p>
+                        <ul class="text-sm text-slate-200 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> Typhoid, Malaria &amp; Viral Fevers</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> Diabetes, BP &amp; Thyroid Care</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> Jaundice &amp; Gastro Infections</li>
+                        </ul>
+                    </div>
+                    <button onclick="openBooking('General Medicine')" class="relative z-10 w-full py-3 rounded-xl bg-white/10 border border-white/15 text-white font-bold text-sm group-hover:bg-medical-teal group-hover:border-medical-teal transition-all flex items-center justify-center gap-2">
+                        Book Consultation <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </div>
+
+                <!-- 9. Nephrology -->
+                <div class="spotlight-card dark-clinical-card group rounded-3xl p-7 text-white flex flex-col justify-between reveal" style="--reveal-delay: 480ms;">
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-2xl mb-5 group-hover:bg-emerald-500 group-hover:text-white group-hover:scale-110 transition-all">
+                            <i class="fa-solid fa-droplet"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-extrabold text-white mb-2">Nephrology</h3>
+                        <p class="text-slate-300 text-sm mb-5">Specialized medical care for acute and chronic kidney diseases.</p>
+                        <ul class="text-sm text-slate-200 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> Chronic Kidney Disease (CKD) Care</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> Diabetic &amp; Hypertensive Renal Care</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> Renal Infection &amp; Electrolyte Care</li>
+                        </ul>
+                    </div>
+                    <button onclick="openBooking('Nephrology')" class="relative z-10 w-full py-3 rounded-xl bg-white/10 border border-white/15 text-white font-bold text-sm group-hover:bg-medical-teal group-hover:border-medical-teal transition-all flex items-center justify-center gap-2">
+                        Book Consultation <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </div>
+
+                <!-- 10. Plastic Surgery -->
+                <div class="spotlight-card dark-clinical-card group rounded-3xl p-7 text-white flex flex-col justify-between reveal" style="--reveal-delay: 540ms;">
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 rounded-2xl bg-purple-500/20 text-purple-300 flex items-center justify-center text-2xl mb-5 group-hover:bg-purple-500 group-hover:text-white group-hover:scale-110 transition-all">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-extrabold text-white mb-2">Plastic Surgery</h3>
+                        <p class="text-slate-300 text-sm mb-5">Advanced reconstructive, post-trauma, burn repair, and cosmetic surgery.</p>
+                        <ul class="text-sm text-slate-200 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> Trauma &amp; Reconstructive Surgery</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> Burn Contracture &amp; Scar Revision</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> Microvascular &amp; Hand Surgery</li>
+                        </ul>
+                    </div>
+                    <button onclick="openBooking('Plastic Surgery')" class="relative z-10 w-full py-3 rounded-xl bg-white/10 border border-white/15 text-white font-bold text-sm group-hover:bg-medical-teal group-hover:border-medical-teal transition-all flex items-center justify-center gap-2">
+                        Book Consultation <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </div>
+
+                <!-- 11. Oncology -->
+                <div class="spotlight-card dark-clinical-card group rounded-3xl p-7 text-white flex flex-col justify-between reveal" style="--reveal-delay: 600ms;">
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 rounded-2xl bg-rose-500/20 text-rose-300 flex items-center justify-center text-2xl mb-5 group-hover:bg-rose-500 group-hover:text-white group-hover:scale-110 transition-all">
+                            <i class="fa-solid fa-ribbon"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-extrabold text-white mb-2">Oncology</h3>
+                        <p class="text-slate-300 text-sm mb-5">Specialized cancer diagnosis, tumor resection, and surgical oncology care.</p>
+                        <ul class="text-sm text-slate-200 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> Surgical Oncology &amp; Tumor Removal</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> Early Cancer Screening &amp; Biopsy</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> Multidisciplinary Cancer Care</li>
+                        </ul>
+                    </div>
+                    <button onclick="openBooking('Oncology')" class="relative z-10 w-full py-3 rounded-xl bg-white/10 border border-white/15 text-white font-bold text-sm group-hover:bg-medical-teal group-hover:border-medical-teal transition-all flex items-center justify-center gap-2">
+                        Book Consultation <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </div>
+
+                <!-- 11. Pulmonology -->
+                <!-- <div class="spotlight-card dark-clinical-card group rounded-3xl p-7 text-white flex flex-col justify-between reveal" style="--reveal-delay: 660ms;">
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 rounded-2xl bg-rose-500/20 text-rose-300 flex items-center justify-center text-2xl mb-5 group-hover:bg-rose-500 group-hover:text-white group-hover:scale-110 transition-all">
+                            <i class="fa-solid fa-lungs"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-extrabold text-white mb-2">Pulmonology</h3>
+                        <p class="text-slate-300 text-sm mb-5">Advanced respiratory &amp; chest care for asthma, COPD, pneumonia, and critical lung infections.</p>
+                    </div>
+                    <button onclick="openBooking('Pulmonology')" class="w-full py-3 rounded-xl bg-medical-light text-medical-blue font-bold text-sm hover:bg-medical-teal hover:text-white transition-colors flex items-center justify-center gap-2">
+                        Book Consultation <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. HORIZONTAL DARK BAR: INPATIENT WARDS AVAILABILITY -->
+    <section class="bg-medical-navy text-white py-10 border-y border-white/10 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-6 relative z-10 reveal">
+            <div class="flex items-center gap-4 text-center sm:text-left">
+                <div class="w-14 h-14 rounded-2xl bg-medical-teal/20 border border-emerald-400/30 text-emerald-300 flex items-center justify-center text-2xl shrink-0">
+                    <i class="fa-solid fa-bed"></i>
+                </div>
+                <div>
+                    <span class="text-[11px] font-bold uppercase tracking-widest text-emerald-300">Inpatient Accommodation</span>
+                    <h3 class="font-display text-xl sm:text-2xl font-extrabold">Comfortable Patient Wards Available</h3>
+                </div>
+            </div>
+            <div class="flex flex-wrap items-center justify-center gap-3">
+                <div class="px-5 py-3 rounded-xl bg-white/10 border border-white/15 hover:bg-white/15 transition-colors flex items-center gap-2.5 text-sm font-bold">
+                    <i class="fa-solid fa-circle-check text-emerald-400"></i> General Wards
+                </div>
+                <div class="px-5 py-3 rounded-xl bg-white/10 border border-white/15 hover:bg-white/15 transition-colors flex items-center gap-2.5 text-sm font-bold">
+                    <i class="fa-solid fa-circle-check text-sky-300"></i> Semi-Private Wards
+                </div>
+                <div class="px-5 py-3 rounded-xl bg-gradient-to-r from-medical-teal to-emerald-500 text-white shadow-lg flex items-center gap-2.5 text-sm font-bold">
+                    <i class="fa-solid fa-circle-check text-white"></i> Private Wards Available
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. AYUSHMAN BHARAT PM-JAY SECTION (Updated Covered Procedures List) -->
+    <section id="ayushman" class="py-20 sm:py-24 bg-gradient-to-b from-white to-medical-light relative overflow-hidden">
         <div class="absolute top-0 right-0 w-96 h-96 bg-emerald-200/20 rounded-full blur-3xl pointer-events-none animate-orb"></div>
         <div class="absolute bottom-0 left-0 w-96 h-96 bg-sky-200/20 rounded-full blur-3xl pointer-events-none animate-orb" style="animation-delay: 2s;"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <!-- Header -->
-            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-                <img src="Images/ayush.png" loading="lazy" alt="Ayushman Bharat Logo" class="h-20 w-auto max-w-full mx-auto mb-5 object-contain" onerror="this.style.display='none'">
+            <div class="text-center max-w-3xl mx-auto mb-14 reveal">
+                <img src="Images/ayush.png" loading="lazy" decoding="async" alt="Ayushman Bharat Logo" class="h-20 w-auto max-w-full mx-auto mb-5 object-contain" onerror="this.style.display='none'">
                 <span class="inline-block px-4 py-1 rounded-full bg-emerald-100 text-medical-green font-bold text-xs uppercase tracking-widest mb-3">PM-JAY Empanelled Hospital</span>
                 <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-medical-navy mb-3">Ayushman Bharat PM-JAY</h2>
                 <p class="text-xl font-bold text-medical-teal mb-3">100% Cashless Treatment</p>
@@ -656,7 +1390,7 @@
             </div>
 
             <!-- Interactive 6-Step Cashless Journey with Progress Bar -->
-            <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-soft border border-slate-100 mb-14 reveal">
+            <div class="bg-white rounded-3xl p-5 sm:p-10 shadow-soft border border-slate-100 mb-12 reveal">
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
                     <h3 class="font-display text-xl font-bold text-medical-navy">Simple 6-Step Cashless Process</h3>
                     <span class="text-xs font-semibold text-medical-teal">Click any step to preview</span>
@@ -667,7 +1401,7 @@
                     <div id="ayushman-progress" class="h-full bg-gradient-to-r from-medical-teal to-emerald-400 rounded-full transition-all duration-500" style="width: 16.66%;"></div>
                 </div>
 
-                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 relative" id="ayushman-steps">
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 relative" id="ayushman-steps">
                     <button type="button" onclick="selectAyushmanStep(0)" class="ayush-step active group p-4 rounded-2xl border-2 border-medical-teal bg-medical-mint/60 text-center transition-all hover:-translate-y-1">
                         <div class="w-12 h-12 mx-auto rounded-xl bg-medical-teal text-white flex items-center justify-center text-xl mb-3 shadow-sm"><i class="fa-solid fa-id-card"></i></div>
                         <p class="font-bold text-xs sm:text-sm text-medical-navy">1. Registration</p>
@@ -704,8 +1438,8 @@
                 </div>
             </div>
 
-            <!-- Covered Procedures Bento Grid -->
-            <div class="bg-medical-navy rounded-[2rem] p-8 sm:p-12 text-white shadow-2xl relative overflow-hidden reveal">
+            <!-- Covered Procedures Bento Grid (Exact Requested Order) -->
+            <div class="bg-medical-navy rounded-[2rem] p-6 sm:p-12 text-white shadow-2xl relative overflow-hidden reveal">
                 <div class="absolute top-0 right-0 w-72 h-72 bg-medical-teal/20 rounded-full blur-3xl pointer-events-none animate-orb"></div>
                 <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 relative z-10">
                     <div>
@@ -718,395 +1452,66 @@
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 relative z-10">
+                    <!-- 1. Knee Replacement -->
                     <div class="spotlight-card glass-dark-card p-5 rounded-2xl flex items-center gap-4 hover:border-emerald-400/50 hover:-translate-y-1 transition-all">
                         <div class="w-12 h-12 rounded-xl bg-sky-500/20 text-sky-300 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-bone"></i></div>
                         <span class="font-semibold text-sm sm:text-base">Knee Replacement</span>
                     </div>
+                    <!-- 2. Hip Replacement -->
                     <div class="spotlight-card glass-dark-card p-5 rounded-2xl flex items-center gap-4 hover:border-emerald-400/50 hover:-translate-y-1 transition-all">
                         <div class="w-12 h-12 rounded-xl bg-sky-500/20 text-sky-300 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-person-walking"></i></div>
                         <span class="font-semibold text-sm sm:text-base">Hip Replacement</span>
                     </div>
+                    <!-- 3. Spine Surgery -->
+                    <div class="spotlight-card glass-dark-card p-5 rounded-2xl flex items-center gap-4 hover:border-emerald-400/50 hover:-translate-y-1 transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-brain"></i></div>
+                        <span class="font-semibold text-sm sm:text-base">Spine Surgery</span>
+                    </div>
+                    <!-- 4. Trauma Surgery -->
+                    <div class="spotlight-card glass-dark-card p-5 rounded-2xl flex items-center gap-4 hover:border-emerald-400/50 hover:-translate-y-1 transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-red-500/20 text-red-300 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-truck-medical"></i></div>
+                        <span class="font-semibold text-sm sm:text-base">Trauma Surgery</span>
+                    </div>
+                    <!-- 5. General Surgery -->
+                    <div class="spotlight-card glass-dark-card p-5 rounded-2xl flex items-center gap-4 hover:border-emerald-400/50 hover:-translate-y-1 transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-teal-500/20 text-teal-300 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-syringe"></i></div>
+                        <span class="font-semibold text-sm sm:text-base">General Surgery</span>
+                    </div>
+                    <!-- 6. Hernia Surgery -->
                     <div class="spotlight-card glass-dark-card p-5 rounded-2xl flex items-center gap-4 hover:border-emerald-400/50 hover:-translate-y-1 transition-all">
                         <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-bandage"></i></div>
                         <span class="font-semibold text-sm sm:text-base">Hernia Surgery</span>
                     </div>
+                    <!-- 7. Appendix Surgery -->
                     <div class="spotlight-card glass-dark-card p-5 rounded-2xl flex items-center gap-4 hover:border-emerald-400/50 hover:-translate-y-1 transition-all">
                         <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-scissors"></i></div>
                         <span class="font-semibold text-sm sm:text-base">Appendix Surgery</span>
                     </div>
+                    <!-- 8. Gall Bladder Surgery -->
                     <div class="spotlight-card glass-dark-card p-5 rounded-2xl flex items-center gap-4 hover:border-emerald-400/50 hover:-translate-y-1 transition-all">
                         <div class="w-12 h-12 rounded-xl bg-teal-500/20 text-teal-300 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-bed-pulse"></i></div>
                         <span class="font-semibold text-sm sm:text-base">Gall Bladder Surgery</span>
                     </div>
+                    <!-- 9. Typhoid Treatment -->
                     <div class="spotlight-card glass-dark-card p-5 rounded-2xl flex items-center gap-4 hover:border-emerald-400/50 hover:-translate-y-1 transition-all">
                         <div class="w-12 h-12 rounded-xl bg-rose-500/20 text-rose-300 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-viruses"></i></div>
                         <span class="font-semibold text-sm sm:text-base">Typhoid Treatment</span>
                     </div>
+                    <!-- 10. Malaria Treatment -->
                     <div class="spotlight-card glass-dark-card p-5 rounded-2xl flex items-center gap-4 hover:border-emerald-400/50 hover:-translate-y-1 transition-all">
                         <div class="w-12 h-12 rounded-xl bg-rose-500/20 text-rose-300 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-mosquito"></i></div>
                         <span class="font-semibold text-sm sm:text-base">Malaria Treatment</span>
                     </div>
+                    <!-- 11. Jaundice Treatment -->
                     <div class="spotlight-card glass-dark-card p-5 rounded-2xl flex items-center gap-4 hover:border-emerald-400/50 hover:-translate-y-1 transition-all">
                         <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-300 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-face-flushed"></i></div>
                         <span class="font-semibold text-sm sm:text-base">Jaundice Treatment</span>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SPECIALITIES / DEPARTMENTS SECTION -->
-    <section id="specialities" class="py-24 bg-white relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-                <span class="text-medical-teal font-bold text-xs uppercase tracking-widest">Our Specialities</span>
-                <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-medical-navy mt-2 mb-4">Advanced Medical Departments</h2>
-                <p class="text-slate-600">Comprehensive surgical, trauma, and multidisciplinary care delivered by experienced specialists.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
-                <!-- Orthopedics -->
-                <div class="spotlight-card group bg-white rounded-3xl p-8 border border-slate-200/80 shadow-soft hover:shadow-card-hover hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between reveal" style="--reveal-delay: 0ms;">
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-sky-50 text-medical-blue flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-blue group-hover:text-white group-hover:scale-110 transition-all">
-                            <i class="fa-solid fa-bone"></i>
-                        </div>
-                        <h3 class="font-display text-xl font-bold text-medical-navy mb-2">Orthopedics &amp; Joint Replacement</h3>
-                        <p class="text-slate-600 text-sm mb-5">Advanced care for bone, joint, and spine disorders.</p>
-                        <ul class="text-sm text-slate-600 space-y-2 mb-6">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-medical-teal text-xs"></i> Knee Replacement</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-medical-teal text-xs"></i> Hip Replacement</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-medical-teal text-xs"></i> Fracture Management</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-medical-teal text-xs"></i> Trauma Care</li>
-                        </ul>
+                    <!-- 12. +Many More... -->
+                    <div class="spotlight-card bg-gradient-to-r from-medical-teal to-emerald-500 p-5 rounded-2xl flex items-center gap-4 shadow-lg hover:-translate-y-1 transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-white/20 text-white flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-plus"></i></div>
+                        <span class="font-extrabold text-sm sm:text-base text-white">+Many More...</span>
                     </div>
-                    <button onclick="openBooking('Orthopedics')" class="w-full py-3 rounded-xl bg-medical-light text-medical-blue font-bold text-sm hover:bg-medical-teal hover:text-white transition-colors flex items-center justify-center gap-2">
-                        Book Consultation <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
-                    </button>
-                </div>
-
-                <!-- Neurosurgery -->
-                <div class="spotlight-card group bg-white rounded-3xl p-8 border border-slate-200/80 shadow-soft hover:shadow-card-hover hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between reveal" style="--reveal-delay: 80ms;">
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-medical-teal flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-teal group-hover:text-white group-hover:scale-110 transition-all">
-                            <i class="fa-solid fa-brain"></i>
-                        </div>
-                        <h3 class="font-display text-xl font-bold text-medical-navy mb-2">Neurosurgery</h3>
-                        <p class="text-slate-600 text-sm mb-5">State-of-the-art procedures for brain and spine.</p>
-                        <ul class="text-sm text-slate-600 space-y-2 mb-6">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-medical-teal text-xs"></i> Brain Surgery</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-medical-teal text-xs"></i> Neuro Trauma</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-medical-teal text-xs"></i> Spine Disorders</li>
-                        </ul>
-                    </div>
-                    <button onclick="openBooking('Neurosurgery')" class="w-full py-3 rounded-xl bg-medical-light text-medical-blue font-bold text-sm hover:bg-medical-teal hover:text-white transition-colors flex items-center justify-center gap-2">
-                        Book Consultation <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
-                    </button>
-                </div>
-
-                <!-- Urology -->
-                <div class="spotlight-card group bg-white rounded-3xl p-8 border border-slate-200/80 shadow-soft hover:shadow-card-hover hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between reveal" style="--reveal-delay: 160ms;">
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-sky-50 text-medical-blue flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-blue group-hover:text-white group-hover:scale-110 transition-all">
-                            <i class="fa-solid fa-vial"></i>
-                        </div>
-                        <h3 class="font-display text-xl font-bold text-medical-navy mb-2">Urology</h3>
-                        <p class="text-slate-600 text-sm mb-5">Comprehensive care for urinary tract system.</p>
-                        <ul class="text-sm text-slate-600 space-y-2 mb-6">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-medical-teal text-xs"></i> Kidney Disorders</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-medical-teal text-xs"></i> Uro Surgery</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-medical-teal text-xs"></i> Stone Treatment</li>
-                        </ul>
-                    </div>
-                    <button onclick="openBooking('Urology')" class="w-full py-3 rounded-xl bg-medical-light text-medical-blue font-bold text-sm hover:bg-medical-teal hover:text-white transition-colors flex items-center justify-center gap-2">
-                        Book Consultation <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
-                    </button>
-                </div>
-
-                <!-- General Surgery -->
-                <div class="spotlight-card group bg-white rounded-3xl p-8 border border-slate-200/80 shadow-soft hover:shadow-card-hover hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between reveal" style="--reveal-delay: 240ms;">
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-medical-teal flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-teal group-hover:text-white group-hover:scale-110 transition-all">
-                            <i class="fa-solid fa-syringe"></i>
-                        </div>
-                        <h3 class="font-display text-xl font-bold text-medical-navy mb-2">General Surgery</h3>
-                        <p class="text-slate-600 text-sm mb-5">Laparoscopic and minimally invasive surgical solutions.</p>
-                        <ul class="text-sm text-slate-600 space-y-2 mb-6">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-medical-teal text-xs"></i> Appendix &amp; Hernia</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-medical-teal text-xs"></i> Gall Bladder Surgery</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-medical-teal text-xs"></i> Laparoscopic Procedures</li>
-                        </ul>
-                    </div>
-                    <button onclick="openBooking('General Surgery')" class="w-full py-3 rounded-xl bg-medical-light text-medical-blue font-bold text-sm hover:bg-medical-teal hover:text-white transition-colors flex items-center justify-center gap-2">
-                        Book Consultation <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
-                    </button>
-                </div>
-
-                <!-- Obstetrics & Gynecology -->
-                <div class="spotlight-card group bg-white rounded-3xl p-8 border border-slate-200/80 shadow-soft hover:shadow-card-hover hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between reveal" style="--reveal-delay: 320ms;">
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-pink-50 text-pink-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-pink-600 group-hover:text-white group-hover:scale-110 transition-all">
-                            <i class="fa-solid fa-person-pregnant"></i>
-                        </div>
-                        <h3 class="font-display text-xl font-bold text-medical-navy mb-2">Obstetrics &amp; Gynecology</h3>
-                        <p class="text-slate-600 text-sm mb-5">Complete healthcare for women from puberty to maternity.</p>
-                        <ul class="text-sm text-slate-600 space-y-2 mb-6">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-medical-teal text-xs"></i> Pregnancy Care</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-medical-teal text-xs"></i> High-Risk Pregnancy</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-medical-teal text-xs"></i> Women's Health</li>
-                        </ul>
-                    </div>
-                    <button onclick="openBooking('Gynecology')" class="w-full py-3 rounded-xl bg-medical-light text-medical-blue font-bold text-sm hover:bg-medical-teal hover:text-white transition-colors flex items-center justify-center gap-2">
-                        Book Consultation <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
-                    </button>
-                </div>
-
-                <!-- Other Specialized Centers -->
-                <div class="rounded-3xl p-8 bg-gradient-to-br from-medical-navy via-medical-blue to-medical-teal text-white shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between relative overflow-hidden reveal" style="--reveal-delay: 400ms;">
-                    <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
-                    <div class="relative z-10">
-                        <div class="w-14 h-14 rounded-2xl bg-white/15 backdrop-blur-md text-white flex items-center justify-center text-2xl mb-6">
-                            <i class="fa-solid fa-hospital-user"></i>
-                        </div>
-                        <h3 class="font-display text-xl font-bold mb-2">Other Specialized Centers</h3>
-                        <p class="text-slate-200 text-sm mb-5">We provide holistic care through multiple specialized departments under one roof.</p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="text-xs font-semibold bg-white/15 px-3 py-1.5 rounded-full border border-white/25">Cancer Surgery</span>
-                            <span class="text-xs font-semibold bg-white/15 px-3 py-1.5 rounded-full border border-white/25">Plastic Surgery</span>
-                            <span class="text-xs font-semibold bg-white/15 px-3 py-1.5 rounded-full border border-white/25">Pediatrics</span>
-                            <span class="text-xs font-semibold bg-white/15 px-3 py-1.5 rounded-full border border-white/25">General Medicine</span>
-                        </div>
-                    </div>
-                    <button onclick="openBooking('General')" class="btn-sheen relative z-10 w-full py-3 rounded-xl bg-white text-medical-navy font-bold text-sm hover:bg-emerald-300 transition-colors shadow-md">
-                        Book Specialist Consultation
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- DOCTORS SECTION (Dr. Alok Singh image fully displayed, no bottom overlay) -->
-    <section id="doctors" class="py-24 bg-medical-light relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14 reveal">
-                <div>
-                    <span class="text-medical-teal font-bold text-xs uppercase tracking-widest">Our Medical Experts</span>
-                    <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-medical-navy mt-2">Leading Specialists</h2>
-                </div>
-                <!-- Interactive Filter Tabs -->
-                <div class="flex flex-wrap gap-2" id="doctor-filters">
-                    <button onclick="filterDoctors('all', this)" class="doc-filter active px-4 py-2 rounded-xl bg-medical-navy text-white text-xs font-bold transition-all">All Doctors</button>
-                    <button onclick="filterDoctors('surgery', this)" class="doc-filter px-4 py-2 rounded-xl bg-white text-slate-600 hover:bg-white/80 border border-slate-200 text-xs font-bold transition-all">Surgeons</button>
-                    <button onclick="filterDoctors('women-child', this)" class="doc-filter px-4 py-2 rounded-xl bg-white text-slate-600 hover:bg-white/80 border border-slate-200 text-xs font-bold transition-all">Women &amp; Child</button>
-                    <button onclick="filterDoctors('super', this)" class="doc-filter px-4 py-2 rounded-xl bg-white text-slate-600 hover:bg-white/80 border border-slate-200 text-xs font-bold transition-all">Super-Speciality</button>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                
-                <!-- Featured Lead Doctor: Dr. Alok Singh (Full Uncut Image) -->
-                <div class="lg:col-span-4 reveal">
-                    <div class="tilt-card bg-white rounded-3xl overflow-hidden shadow-card-hover border border-slate-100 flex flex-col">
-                        <div class="bg-gradient-to-b from-medical-mint/60 to-white overflow-hidden group">
-                            <img src="Images/13.png" loading="lazy" alt="Dr. Alok Singh" class="w-full h-auto block group-hover:scale-[1.02] transition-transform duration-700" onerror="this.src='https://placehold.co/600x600/0A3A66/ffffff?text=Dr.+Alok+Singh'">
-                        </div>
-                        <div class="p-6 flex-grow flex flex-col justify-between border-t border-slate-100">
-                            <div>
-                                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-extrabold mb-3">
-                                    <i class="fa-solid fa-medal text-amber-500"></i> Gold Medalist Surgeon
-                                </span>
-                                <h3 class="font-display text-2xl font-extrabold text-medical-navy">Dr. Alok Singh</h3>
-                                <p class="text-medical-teal text-sm font-semibold mb-4">MBBS, Orthopedic Surgeon</p>
-                                <div class="space-y-2.5 text-sm text-slate-600 mb-6 pt-3 border-t border-slate-100">
-                                    <div class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-medical-teal"></i> <span>Joint Replacement</span></div>
-                                    <div class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-medical-teal"></i> <span>Trauma Surgery</span></div>
-                                    <div class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-medical-teal"></i> <span>Fracture Care</span></div>
-                                    <div class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-medical-teal"></i> <span>Orthopedic Procedures</span></div>
-                                </div>
-                            </div>
-                            <button onclick="openBooking('Orthopedics', 'Dr. Alok Singh')" class="btn-sheen w-full py-3.5 rounded-xl bg-medical-navy text-white font-bold text-sm hover:bg-medical-teal transition-colors shadow-md flex items-center justify-center gap-2">
-                                <i class="fa-regular fa-calendar-check"></i> Book Appointment
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Specialist Grid -->
-                <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4 reveal" style="--reveal-delay: 120ms;" id="doctors-grid">
-                    <!-- Dr. Mamta Singh -->
-                    <div class="doctor-card spotlight-card bg-white p-5 rounded-2xl border border-slate-200/80 shadow-soft hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col justify-between" data-category="women-child">
-                        <div>
-                            <div class="flex items-start justify-between gap-3 mb-3">
-                                <div>
-                                    <h4 class="font-display font-bold text-lg text-medical-navy">Dr. Mamta Singh</h4>
-                                    <span class="inline-block text-xs font-bold text-medical-teal">MBBS, MD</span>
-                                </div>
-                                <div class="w-10 h-10 rounded-xl bg-pink-50 text-pink-600 flex items-center justify-center shrink-0"><i class="fa-solid fa-person-pregnant"></i></div>
-                            </div>
-                            <p class="text-sm font-semibold text-slate-800 mb-1">Obstetrics &amp; Gynecology Specialist</p>
-                            <p class="text-xs text-slate-500 leading-relaxed mb-4">Expertise in Pregnancy Care, Gynecology, and Comprehensive Women's Health.</p>
-                        </div>
-                        <button onclick="openBooking('Gynecology', 'Dr. Mamta Singh')" class="text-xs font-bold text-medical-blue hover:text-medical-teal flex items-center gap-1.5 transition-colors">
-                            Consult Doctor <i class="fa-solid fa-arrow-right"></i>
-                        </button>
-                    </div>
-
-                    <!-- Dr. Deepak Agrahari -->
-                    <div class="doctor-card spotlight-card bg-white p-5 rounded-2xl border border-slate-200/80 shadow-soft hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col justify-between" data-category="surgery super">
-                        <div>
-                            <div class="flex items-start justify-between gap-3 mb-3">
-                                <div>
-                                    <h4 class="font-display font-bold text-lg text-medical-navy">Dr. Deepak Agrahari</h4>
-                                    <span class="inline-block text-xs font-bold text-medical-teal">MBBS, MS, MCh</span>
-                                </div>
-                                <div class="w-10 h-10 rounded-xl bg-sky-50 text-medical-blue flex items-center justify-center shrink-0"><i class="fa-solid fa-user-doctor"></i></div>
-                            </div>
-                            <p class="text-sm font-semibold text-slate-800 mb-4">Plastic Surgeon</p>
-                        </div>
-                        <button onclick="openBooking('General', 'Dr. Deepak Agrahari')" class="text-xs font-bold text-medical-blue hover:text-medical-teal flex items-center gap-1.5 transition-colors">
-                            Consult Doctor <i class="fa-solid fa-arrow-right"></i>
-                        </button>
-                    </div>
-
-                    <!-- Dr. S. K. Dubey -->
-                    <div class="doctor-card spotlight-card bg-white p-5 rounded-2xl border border-slate-200/80 shadow-soft hover:shadow-lg hover:-translate-y-1 transition-all flex items-center justify-between gap-3" data-category="surgery super">
-                        <div class="flex items-center gap-3.5">
-                            <div class="w-11 h-11 rounded-xl bg-emerald-50 text-medical-teal flex items-center justify-center text-lg shrink-0"><i class="fa-solid fa-brain"></i></div>
-                            <div>
-                                <h5 class="font-display font-bold text-medical-navy">Dr. S. K. Dubey</h5>
-                                <p class="text-xs font-semibold text-medical-teal">Neurosurgeon</p>
-                            </div>
-                        </div>
-                        <button onclick="openBooking('Neurosurgery', 'Dr. S. K. Dubey')" title="Book Appointment" class="w-10 h-10 rounded-xl bg-medical-light text-medical-blue hover:bg-medical-teal hover:text-white transition-colors flex items-center justify-center shrink-0">
-                            <i class="fa-regular fa-calendar-plus"></i>
-                        </button>
-                    </div>
-
-                    <!-- Dr. P. K. Keshri -->
-                    <div class="doctor-card spotlight-card bg-white p-5 rounded-2xl border border-slate-200/80 shadow-soft hover:shadow-lg hover:-translate-y-1 transition-all flex items-center justify-between gap-3" data-category="super">
-                        <div class="flex items-center gap-3.5">
-                            <div class="w-11 h-11 rounded-xl bg-sky-50 text-medical-blue flex items-center justify-center text-lg shrink-0"><i class="fa-solid fa-vial"></i></div>
-                            <div>
-                                <h5 class="font-display font-bold text-medical-navy">Dr. P. K. Keshri</h5>
-                                <p class="text-xs font-semibold text-medical-teal">Urologist</p>
-                            </div>
-                        </div>
-                        <button onclick="openBooking('Urology', 'Dr. P. K. Keshri')" title="Book Appointment" class="w-10 h-10 rounded-xl bg-medical-light text-medical-blue hover:bg-medical-teal hover:text-white transition-colors flex items-center justify-center shrink-0">
-                            <i class="fa-regular fa-calendar-plus"></i>
-                        </button>
-                    </div>
-
-                    <!-- Dr. H. S. Singh -->
-                    <div class="doctor-card spotlight-card bg-white p-5 rounded-2xl border border-slate-200/80 shadow-soft hover:shadow-lg hover:-translate-y-1 transition-all flex items-center justify-between gap-3" data-category="surgery super">
-                        <div class="flex items-center gap-3.5">
-                            <div class="w-11 h-11 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-lg shrink-0"><i class="fa-solid fa-staff-snake"></i></div>
-                            <div>
-                                <h5 class="font-display font-bold text-medical-navy">Dr. H. S. Singh</h5>
-                                <p class="text-xs font-semibold text-medical-teal">Cancer Surgeon</p>
-                            </div>
-                        </div>
-                        <button onclick="openBooking('General', 'Dr. H. S. Singh')" title="Book Appointment" class="w-10 h-10 rounded-xl bg-medical-light text-medical-blue hover:bg-medical-teal hover:text-white transition-colors flex items-center justify-center shrink-0">
-                            <i class="fa-regular fa-calendar-plus"></i>
-                        </button>
-                    </div>
-
-                    <!-- Dr. S. N. Singh -->
-                    <div class="doctor-card spotlight-card bg-white p-5 rounded-2xl border border-slate-200/80 shadow-soft hover:shadow-lg hover:-translate-y-1 transition-all flex items-center justify-between gap-3" data-category="women-child">
-                        <div class="flex items-center gap-3.5">
-                            <div class="w-11 h-11 rounded-xl bg-emerald-50 text-medical-teal flex items-center justify-center text-lg shrink-0"><i class="fa-solid fa-children"></i></div>
-                            <div>
-                                <h5 class="font-display font-bold text-medical-navy">Dr. S. N. Singh</h5>
-                                <p class="text-xs font-semibold text-medical-teal">Pediatric Specialist</p>
-                            </div>
-                        </div>
-                        <button onclick="openBooking('Pediatrics', 'Dr. S. N. Singh')" title="Book Appointment" class="w-10 h-10 rounded-xl bg-medical-light text-medical-blue hover:bg-medical-teal hover:text-white transition-colors flex items-center justify-center shrink-0">
-                            <i class="fa-regular fa-calendar-plus"></i>
-                        </button>
-                    </div>
-
-                    <!-- Dr. Abhishek Agrahari -->
-                    <div class="doctor-card spotlight-card bg-white p-5 rounded-2xl border border-slate-200/80 shadow-soft hover:shadow-lg hover:-translate-y-1 transition-all flex items-center justify-between gap-3" data-category="women-child">
-                        <div class="flex items-center gap-3.5">
-                            <div class="w-11 h-11 rounded-xl bg-sky-50 text-medical-blue flex items-center justify-center text-lg shrink-0"><i class="fa-solid fa-child-reaching"></i></div>
-                            <div>
-                                <h5 class="font-display font-bold text-medical-navy">Dr. Abhishek Agrahari</h5>
-                                <p class="text-xs font-semibold text-medical-teal">Child Disease Specialist</p>
-                            </div>
-                        </div>
-                        <button onclick="openBooking('Pediatrics', 'Dr. Abhishek Agrahari')" title="Book Appointment" class="w-10 h-10 rounded-xl bg-medical-light text-medical-blue hover:bg-medical-teal hover:text-white transition-colors flex items-center justify-center shrink-0">
-                            <i class="fa-regular fa-calendar-plus"></i>
-                        </button>
-                    </div>
-
-                    <!-- Dr. Sunil Singh -->
-                    <div class="doctor-card spotlight-card bg-white p-5 rounded-2xl border border-slate-200/80 shadow-soft hover:shadow-lg hover:-translate-y-1 transition-all flex items-center justify-between gap-3" data-category="surgery">
-                        <div class="flex items-center gap-3.5">
-                            <div class="w-11 h-11 rounded-xl bg-emerald-50 text-medical-teal flex items-center justify-center text-lg shrink-0"><i class="fa-solid fa-syringe"></i></div>
-                            <div>
-                                <h5 class="font-display font-bold text-medical-navy">Dr. Sunil Singh</h5>
-                                <p class="text-xs font-semibold text-medical-teal">General Surgeon</p>
-                            </div>
-                        </div>
-                        <button onclick="openBooking('General Surgery', 'Dr. Sunil Singh')" title="Book Appointment" class="w-10 h-10 rounded-xl bg-medical-light text-medical-blue hover:bg-medical-teal hover:text-white transition-colors flex items-center justify-center shrink-0">
-                            <i class="fa-regular fa-calendar-plus"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FACILITIES SECTION -->
-    <section id="facilities" class="py-24 hero-mesh text-white relative overflow-hidden">
-        <div class="ambient-particle w-5 h-5 left-[18%] top-[78%]" style="--dur: 7.5s; --delay: 0.4s;"></div>
-        <div class="ambient-particle w-4 h-4 left-[82%] top-[74%]" style="--dur: 6.5s; --delay: 1.8s;"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-                <span class="text-emerald-300 font-bold text-xs uppercase tracking-widest">Infrastructure</span>
-                <h2 class="font-display text-3xl sm:text-5xl font-extrabold mt-2 mb-4">World-Class Facilities</h2>
-                <p class="text-slate-300">Equipped with state-of-the-art medical technology to provide comprehensive care around the clock.</p>
-            </div>
-
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
-                <div class="reveal tilt-card glass-dark-card p-6 rounded-2xl text-center hover:-translate-y-1.5 hover:bg-white/10 transition-all" style="--reveal-delay: 0ms;">
-                    <div class="w-12 h-12 mx-auto rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-2xl mb-3"><i class="fa-solid fa-bed-pulse"></i></div>
-                    <h5 class="font-bold text-sm">Advanced ICU</h5>
-                </div>
-                <div class="reveal tilt-card glass-dark-card p-6 rounded-2xl text-center hover:-translate-y-1.5 hover:bg-white/10 transition-all" style="--reveal-delay: 60ms;">
-                    <div class="w-12 h-12 mx-auto rounded-xl bg-sky-500/20 text-sky-300 flex items-center justify-center text-2xl mb-3"><i class="fa-solid fa-baby"></i></div>
-                    <h5 class="font-bold text-sm">NICU Facility</h5>
-                </div>
-                <div class="reveal tilt-card glass-dark-card p-6 rounded-2xl text-center hover:-translate-y-1.5 hover:bg-white/10 transition-all" style="--reveal-delay: 120ms;">
-                    <div class="w-12 h-12 mx-auto rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-2xl mb-3"><i class="fa-solid fa-scissors"></i></div>
-                    <h5 class="font-bold text-sm">Modern OTs</h5>
-                </div>
-                <div class="reveal tilt-card glass-dark-card p-6 rounded-2xl text-center hover:-translate-y-1.5 hover:bg-white/10 transition-all" style="--reveal-delay: 180ms;">
-                    <div class="w-12 h-12 mx-auto rounded-xl bg-sky-500/20 text-sky-300 flex items-center justify-center text-2xl mb-3"><i class="fa-solid fa-microscope"></i></div>
-                    <h5 class="font-bold text-sm">Pathology</h5>
-                </div>
-                <div class="reveal tilt-card glass-dark-card p-6 rounded-2xl text-center hover:-translate-y-1.5 hover:bg-white/10 transition-all" style="--reveal-delay: 240ms;">
-                    <div class="w-12 h-12 mx-auto rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-2xl mb-3"><i class="fa-solid fa-x-ray"></i></div>
-                    <h5 class="font-bold text-sm">Digital X-Ray</h5>
-                </div>
-                <div class="reveal tilt-card glass-dark-card p-6 rounded-2xl text-center hover:-translate-y-1.5 hover:bg-white/10 transition-all" style="--reveal-delay: 300ms;">
-                    <div class="w-12 h-12 mx-auto rounded-xl bg-sky-500/20 text-sky-300 flex items-center justify-center text-2xl mb-3"><i class="fa-solid fa-heart-pulse"></i></div>
-                    <h5 class="font-bold text-sm">ECG Services</h5>
-                </div>
-                <div class="reveal tilt-card glass-dark-card p-6 rounded-2xl text-center hover:-translate-y-1.5 hover:bg-white/10 transition-all" style="--reveal-delay: 360ms;">
-                    <div class="w-12 h-12 mx-auto rounded-xl bg-amber-500/20 text-amber-300 flex items-center justify-center text-2xl mb-3"><i class="fa-solid fa-sun"></i></div>
-                    <h5 class="font-bold text-sm">Day Care</h5>
-                </div>
-                <div class="reveal tilt-card glass-dark-card p-6 rounded-2xl text-center hover:-translate-y-1.5 hover:bg-white/10 transition-all" style="--reveal-delay: 420ms;">
-                    <div class="w-12 h-12 mx-auto rounded-xl bg-sky-500/20 text-sky-300 flex items-center justify-center text-2xl mb-3"><i class="fa-solid fa-user-nurse"></i></div>
-                    <h5 class="font-bold text-sm">OPD &amp; IPD</h5>
-                </div>
-                <div class="reveal tilt-card glass-dark-card p-6 rounded-2xl text-center hover:-translate-y-1.5 hover:bg-white/10 transition-all" style="--reveal-delay: 480ms;">
-                    <div class="w-12 h-12 mx-auto rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-2xl mb-3"><i class="fa-solid fa-pills"></i></div>
-                    <h5 class="font-bold text-sm">24x7 Pharmacy</h5>
-                </div>
-                <div class="reveal tilt-card glass-dark-card p-6 rounded-2xl text-center hover:-translate-y-1.5 bg-red-500/20 border-red-400/40 transition-all" style="--reveal-delay: 540ms;">
-                    <div class="w-12 h-12 mx-auto rounded-xl bg-red-500/30 text-white flex items-center justify-center text-2xl mb-3"><i class="fa-solid fa-ambulance"></i></div>
-                    <h5 class="font-bold text-sm">24x7 Ambulance</h5>
                 </div>
             </div>
         </div>
@@ -1135,16 +1540,16 @@
         </div>
     </section>
 
-    <!-- COMMUNITY HEALTHCARE & HOSPITAL NOTICES SECTION (Full Uncut Image, No Bottom Floating Card) -->
-    <section id="notices" class="py-24 bg-medical-light">
+    <!-- 10. SOCIAL RESPONSIBILITY & NOTICES SECTION -->
+    <section id="notices" class="py-20 sm:py-24 bg-medical-light">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
                 
                 <!-- Left Column: Social Responsibility & Notices -->
                 <div class="lg:col-span-6 reveal">
                     <span class="text-medical-teal font-bold text-xs uppercase tracking-widest">Social Responsibility &amp; Notices</span>
                     <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-medical-navy mt-2 mb-4">Healthcare Beyond Hospital Walls</h2>
-                    <p class="text-slate-600 mb-8 leading-relaxed">
+                    <p class="text-slate-600 mb-8 leading-relaxed text-sm sm:text-base">
                         Janseva Hospital is deeply rooted in the community. We regularly conduct outreach programs to ensure healthcare reaches the unreached in rural areas surrounding Varanasi.
                     </p>
 
@@ -1167,15 +1572,15 @@
                         </div>
                     </div>
 
-                    <!-- Patient Notice Board -->
-                    <div class="bg-white rounded-2xl p-6 border-l-4 border-medical-teal shadow-soft">
-                        <div class="flex items-center gap-2 text-medical-navy font-display font-bold mb-3">
-                            <i class="fa-solid fa-bullhorn text-medical-teal"></i> Important Patient Notices
+                    <!-- Patient Notice Board (Dark Contrast Card) -->
+                    <div class="bg-medical-navy text-white rounded-2xl p-6 border-l-4 border-emerald-400 shadow-xl">
+                        <div class="flex items-center gap-2 font-display font-bold mb-3">
+                            <i class="fa-solid fa-bullhorn text-emerald-300"></i> Important Patient Notices
                         </div>
-                        <ul class="space-y-2 text-xs sm:text-sm text-slate-600">
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-angle-right text-medical-teal mt-1"></i> <span><strong>OPD Consultation:</strong> Monday – Sunday, 9:00 AM – 5:00 PM.</span></li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-angle-right text-medical-teal mt-1"></i> <span><strong>Ayushman Helpdesk:</strong> Dedicated desk open for 100% cashless verification up to ₹5 Lakhs.</span></li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-angle-right text-medical-teal mt-1"></i> <span><strong>Emergency &amp; Pharmacy:</strong> Casualty, Trauma, Ambulance, and Pharmacy operate 24×7.</span></li>
+                        <ul class="space-y-2 text-xs sm:text-sm text-slate-200">
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-angle-right text-emerald-400 mt-1"></i> <span><strong>OPD Consultation:</strong> Monday – Sunday, 9:00 AM – 5:00 PM.</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-angle-right text-emerald-400 mt-1"></i> <span><strong>Ayushman Helpdesk:</strong> Dedicated desk open for 100% cashless verification up to ₹5 Lakhs.</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-angle-right text-emerald-400 mt-1"></i> <span><strong>Emergency &amp; Pharmacy:</strong> Casualty, Trauma, Ambulance, and Pharmacy operate 24×7.</span></li>
                         </ul>
                     </div>
                 </div>
@@ -1183,17 +1588,17 @@
                 <!-- Right Column: Community Camp Full Uncut Image -->
                 <div class="lg:col-span-6 reveal" style="--reveal-delay: 120ms;">
                     <div class="tilt-card rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white group">
-                        <img src="Images/7.png" loading="lazy" alt="Health Camp" class="w-full h-auto block group-hover:scale-[1.02] transition-transform duration-700" onerror="this.src='https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1000&q=80'">
+                        <img src="Images/7.png" loading="lazy" decoding="async" alt="Health Camp" class="w-full h-auto block group-hover:scale-[1.02] transition-transform duration-700" onerror="this.src='https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1000&q=80'">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- TESTIMONIALS SECTION (Auto-rotates ONLY when visible in viewport) -->
-    <section id="testimonials" class="py-24 bg-white relative overflow-hidden">
+    <!-- 11. REVIEWS / TESTIMONIALS SECTION (Auto-rotates ONLY when visible in viewport) -->
+    <section id="testimonials" class="py-20 sm:py-24 bg-white relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14 reveal">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 reveal">
                 <div>
                     <span class="text-medical-teal font-bold text-xs uppercase tracking-widest">Patient Stories</span>
                     <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-medical-navy mt-2">What Our Patients Say</h2>
@@ -1214,44 +1619,10 @@
         </div>
     </section>
 
-    <!-- HOSPITAL INFRASTRUCTURE GALLERY (Auto-rotates ONLY when visible in viewport) -->
-    <section id="gallery" class="py-24 bg-medical-navy text-white relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 reveal">
-                <div>
-                    <span class="text-emerald-300 font-bold text-xs uppercase tracking-widest">Virtual Tour</span>
-                    <h2 class="font-display text-3xl sm:text-4xl font-extrabold mt-2">Hospital Infrastructure</h2>
-                    <p class="text-slate-300 mt-2 text-sm sm:text-base">A glimpse into our world-class facilities and environment. Click any image to expand.</p>
-                </div>
-                <div class="flex flex-wrap gap-2" id="gallery-tabs">
-                    <button class="gallery-tab active px-5 py-2.5 rounded-xl bg-medical-teal text-white text-xs font-bold transition-all" data-category="Building">Hospital Building</button>
-                    <button class="gallery-tab px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-xs font-bold transition-all" data-category="OT">Operation Theatre</button>
-                    <button class="gallery-tab px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 text-xs font-bold transition-all" data-category="ICU">ICU &amp; NICU</button>
-                </div>
-            </div>
-
-            <div class="relative max-w-5xl mx-auto reveal">
-                <div class="rounded-3xl shadow-2xl border border-white/10 bg-black/30 relative overflow-hidden p-2 sm:p-3">
-                    <div id="gallery-stage" class="flex items-center justify-center rounded-2xl overflow-hidden bg-black/20">
-                        <img id="gallery-active-img" src="" alt="Hospital Infrastructure" class="w-full h-auto max-h-[75vh] object-contain mx-auto block cursor-zoom-in fade-img-in">
-                    </div>
-                    <button id="gal-prev" aria-label="Previous Photo" class="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/90 text-medical-navy hover:bg-medical-teal hover:text-white transition-colors shadow-lg flex items-center justify-center z-10">
-                        <i class="fa-solid fa-chevron-left"></i>
-                    </button>
-                    <button id="gal-next" aria-label="Next Photo" class="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/90 text-medical-navy hover:bg-medical-teal hover:text-white transition-colors shadow-lg flex items-center justify-center z-10">
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </button>
-                </div>
-                <!-- Thumbnail Strip -->
-                <div id="gallery-thumbs" class="flex justify-center gap-3 mt-5 overflow-x-auto no-scrollbar py-1"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQs SECTION (Includes NABH Approved) -->
-    <section id="faqs" class="py-24 bg-white relative">
+    <!-- 12. FAQs SECTION (Includes NABH Approved) -->
+    <section id="faqs" class="py-20 sm:py-24 bg-medical-light relative">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-14 reveal">
+            <div class="text-center mb-12 reveal">
                 <span class="text-medical-teal font-bold text-xs uppercase tracking-widest">Have Questions?</span>
                 <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-medical-navy mt-2 mb-3">Frequently Asked Questions</h2>
                 <p class="text-slate-600 text-sm sm:text-base">Quick answers about our accreditations, cashless treatments, timings, and appointments.</p>
@@ -1259,16 +1630,16 @@
 
             <div class="space-y-4" id="faq-accordion">
                 <!-- FAQ 1: NABH Approved & ISO -->
-                <div class="reveal faq-item open bg-medical-light/60 border border-slate-200/80 rounded-2xl transition-all hover:border-medical-teal/50" style="--reveal-delay: 0ms;">
-                    <button type="button" onclick="toggleFaq(this)" class="w-full px-6 py-5 text-left flex items-center justify-between gap-4">
+                <div class="reveal faq-item open bg-white border border-slate-200/80 rounded-2xl transition-all hover:border-medical-teal/50 shadow-soft" style="--reveal-delay: 0ms;">
+                    <button type="button" onclick="toggleFaq(this)" class="w-full px-5 sm:px-6 py-5 text-left flex items-center justify-between gap-4">
                         <span class="font-display font-bold text-medical-navy text-base sm:text-lg">Is Janseva Hospital &amp; Trauma Centre NABH Approved and certified?</span>
-                        <span class="faq-icon w-8 h-8 rounded-full bg-white text-medical-teal flex items-center justify-center shrink-0 shadow-sm transition-transform duration-300">
+                        <span class="faq-icon w-8 h-8 rounded-full bg-medical-mint text-medical-teal flex items-center justify-center shrink-0 transition-transform duration-300">
                             <i class="fa-solid fa-chevron-down text-xs"></i>
                         </span>
                     </button>
                     <div class="faq-answer">
                         <div>
-                            <p class="px-6 pb-5 text-sm sm:text-base text-slate-600 leading-relaxed">
+                            <p class="px-5 sm:px-6 pb-5 text-sm sm:text-base text-slate-600 leading-relaxed">
                                 Yes, Janseva Hospital &amp; Trauma Centre is <strong>NABH Approved</strong> and <strong>ISO 9001:2015 Certified</strong>. We have been serving Varanasi since 1997 with high clinical safety standards, advanced surgical care, and critical care facilities.
                             </p>
                         </div>
@@ -1276,33 +1647,33 @@
                 </div>
 
                 <!-- FAQ 2: Ayushman Bharat -->
-                <div class="reveal faq-item bg-medical-light/60 border border-slate-200/80 rounded-2xl transition-all hover:border-medical-teal/50" style="--reveal-delay: 60ms;">
-                    <button type="button" onclick="toggleFaq(this)" class="w-full px-6 py-5 text-left flex items-center justify-between gap-4">
+                <div class="reveal faq-item bg-white border border-slate-200/80 rounded-2xl transition-all hover:border-medical-teal/50 shadow-soft" style="--reveal-delay: 60ms;">
+                    <button type="button" onclick="toggleFaq(this)" class="w-full px-5 sm:px-6 py-5 text-left flex items-center justify-between gap-4">
                         <span class="font-display font-bold text-medical-navy text-base sm:text-lg">Is cashless treatment available under Ayushman Bharat PM-JAY?</span>
-                        <span class="faq-icon w-8 h-8 rounded-full bg-white text-medical-teal flex items-center justify-center shrink-0 shadow-sm transition-transform duration-300">
+                        <span class="faq-icon w-8 h-8 rounded-full bg-medical-mint text-medical-teal flex items-center justify-center shrink-0 transition-transform duration-300">
                             <i class="fa-solid fa-chevron-down text-xs"></i>
                         </span>
                     </button>
                     <div class="faq-answer">
                         <div>
-                            <p class="px-6 pb-5 text-sm sm:text-base text-slate-600 leading-relaxed">
-                                Yes, we are proudly Ayushman Bharat PM-JAY empanelled, offering 100% cashless treatment up to <strong>₹5 Lakhs per family per year</strong>. Covered treatments include Knee Replacement, Hip Replacement, Hernia Surgery, Appendix Surgery, Gall Bladder Surgery, Typhoid, Malaria, and Jaundice treatments.
+                            <p class="px-5 sm:px-6 pb-5 text-sm sm:text-base text-slate-600 leading-relaxed">
+                                Yes, we are proudly Ayushman Bharat PM-JAY empanelled, offering 100% cashless treatment up to <strong>₹5 Lakhs per family per year</strong>. Covered treatments include Knee Replacement, Hip Replacement, Spine Surgery, Trauma Surgery, General Surgery, Hernia Surgery, Appendix Surgery, Gall Bladder Surgery, Typhoid, Malaria, Jaundice treatments, and more.
                             </p>
                         </div>
                     </div>
                 </div>
 
                 <!-- FAQ 3: Timings & Emergency -->
-                <div class="reveal faq-item bg-medical-light/60 border border-slate-200/80 rounded-2xl transition-all hover:border-medical-teal/50" style="--reveal-delay: 120ms;">
-                    <button type="button" onclick="toggleFaq(this)" class="w-full px-6 py-5 text-left flex items-center justify-between gap-4">
+                <div class="reveal faq-item bg-white border border-slate-200/80 rounded-2xl transition-all hover:border-medical-teal/50 shadow-soft" style="--reveal-delay: 120ms;">
+                    <button type="button" onclick="toggleFaq(this)" class="w-full px-5 sm:px-6 py-5 text-left flex items-center justify-between gap-4">
                         <span class="font-display font-bold text-medical-navy text-base sm:text-lg">What are the OPD timings and 24×7 emergency services?</span>
-                        <span class="faq-icon w-8 h-8 rounded-full bg-white text-medical-teal flex items-center justify-center shrink-0 shadow-sm transition-transform duration-300">
+                        <span class="faq-icon w-8 h-8 rounded-full bg-medical-mint text-medical-teal flex items-center justify-center shrink-0 transition-transform duration-300">
                             <i class="fa-solid fa-chevron-down text-xs"></i>
                         </span>
                     </button>
                     <div class="faq-answer">
                         <div>
-                            <p class="px-6 pb-5 text-sm sm:text-base text-slate-600 leading-relaxed">
+                            <p class="px-5 sm:px-6 pb-5 text-sm sm:text-base text-slate-600 leading-relaxed">
                                 Regular OPD consultations run <strong>Monday to Sunday from 9:00 AM to 5:00 PM</strong>. Our Emergency &amp; Trauma Care, Advanced ICU, NICU, 24×7 Ambulance, and 24×7 Pharmacy operate round the clock. For immediate emergency support, call <strong>85429 29429</strong> or <strong>9874054557</strong>.
                             </p>
                         </div>
@@ -1310,33 +1681,33 @@
                 </div>
 
                 <!-- FAQ 4: Specialities -->
-                <div class="reveal faq-item bg-medical-light/60 border border-slate-200/80 rounded-2xl transition-all hover:border-medical-teal/50" style="--reveal-delay: 180ms;">
-                    <button type="button" onclick="toggleFaq(this)" class="w-full px-6 py-5 text-left flex items-center justify-between gap-4">
-                        <span class="font-display font-bold text-medical-navy text-base sm:text-lg">Which medical and surgical departments are available?</span>
-                        <span class="faq-icon w-8 h-8 rounded-full bg-white text-medical-teal flex items-center justify-center shrink-0 shadow-sm transition-transform duration-300">
+                <div class="reveal faq-item bg-white border border-slate-200/80 rounded-2xl transition-all hover:border-medical-teal/50 shadow-soft" style="--reveal-delay: 180ms;">
+                    <button type="button" onclick="toggleFaq(this)" class="w-full px-5 sm:px-6 py-5 text-left flex items-center justify-between gap-4">
+                        <span class="font-display font-bold text-medical-navy text-base sm:text-lg">Which medical and surgical departments and wards are available?</span>
+                        <span class="faq-icon w-8 h-8 rounded-full bg-medical-mint text-medical-teal flex items-center justify-center shrink-0 transition-transform duration-300">
                             <i class="fa-solid fa-chevron-down text-xs"></i>
                         </span>
                     </button>
                     <div class="faq-answer">
                         <div>
-                            <p class="px-6 pb-5 text-sm sm:text-base text-slate-600 leading-relaxed">
-                                We provide multidisciplinary care including Orthopedics &amp; Joint Replacement, Neurosurgery, Urology, General Surgery, Obstetrics &amp; Gynecology, Cancer Surgery, Plastic Surgery, Pediatrics, and General Medicine, supported by Modern OTs, Pathology, Digital X-Ray, and ECG services.
+                            <p class="px-5 sm:px-6 pb-5 text-sm sm:text-base text-slate-600 leading-relaxed">
+                                We provide Orthopedics &amp; Joint Replacement, Neurosurgery, Urology, General &amp; Laparoscopic Surgery, Obstetrics &amp; Gynecology, General Medicine, Nephrology, Pediatric Care &amp; NICU, Plastic Surgery, Oncology, and Pulmonology—along with General, Semi-Private, and Private Wards.
                             </p>
                         </div>
                     </div>
                 </div>
 
                 <!-- FAQ 5: Booking -->
-                <div class="reveal faq-item bg-medical-light/60 border border-slate-200/80 rounded-2xl transition-all hover:border-medical-teal/50" style="--reveal-delay: 240ms;">
-                    <button type="button" onclick="toggleFaq(this)" class="w-full px-6 py-5 text-left flex items-center justify-between gap-4">
+                <div class="reveal faq-item bg-white border border-slate-200/80 rounded-2xl transition-all hover:border-medical-teal/50 shadow-soft" style="--reveal-delay: 240ms;">
+                    <button type="button" onclick="toggleFaq(this)" class="w-full px-5 sm:px-6 py-5 text-left flex items-center justify-between gap-4">
                         <span class="font-display font-bold text-medical-navy text-base sm:text-lg">How do I book an appointment or visit the hospital?</span>
-                        <span class="faq-icon w-8 h-8 rounded-full bg-white text-medical-teal flex items-center justify-center shrink-0 shadow-sm transition-transform duration-300">
+                        <span class="faq-icon w-8 h-8 rounded-full bg-medical-mint text-medical-teal flex items-center justify-center shrink-0 transition-transform duration-300">
                             <i class="fa-solid fa-chevron-down text-xs"></i>
                         </span>
                     </button>
                     <div class="faq-answer">
                         <div>
-                            <p class="px-6 pb-5 text-sm sm:text-base text-slate-600 leading-relaxed">
+                            <p class="px-5 sm:px-6 pb-5 text-sm sm:text-base text-slate-600 leading-relaxed">
                                 Click any <strong>Book Appointment</strong> button on this page to send your details for instant confirmation via WhatsApp (<strong>9651796001</strong>), or call us directly. Our hospital is located In Front of Krishi Bhawan, GT Road, Churamanpur, Chandpur, Varanasi – 221108.
                             </p>
                         </div>
@@ -1346,17 +1717,17 @@
         </div>
     </section>
 
-    <!-- CONTACT & LOCATION SECTION -->
-    <section id="contact" class="py-24 bg-medical-light relative">
+    <!-- 13. CONTACT & LOCATION SECTION -->
+    <section id="contact" class="py-20 sm:py-24 bg-white relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+            <div class="text-center max-w-2xl mx-auto mb-12 reveal">
                 <span class="text-medical-teal font-bold text-xs uppercase tracking-widest">Reach Out to Us</span>
                 <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-medical-navy mt-2">Get in Touch</h2>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 bg-white rounded-[2rem] shadow-card-hover overflow-hidden border border-slate-100 reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-12 bg-medical-light/60 rounded-[2rem] shadow-card-hover overflow-hidden border border-slate-200/80 reveal">
                 <!-- Info Panel -->
-                <div class="lg:col-span-5 p-8 sm:p-10 flex flex-col justify-between">
+                <div class="lg:col-span-5 p-6 sm:p-10 bg-white flex flex-col justify-between">
                     <div>
                         <h3 class="font-display text-2xl font-extrabold text-medical-navy mb-6 pb-4 border-b border-slate-100">Contact Information</h3>
                         
@@ -1407,7 +1778,7 @@
                 </div>
 
                 <!-- Map Panel -->
-                <div class="lg:col-span-7 min-h-[380px] lg:min-h-[520px] bg-slate-100">
+                <div class="lg:col-span-7 min-h-[300px] sm:min-h-[420px] lg:min-h-[520px] bg-slate-100">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.041399605727!2d82.95257989999999!3d25.302813099999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e327fa9afbb59%3A0x7d26f2a4c29c977d!2sJanseva%20Hospital!5e0!3m2!1sen!2sin!4v1781958213614!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Janseva Hospital Map Location"></iframe>
                 </div>
             </div>
@@ -1663,9 +2034,9 @@
         // 4. Adaptive Full-Image Hero Showcase Slider (Runs ONLY when #home is visible)
         const heroSlidesData = [
             { src: 'Images/2.png', caption: 'Multi-Speciality Surgical & Trauma Care Centre', fallback: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=80' },
-            { src: 'Images/9.png', caption: 'Trusted Healthcare in Varanasi Since 1997', fallback: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80' },
+            { src: 'Images/3.png', caption: 'Trusted Healthcare in Varanasi Since 1997', fallback: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80' },
             { src: 'Images/5.png', caption: 'Advanced Trauma, Orthopedic & Surgical Hub', fallback: 'https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1200&q=80' },
-            { src: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1920&q=80', caption: '24×7 ICU, NICU & Critical Care Facilities', fallback: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1920&q=80' }
+            { src: 'Images/15.png', caption: '24×7 ICU, NICU & Critical Care Facilities', fallback: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1920&q=80' }
         ];
 
         const heroImgEl = document.getElementById('hero-active-img');
@@ -1904,9 +2275,8 @@
 
         // 9. Adaptive Uncut Infrastructure Gallery + Lightbox (Runs ONLY when #gallery is visible in viewport)
         const galleryData = {
-            'Building': ['Images/1.png', 'Images/5.png', 'Images/2.png', 'Images/7.png'],
-            'OT': ['https://images.unsplash.com/photo-1551076805-e1869033e561', 'Images/6.png', 'Images/5.png'],
-            'ICU': ['Images/ayush.jpg', 'https://images.unsplash.com/photo-1584515933487-779824d29309', 'Images/3.png']
+            'Building': ['Images/1.png', 'Images/3.png', 'Images/6.png', 'Images/2.png', 'Images/15.png', 'Images/10.png', 'Images/9.png', 'Images/16.png', 'Images/14.png', 'Images/5.png', 'Images/8.png', 'Images/logo-modified.png', 'Images/4.png', 'Images/7.png']
+
         };
 
         const galImgEl = document.getElementById('gallery-active-img');
